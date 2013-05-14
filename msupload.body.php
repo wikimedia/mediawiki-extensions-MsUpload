@@ -3,7 +3,7 @@
  * Body file for extension MsUpload.
  *  
  * @author Martin Schwindl  <martin.schwindl@ratin.de> 
- * @copyright � 2012 by Martin Schwindl
+ * @copyright 2013 by Martin Schwindl
  *
  * @licence GNU General Public Licence 2.0 or later
  */

@@ -18,7 +18,8 @@
 #$wgMSU_ShowAutoKat = true;     #autokategorisierung
 #$wgMSU_CheckedAutoKat = true;  #checkbox: checked = true/false
 #$wgMSU_debug = false;
-#$wgMSU_ImgParams = "400px";	
+#$wgMSU_ImgParams = "400px";
+$wgMSU_UseDragDrop = true; 	#show Drag&Drop Area?	
 #require_once("$IP/extensions/MsUpload/msupload.php");
 ##End  --------------------------------------- MsUpload
 #
