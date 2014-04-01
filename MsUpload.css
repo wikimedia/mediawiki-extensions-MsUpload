@@ -1,0 +1,304 @@
+#upload-container {
+	padding: 2px;
+}
+
+#upload-container.start-loading {
+	background: url(images/msu_loading.png) no-repeat 5px 5px;
+}
+
+#upload-select {
+	background: url(images/msu_upload_button.png) no-repeat 0;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+#upload-select.old-button {
+	background: url(images/msu_upload_button_old.gif) no-repeat 0;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#upload-select:hover {
+	zoom: 1;
+	-moz-opacity: 0.7; 
+	opacity: 0.7; 
+	filter: alpha(opacity = 70);
+}
+
+#upload-div {
+	padding: 0px 0px;
+	width: 99.9%;
+	background: #657D92;
+	background: #83AF9B;
+	background: #657D92;
+	box-shadow: 0 -45px 62px -62px rgba(0, 0, 0, 0.35) inset, 0 1px 0 rgba(255, 255, 255, 0.6);
+	border: 1px solid #AAAAAA;
+	/*margin: 2px 20px 2px 0px;*/
+} 
+
+#upload-div a {
+	cursor: pointer;
+}
+
+#upload-div.nodragdrop {
+	border: none;
+}
+
+#upload-drop {
+	margin: 3px;
+	padding: 5px;
+	border: 1px dashed #ddd;
+	text-align: center;
+	height: 20px;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+	color: #fff;
+}
+
+.drop-over {
+	background: #7092AD;
+	border: 3px dashed #AAAAAA;
+}
+
+#upload-list {
+	list-style: none none;
+	margin: 0;
+	padding: 0;
+}
+
+#upload-list li:hover { 
+	/*border: 1px solid #B0C4DE;*/	
+}
+
+#upload-list .file {
+	line-height: 2em;
+	box-shadow: 0 -45px 62px -62px rgba(0, 0, 0, 0.35) inset, 0 1px 0 rgba(255, 255, 255, 0.6);
+	background: #DEE9E9;
+	padding: 1px 0px 1px 10px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 1px;
+}
+
+#upload-list .yellow {
+	background: #F9CDAD;
+}
+
+#upload-list .red {
+	background: #F9CDAD;
+}
+
+#upload-list .green {
+	background: #A8DBA8;
+}
+
+#upload-list .file .file-type {
+	padding: 10px;
+	background: url(images/msu_document-globe.png) no-repeat 0 0;
+	position: absolute;
+	margin-top: 5px;
+}
+
+#upload-list .file .picture {
+	background: url(images/msu_document-image.png) no-repeat 0 0;
+}
+
+#upload-list .file .film {
+	background: url(images/msu_document-film.png) no-repeat 0 0;
+}
+
+#upload-list .file .pdf {
+	background: url(images/msu_document-pdf.png) no-repeat 0 0;
+}
+
+#upload-list .file .document {
+	background: url(images/msu_document.png) no-repeat 0 0;
+}
+
+#upload-list .file .ok {
+	background: url(images/msu_tick.png) no-repeat 0 0;
+}
+
+#upload-list .file .error {
+	background: url(images/msu_error.png) no-repeat 0 0;
+}
+
+#upload-list .file .picture_load {
+	background: none;
+	padding: 2px;
+	height: 22px;
+	margin: 1px;
+}
+
+#upload-list .file .picture_load canvas {
+	margin: 1px;
+}
+
+#upload-list .file .file-title {
+	font-weight: bold;
+	margin-left: 35px;
+}
+
+#upload-list .file .title_over {
+	border: 1px solid #ddd;
+	padding: 2px 3px;
+	background-color: #fbfbfb;
+}
+
+#upload-list .file .file-size {
+	color: #666;
+}
+
+#upload-list .file .file-progress {
+	width: 150px;
+	height: 10px;
+	display: inline;
+}
+
+.ui-progressbar-value.ui-widget-header {
+	background: url(images/msu_progress_stripe.png) repeat-x 0 0;	
+}
+
+.ui-progressbar-value.ui-widget-content {
+	background: none;
+}
+
+.ui-progressbar-value {	
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	border: 1px solid #ccc;
+}
+
+#upload-list .file .file-progress-bar {
+	background: none;
+	display: inline;
+	width: 150px;
+	height: 10px;
+	/*
+	position: absolute; 
+	margin-top: 8px;
+	*/
+	position: absolute;
+	margin-top: 8px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+}
+
+#upload-list .file .file-progress-state {
+	text-align: center;
+	font-size: 75%;
+	width: 150px;
+	position: absolute;
+	margin-top: 1px;
+}
+
+#upload-list .file .file-cancel {
+	background: url(images/msu_close.png) no-repeat 0 0;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding: 3px 10px;
+	cursor: pointer;
+}
+
+#upload-list .file .file-cancel:hover {
+	-moz-opacity: 0.7; 
+	opacity: 0.7; 
+}
+
+#upload-list .file .file-loading {
+	background: url(images/msu_loading.png) no-repeat 0 0;
+	margin: 0px 5px;
+	padding: 1px 8px;
+}
+
+#upload-list .file .file-warning {
+	color: #514721;
+	/*display: block;*/
+	font-size: 80%;
+	padding: 2px 5px;
+	font-style: italic;
+}
+
+#upload-list .file-warning p {
+	display: inline;
+}
+
+#upload-list .file .small-warn {
+	background: url(images/msu_error-small.png) no-repeat 0;
+	padding: 1px;
+	padding-left: 15px;
+	font-size: 95%; 
+	overflow: hidden; 
+	width: 500px;
+	background-color: #fff6bf;
+}
+
+.neu {
+	display: block;
+	/*border: 1px solid red;*/
+}
+
+.sel {
+	margin: 2px 5px 0 5px;
+}
+
+a.hover {
+	color: red;
+}
+
+#upload-list .file span,
+#upload-list .file a {
+	padding: 0 4px;
+}
+
+#upload-list .file .input-change {
+	margin: 0px 10px;
+	display: inline;
+}
+
+#upload-list .file .file-size {
+	color: #666;
+}
+ 
+#upload-list .file .file-error {
+	color: #8a1f11;
+}
+
+.check-index {
+	float: right;
+	margin-top: 7px;
+}
+
+.check-span {
+	float: right;
+	color: #444;
+}
+
+#upload-bottom {
+	 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+	 padding: 8px;
+	 height: 22px;
+}
+
+#upload-bottom a {
+	color: white;
+	font-weight: bold;
+}
+
+#upload-bottom #upload-files {
+	padding: 3px 0px 3px 25px;
+	background: url(images/msu_upload_icon.png) no-repeat 0 0;
+	height: 12px;
+}
+
+#upload-bottom .spacer {
+	border-left: 1px solid #CCCCCC;
+	margin: 0px 8px;
+	width: 1px;
+	background-color: #CCCCCC;
+}
