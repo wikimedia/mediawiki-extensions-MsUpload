@@ -1,0 +1,20 @@
+{
+    "@metadata": {
+        "authors": [
+            "Hernan Hegykozi"
+        ]
+    },
+    "msu-desc": "Permite la transferencia sencilla (si está disponible también a través de arrastrar y soltar) para uno o varios archivos al mismo tiempo",
+    "msu-button_title": "Seleccione los archivos",
+    "msu-insert_link": "Inserte el link",
+    "msu-insert_gallery": "Inserte imagen como galería",
+    "msu-insert_picture": "Inserte la imagen",
+    "msu-insert_movie": "Inserte la película",
+    "msu-cancel_upload": "Cancelar carga",
+    "msu-upload_possible": "El archivo puede ser cargado",
+    "msu-ext_not_allowed": "Sólo se permiten los siguientes tipos de archivos:",
+    "msu-upload_this": "Haga click aquí para cargar este archivo",
+    "msu-upload_all": "Haga click aquí para cargar todos los archivos",
+    "msu-dropzone": "Soltar los archivos aquí",
+    "msu-comment": "MsUpload"
+}

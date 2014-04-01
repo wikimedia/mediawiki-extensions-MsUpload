@@ -3,7 +3,7 @@
 #Author:
 #Martin Schwindl, msupload@ratin.de
 #
-#Icons: 
+#Icons:
 #Some icons by Yusuke Kamiyamane. All rights reserved. Licensed under a Creative Commons Attribution 3.0 License.
 #http://p.yusukekamiyamane.com
 #
@@ -19,7 +19,7 @@
 #$wgMSU_ShowAutoKat = true;     #autokategorisierung
 #$wgMSU_CheckedAutoKat = true;  #checkbox: checked = true/false
 #$wgMSU_debug = false;
-#$wgMSU_ImgParams = "400px";	
+#$wgMSU_ImgParams = "400px";
 #require_once("$IP/extensions/MsUpload/msupload.php");
 ##End  --------------------------------------- MsUpload
 #
@@ -36,13 +36,14 @@ $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'MsUpload',
 	'url'  => 'http://www.mediawiki.org/wiki/Extension:MsUpload',
 	'descriptionmsg' => 'msu-desc',
-	'version' => '9.3',
+	'version' => '9.4.0',
 	'author' => '[mailto:msupload@ratin.de info@ratin.de] | [http://www.ratin.de/msupload.html Ratin]',
 );
 
 $dir = dirname(__FILE__).'/';
 //$wgAvailableRights[] = 'msupload';
-$wgExtensionMessagesFiles['msu'] = $dir . 'msupload.i18n.php';
+$wgMessagesDirs['MsUpload'] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['MsUpload'] = $dir . 'msupload.i18n.php';
 
 $wgHooks['EditPage::showEditForm:initial'][] = 'MSLSetup';
 require_once($dir.'msupload.body.php');
@@ -61,7 +62,7 @@ $wgResourceModules['ext.MsUpload'] = array(
         'remoteExtPath' => 'MsUpload'
 );
 
- 
+
 function MSLSetup() {
 
   global $wgOut, $wgScriptPath;
@@ -69,16 +70,16 @@ function MSLSetup() {
   //$version = explode(".", $wgVersion); #$version[0] = 1; $version[1] = 17; $version[2] = 0;
   $path =  $wgScriptPath.'/extensions/MsUpload';
   $dir = dirname(__FILE__).'/';
-  
+
   //load module
   $wgOut->addModules( 'ext.MsUpload' );
-  
+
   global $wgMSU_ShowAutoKat, $wgMSU_AutoIndex, $wgMSU_CheckedAutoKat, $wgMSL_FileTypes, $wgJsMimeType, $wgMSU_debug, $wgMSU_ImgParams;
-  
+
   $use_MsLinks = 'false';
   if(isset($wgMSL_FileTypes)){$use_MsLinks = 'true';} //check whether the extension MsLinks is installed
   if(!is_null($wgMSU_ImgParams)){$wgMSU_ImgParams = '|'.$wgMSU_ImgParams;} //default image params
-    
+
 	$msu_vars = array(
 		'path' => $path,
     	'use_mslinks' => $use_MsLinks,
@@ -90,12 +91,12 @@ function MSLSetup() {
 	);
 
 	$msu_vars = json_encode($msu_vars);
-	
+
     $wgOut->addScript( "<script type=\"{$wgJsMimeType}\">var msu_vars = $msu_vars;</script>\n" );
-  
+
   return true;
 }
 
 function BoolToText($a) {
 return $a ? "true" : "false";
-}  
+}

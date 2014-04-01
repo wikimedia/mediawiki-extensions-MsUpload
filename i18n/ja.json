@@ -1,0 +1,20 @@
+{
+    "@metadata": {
+        "authors": [
+            "Kouichi Nishizawa"
+        ]
+    },
+    "msu-desc": "ひとつまたは複数の同時ファイルアップロード（可能な場合はドラッグ＆ドロップで）をすることができます。",
+    "msu-button_title": "ファイル選択",
+    "msu-insert_link": "リンクを挿入",
+    "msu-insert_gallery": "ギャラリーとして画像を挿入",
+    "msu-insert_picture": "画像を挿入",
+    "msu-insert_movie": "動画を挿入",
+    "msu-cancel_upload": "アップロードをキャンセル",
+    "msu-upload_possible": "ファイルをアップロードすることができます",
+    "msu-ext_not_allowed": "次の形式のファイルのみアップロードできます:",
+    "msu-upload_this": "このファイルをアップロードするにはここをクリックしてください",
+    "msu-upload_all": "すべてのファイルをアップロード",
+    "msu-dropzone": "ファイルをここにドロップしてください",
+    "msu-comment": "MsUpload"
+}
