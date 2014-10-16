@@ -1,20 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "晒太阳的冰 （zoglun@gmail.com）"
-        ]
-    },
-    "msu-desc": "开启轻松上传",
-    "msu-button_title": "上传图片",
-    "msu-insert_link": "插入图片的链接",
-    "msu-insert_gallery": "插入图片画廊",
-    "msu-insert_picture": "插入图片",
-    "msu-insert_movie": "插入视频",
-    "msu-cancel_upload": "取消上传",
-    "msu-upload_possible": "文件没有问题，可以被上传",
-    "msu-ext_not_allowed": "只有下列类型文件可以被上传:",
-    "msu-upload_this": "点这里上传这个文件",
-    "msu-upload_all": "点这里上传所有文件",
-    "msu-dropzone": "拖动文件到这里上传",
-    "msu-comment": "MsUpload"
+	"@metadata": {
+		"authors": [
+			"晒太阳的冰 (zoglun@gmail.com)"
+		]
+	},
+	"msu-desc": "开启轻松上传",
+	"msu-button-title": "上传图片",
+	"msu-insert-link": "插入图片的链接",
+	"msu-insert-gallery": "插入图片画廊",
+	"msu-insert-picture": "插入图片",
+	"msu-insert-movie": "插入视频",
+	"msu-cancel-upload": "取消上传",
+	"msu-clean-all": "清空图片",
+	"msu-upload-possible": "文件没有问题，可以被上传",
+	"msu-ext-not-allowed": "只有下列类型文件可以被上传:",
+	"msu-upload-this": "点这里上传这个文件",
+	"msu-upload-all": "点这里上传所有文件",
+	"msu-dropzone": "拖动文件到这里上传",
+	"msu-comment": "MsUpload"
 }

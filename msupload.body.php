@@ -1,42 +1,63 @@
 <?php
-/**
- * Body file for extension MsUpload.
- *
- * @author Martin Schwindl  <martin.schwindl@ratin.de>
- * @copyright � 2012 by Martin Schwindl
- *
- * @licence GNU General Public Licence 2.0 or later
- */
 
-if( !defined( 'MEDIAWIKI' ) ) {
-  echo( "This file is an extension to the MediaWiki software and cannot be used standalone.\n" );
-  die();
-}
+class MsUpload {
 
-$wgAjaxExportList[] = 'wfMsUploadSaveKat';
-function wfMsUploadSaveKat($name,$kat) {
+	static function start() {
+		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgMSL_FileTypes, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_autoIndex, $wgMSU_checkAutoCat, $wgMSU_imgParams, $wgMSU_useDragDrop;
 
-        global $wgContLang,$wgUser;
+		$wgOut->addModules( 'ext.MsUpload' );
 
-        $mediaString = strtolower( $wgContLang->getNsText( NS_FILE ) );
+		if ( $wgMSU_imgParams ) {
+			$wgMSU_imgParams = '|' . $wgMSU_imgParams;
+		}
 
-        $title = $mediaString.':'.$name;
-        $text = "\n[[".$kat."]]";
+		$msuVars = array(
+			'path' => $wgScriptPath . '/extensions/MsUpload',
+			'useDragDrop' => $wgMSU_useDragDrop,
+			'showAutoCat' => $wgMSU_showAutoCat,
+			'checkAutoCat' => $wgMSU_checkAutoCat,
+			'useMsLinks' => $wgMSU_useMsLinks,
+			'imgParams' => $wgMSU_imgParams,
+			//'autoIndex' => $wgMSU_autoIndex,
+		);
 
-        $wgEnableWriteAPI = true;
-        $params = new FauxRequest(array (
-        	'action' => 'edit',
-        	'section'=>  'new',
-        	'title' =>  $title,
-        	'text' => $text,
-        	'token' => $wgUser->getEditToken(),//$token."%2B%5C",
-        ), true, $_SESSION );
+		$msuVars = json_encode( $msuVars );
+		$wgOut->addScript( "<script type=\"{$wgJsMimeType}\">var msuVars = $msuVars;</script>\n" );
 
-        $enableWrite = true; // This is set to false by default, in the ApiMain constructor
-        $api = new ApiMain($params,$enableWrite);
-        #$api = new ApiMain($params);
-        $api->execute();
-        $data = & $api->getResultData();
+		return true;
+	}
 
-  return $mediaString;
+	static function saveCat( $filename, $category ) {
+        global $wgContLang, $wgUser;
+		$mediaString = strtolower( $wgContLang->getNsText( NS_FILE ) );
+		$title = $mediaString . ':' . $filename;
+		$text = "\n[[" . $category . "]]";
+		$wgEnableWriteAPI = true;    
+		$params = new FauxRequest(array (
+			'action' => 'edit',
+			'section'=> 'new',
+			'title' =>  $title,
+			'text' => $text,
+			'token' => $wgUser->editToken(),//$token."%2B%5C",
+		), true, $_SESSION );
+		$enableWrite = true; // This is set to false by default, in the ApiMain constructor
+		$api = new ApiMain( $params, $enableWrite );
+		$api->execute();
+		$data = &$api->getResultData();
+		return $mediaString;
+
+/* This code does the same and is better, but for some reason it doesn't update the categorylinks table
+		global $wgContLang, $wgUser;
+		$title = Title::newFromText( $filename, NS_FILE );
+		$page = new WikiPage( $title );
+		$text = $page->getText();
+		$text .= "\n\n[[" . $category . "]]";
+		$summary = wfMessage( 'msu-comment' );
+		$status = $page->doEditContent( $text, $summary, EDIT_UPDATE, false, $wgUser );
+		$value = $status->value;
+		$revision = $value['revision'];
+		$page->doEditUpdates( $revision, $wgUser );
+		return true;
+*/
+	}
 }
