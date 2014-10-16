@@ -1,20 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "晒太阳的冰 （zoglun@gmail.com）"
-        ]
-    },
-    "msu-desc": "開啟輕鬆上傳",
-    "msu-button_title": "上傳圖片",
-    "msu-insert_link": "插入該圖之鏈接",
-    "msu-insert_gallery": "插入圖片畫廊（gallery）",
-    "msu-insert_picture": "插入圖片",
-    "msu-insert_movie": "插入視頻",
-    "msu-cancel_upload": "取消上傳",
-    "msu-upload_possible": "經檢查閣下所選圖片可被上傳",
-    "msu-ext_not_allowed": "只有下列類型文件可被上傳:",
-    "msu-upload_this": "點此上傳該文件",
-    "msu-upload_all": "點此上傳所有文件",
-    "msu-dropzone": "拖動文件到這裡",
-    "msu-comment": "MsUpload"
+	"@metadata": {
+		"authors": [
+			"晒太阳的冰 (zoglun@gmail.com)"
+		]
+	},
+	"msu-desc": "開啟輕鬆上傳",
+	"msu-button-title": "上傳圖片",
+	"msu-insert-link": "插入該圖之鏈接",
+	"msu-insert-gallery": "插入圖片畫廊（gallery）",
+	"msu-insert-picture": "插入圖片",
+	"msu-insert-movie": "插入視頻",
+	"msu-cancel-upload": "取消上傳",
+	"msu-clean-all": "Clear list",
+	"msu-upload-possible": "經檢查閣下所選圖片可被上傳",
+	"msu-ext-not-allowed": "只有下列類型文件可被上傳:",
+	"msu-upload-this": "點此上傳該文件",
+	"msu-upload-all": "點此上傳所有文件",
+	"msu-dropzone": "拖動文件到這裡",
+	"msu-comment": "MsUpload"
 }

@@ -1,20 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "teokraba"
-        ]
-    },
-    "msu-desc": "Abilita uploads veloci(quando e' disponibile il drag&drop) per uno o piu' file contemporaneamente",
-    "msu-button_title": "Seleziona files",
-    "msu-insert_link": "Inserisci link",
-    "msu-insert_gallery": "Inserisci immagini come galleria",
-    "msu-insert_picture": "Inserisci immagine",
-    "msu-insert_movie": "Inserisci film",
-    "msu-cancel_upload": "Cancella upload",
-    "msu-upload_possible": "Il file non puo' essere caricato",
-    "msu-ext_not_allowed": "Solo i seguenti tipi di file sono accettati:",
-    "msu-upload_this": "Clicca qui per effettuare l'upload del file",
-    "msu-upload_all": "Clicca qui per effettuare l'upload di tutti i files",
-    "msu-dropzone": "Posiziona i files qui",
-    "msu-comment": "MsUpload"
+	"@metadata": {
+		"authors": [
+			"teokraba"
+		]
+	},
+	"msu-desc": "Abilita uploads veloci(quando e' disponibile il drag&drop) per uno o piu' file contemporaneamente",
+	"msu-button-title": "Seleziona files",
+	"msu-insert-link": "Inserisci link",
+	"msu-insert-gallery": "Inserisci immagini come galleria",
+	"msu-insert-picture": "Inserisci immagine",
+	"msu-insert-movie": "Inserisci film",
+	"msu-cancel-upload": "Cancella upload",
+	"msu-clean-all": "Clear list",
+	"msu-upload-possible": "Il file non puo' essere caricato",
+	"msu-ext-not-allowed": "Solo i seguenti tipi di file sono accettati:",
+	"msu-upload-this": "Clicca qui per effettuare l'upload del file",
+	"msu-upload-all": "Clicca qui per effettuare l'upload di tutti i files",
+	"msu-dropzone": "Posiziona i files qui",
+	"msu-comment": "MsUpload"
 }

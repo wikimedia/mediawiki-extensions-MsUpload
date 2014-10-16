@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vitas Povilaitis"
+		]
+	},
+	"msu-desc": "Leidžia lengviau pakrauti vieną arba keletą failų vienu metu. Yra galimybė naudoti drag&drop.",
+	"msu-button-title": "Pasirinkti failus",
+	"msu-insert-link": "Įterpti nuorodas",
+	"msu-insert-gallery": "Įterpti vaizdų galeriją",
+	"msu-insert-picture": "Įterpti vaizdą",
+	"msu-insert-movie": "Įterpti filmą",
+	"msu-cancel-upload": "Nutraukti pakrovimą",
+	"msu-clean-all": "Išvalyti sąrašą",
+	"msu-upload-possible": "Failai gali būti pakrauti",
+	"msu-ext-not-allowed": "Leidžiami tik sekantys failų tipai:",
+	"msu-upload-this": "Paspausk, kad pakrauti šį failą",
+	"msu-upload-all": "Paspausk, kad pakrauti visus failus",
+	"msu-dropzone": "Čia užtemk failus",
+	"msu-comment": "MsUpload"
+}

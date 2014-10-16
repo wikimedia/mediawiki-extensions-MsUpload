@@ -1,20 +1,22 @@
 {
-    "@metadata": {
-        "authors": [
-            "Martin Schwindl <martin.schwindl@ratin.de>"
-        ]
-    },
-    "msu-desc": "Ermöglicht einfache Uploads (wenn verfügbar auch per drag&drop) für eine oder mehrere Dateien gleichzeitig",
-    "msu-button_title": "Datei(en) auswählen",
-    "msu-insert_link": "als Link einfügen",
-    "msu-insert_gallery": "Bilder als Gallery einfügen",
-    "msu-insert_picture": "als Bild einfügen",
-    "msu-insert_movie": "als Film einfügen",
-    "msu-cancel_upload": "Upload abbrechen",
-    "msu-upload_possible": "Datei kann hochgeladen werden",
-    "msu-ext_not_allowed": "Es sind nur folgende Dateitypen erlaubt:",
-    "msu-upload_this": "Hier klicken um diese Datei hochzuladen",
-    "msu-upload_all": "Hier klicken um alle Dateien hochzuladen",
-    "msu-dropzone": "Datei(en) hier ablegen",
-    "msu-comment": "MsUpload"
+	"@metadata": {
+		"authors": [
+			"Martin Schwindl <martin.schwindl@ratin.de>"
+		]
+	},
+	"msu-desc": "Ermöglicht einfache Uploads (wenn verfügbar auch per drag&drop) für eine oder mehrere Dateien gleichzeitig",
+	"msu-button-title": "Datei(en) auswählen",
+	"msu-insert-link": "als Link einfügen",
+	"msu-insert-gallery": "Bilder als Gallery einfügen",
+	"msu-insert-files": "Bilder als Gallerie einfügen",
+	"msu-insert-picture": "als Bild einfügen",
+	"msu-insert-movie": "als Film einfügen",
+	"msu-cancel-upload": "Upload abbrechen",
+	"msu-clean-all": "Liste leeren",
+	"msu-upload-possible": "Datei kann hochgeladen werden",
+	"msu-ext-not-allowed": "Es sind nur folgende Dateitypen erlaubt:",
+	"msu-upload-this": "Hier klicken um diese Datei hochzuladen",
+	"msu-upload-all": "Hier klicken um alle Dateien hochzuladen",
+	"msu-dropzone": "Datei(en) hier ablegen",
+	"msu-comment": "Datei hochgeladen mit MsUpload"
 }

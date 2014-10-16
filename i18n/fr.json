@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Marc MORA"
+		]
+	},
+	"msu-desc": "Permet le téléversement facile (si valable le drag&drop aussi) pour un ou plusieurs fichiers",
+	"msu-button-title": "Sélectionnez les fichiers",
+	"msu-insert-link": "Insère le lien",
+	"msu-insert-gallery": "Insère les images en gallery",
+	"msu-insert-picture": "Insère l'image",
+	"msu-insert-movie": "Insère un film",
+	"msu-cancel-upload": "Annule téléversement",
+	"msu-upload-possible": "Ce fichier peut être téléversé",
+	"msu-ext-not-allowed": "Seuls les types suivants sont autorisés:",
+	"msu-upload-this": "Click ici pour téléverser le fichier",
+	"msu-upload-all": "Click ici pour téléverser tous les fichiers",
+	"msu-dropzone": "Glisser ici les fichiers",
+	"msu-comment": "MsUpload"
+}

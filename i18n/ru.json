@@ -1,20 +1,21 @@
 {
-    "@metadata": {
-        "authors": [
-            "alexandr"
-        ]
-    },
-    "msu-desc": "Используется для удобной загрузки (при поддержке - через drag&drop) одного или нескольких файлов одновременно",
-    "msu-button_title": "Выберите файлы",
-    "msu-insert_link": "Вставить ссылку",
-    "msu-insert_gallery": "Вставить картинки как галерея",
-    "msu-insert_picture": "Вставить картинку",
-    "msu-insert_movie": "Вставить видео",
-    "msu-cancel_upload": "Отменить загрузку",
-    "msu-upload_possible": "Файл можно загрузить",
-    "msu-ext_not_allowed": "Разрешены следующие типы файлов:",
-    "msu-upload_this": "Щелкните, чтобы загрузить этот файл",
-    "msu-upload_all": "Щелкните, чтобы загрузить все файлы",
-    "msu-dropzone": "Перетащите файлы сюда",
-    "msu-comment": "MsUpload"
+	"@metadata": {
+		"authors": [
+			"alexandr"
+		]
+	},
+	"msu-desc": "Используется для удобной загрузки (при поддержке - через drag&drop) одного или нескольких файлов одновременно",
+	"msu-button-title": "Выберите файлы",
+	"msu-insert-link": "Вставить ссылку",
+	"msu-insert-gallery": "Вставить картинки как галерея",
+	"msu-insert-picture": "Вставить картинку",
+	"msu-insert-movie": "Вставить видео",
+	"msu-cancel-upload": "Отменить загрузку",
+	"msu-clean-all": "Clear list",
+	"msu-upload-possible": "Файл можно загрузить",
+	"msu-ext-not-allowed": "Разрешены следующие типы файлов:",
+	"msu-upload-this": "Щелкните, чтобы загрузить этот файл",
+	"msu-upload-all": "Щелкните, чтобы загрузить все файлы",
+	"msu-dropzone": "Перетащите файлы сюда",
+	"msu-comment": "MsUpload"
 }
