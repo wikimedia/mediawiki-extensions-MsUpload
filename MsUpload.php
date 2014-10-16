@@ -17,7 +17,7 @@ $wgResourceModules['ext.MsUpload'] = array(
 	'dependencies' => 'jquery.ui.progressbar',
 	'styles' => 'MsUpload.css',
 	'messages' => array(
-		'msu-description',
+		'msu-desc',
 		'msu-button-title',
 		'msu-insert-link',
 		'msu-insert-gallery',
