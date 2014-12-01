@@ -22,7 +22,7 @@ class MsUpload {
 		);
 
 		$msuVars = json_encode( $msuVars );
-		$wgOut->addScript( "<script type=\"{$wgJsMimeType}\">var msuVars = $msuVars;</script>\n" );
+		$wgOut->addScript( "<script type=\"$wgJsMimeType\">var msuVars = $msuVars;</script>\n" );
 
 		return true;
 	}

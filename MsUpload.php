@@ -3,10 +3,10 @@
 $wgExtensionCredits['parserhook'][] = array(
 	'name' => 'MsUpload',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:MsUpload',
-	'version' => 10,
-	'license-name' => 'GPLv2+',
-	'author' => array( '[mailto:msupload@ratin.de Martin Schwindl]', '[https://www.mediawiki.org/wiki/User:Luis_Felipe_Schenone Luis Felipe Schenone]' ),
+	'version' => '10.0',
 	'descriptionmsg' => 'msu-desc',
+	'license-name' => 'GPLv2+',
+	'author' => array( '[mailto:wiki@ratin.de Martin Schwindl]', '[mailto:wiki@keyler-consult.de Martin Keyler]', '[https://www.mediawiki.org/wiki/User:Luis_Felipe_Schenone Luis Felipe Schenone]' ),
 );
 
 $wgResourceModules['ext.MsUpload'] = array(
@@ -17,11 +17,12 @@ $wgResourceModules['ext.MsUpload'] = array(
 	'dependencies' => 'jquery.ui.progressbar',
 	'styles' => 'MsUpload.css',
 	'messages' => array(
-		'msu-desc',
+		'msu-description',
 		'msu-button-title',
 		'msu-insert-link',
 		'msu-insert-gallery',
 		'msu-insert-files',
+		'msu-insert-links',
 		'msu-insert-picture',
 		'msu-insert-movie',
 		'msu-cancel-upload',
@@ -46,9 +47,9 @@ $wgHooks['EditPage::showEditForm:initial'][] = 'MsUpload::start';
 
 $wgAjaxExportList[] = 'MsUpload::saveCat';
 
-//Configuration defaults
+// Default configuration
 $wgMSU_useDragDrop = true;
 $wgMSU_showAutoCat = true;
 $wgMSU_checkAutoCat = true;
-$wgMSU_imgParams = '';
+$wgMSU_imgParams = '400px';
 $wgMSU_useMsLinks = false;
