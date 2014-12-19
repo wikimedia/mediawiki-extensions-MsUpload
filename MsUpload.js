@@ -126,7 +126,7 @@ function checkExtension( file, uploader ) {
 	file.li.loading.show();
 	file.extension = file.name.split( '.' ).pop().toLowerCase();
 
-	if ( $.inArray( file.extension, wgFileExtensions ) !== -1 ) {
+	if ( $.inArray( file.extension, mw.config.get( 'wgFileExtensions' ) ) !== -1 ) {
 		switch( file.extension ) {
 			case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff': // pictures
 				file.group = 'pic';
@@ -177,7 +177,7 @@ function checkExtension( file, uploader ) {
 			uploader.removeFile( file );
 			uploader.refresh();
 		});
-		fileError( uploader, file, mw.msg( 'msu-ext-not-allowed' ) + ' ' + wgFileExtensions.join( ',' ) );
+		fileError( uploader, file, mw.msg( 'msu-ext-not-allowed' ) + ' ' + mw.config.get( 'wgFileExtensions' ).join( ',' ) );
 	}
 }
 
