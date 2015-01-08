@@ -46,7 +46,11 @@ class MsUpload {
 		$enableWrite = true; // This is set to false by default, in the ApiMain constructor
 		$api = new ApiMain( $params, $enableWrite );
 		$api->execute();
-		$data = &$api->getResultData();
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$data = $api->getResult()->getResultData();
+		} else {
+			$data = &$api->getResultData();
+		}
 		return $mediaString;
 
 /* This code does the same and is better, but for some reason it doesn't update the categorylinks table
