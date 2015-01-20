@@ -128,10 +128,21 @@
 	padding: 2px;
 	height: 22px;
 	margin: 1px;
+	cursor: pointer;
 }
 
 #upload-list .file .picture_load canvas {
 	margin: 1px;
+}
+
+#upload-list .file .picture_load canvas:nth-child(2) {
+	display: none;
+	position: relative;
+	z-index: 10;
+}
+
+#upload-list .file .picture_load:hover canvas:nth-child(2) {
+	display: block;
 }
 
 #upload-list .file .file-title {
@@ -257,14 +268,14 @@ a.hover {
 }
 
 #upload-list .file .input-change {
-	margin: 0px 10px;
+	margin: 0 10px 0 40px;
 	display: inline;
 }
 
 #upload-list .file .file-size {
 	color: #666;
 }
- 
+
 #upload-list .file .file-error {
 	color: #8a1f11;
 }

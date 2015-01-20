@@ -137,7 +137,13 @@ function checkExtension( file, uploader ) {
 						// embed the current thumbnail
 						this.embed( file.li.type.get( 0 ), {
 							width: 30,
-							height: 17,
+							height: 40,
+							crop: false
+						});
+						// big thumbnail
+						this.embed( file.li.type.get( 0 ), {
+							width: 300,
+							height: 300,
 							crop: false
 						});
 					};
