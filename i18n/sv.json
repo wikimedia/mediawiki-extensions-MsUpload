@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"WikiPhoenix"
+		]
+	},
+	"msu-button-title": "Välj filer",
+	"msu-insert-link": "Infoga länk",
+	"msu-insert-movie": "Infoga film",
+	"msu-cancel-upload": "Avbryt uppladdning",
+	"msu-clean-all": "Rensa lista",
+	"msu-upload-all": "Klicka här för att ladda upp alla filer",
+	"msu-dropzone": "Släpp filer här"
+}

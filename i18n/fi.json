@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nike"
+		]
+	},
+	"msu-insert-picture": "Lisää kuva",
+	"msu-insert-movie": "Lisää elokuva",
+	"msu-cancel-upload": "Peru tallennus",
+	"msu-dropzone": "Pudota tiedostoja tähän"
+}

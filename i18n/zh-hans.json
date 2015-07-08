@@ -1,21 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
-			"晒太阳的冰 (zoglun@gmail.com)"
+			"晒太阳的冰 (zoglun@gmail.com)",
+			"Liuxinyu970226"
 		]
 	},
-	"msu-desc": "开启轻松上传",
-	"msu-button-title": "上传图片",
-	"msu-insert-link": "插入图片的链接",
-	"msu-insert-gallery": "插入图片画廊",
+	"msu-desc": "为一个或多个文件同时开启轻松上传（当通过拖放也能实现时）",
+	"msu-button-title": "选择文件",
+	"msu-insert-link": "插入链接",
+	"msu-insert-gallery": "将所有插入为图库",
+	"msu-insert-files": "将所有插入为文件",
+	"msu-insert-links": "将所有插入为链接",
 	"msu-insert-picture": "插入图片",
 	"msu-insert-movie": "插入视频",
 	"msu-cancel-upload": "取消上传",
-	"msu-clean-all": "清空图片",
-	"msu-upload-possible": "文件没有问题，可以被上传",
-	"msu-ext-not-allowed": "只有下列类型文件可以被上传:",
-	"msu-upload-this": "点这里上传这个文件",
-	"msu-upload-all": "点这里上传所有文件",
-	"msu-dropzone": "拖动文件到这里上传",
-	"msu-comment": "MsUpload"
+	"msu-clean-all": "清空列表",
+	"msu-upload-possible": "文件可以被上传",
+	"msu-ext-not-allowed": "只允许以下文件类型：",
+	"msu-upload-this": "点此上传该文件",
+	"msu-upload-all": "点此上传所有文件",
+	"msu-dropzone": "拖动文件至此",
+	"msu-comment": "基于MsUpload的文件上传"
 }

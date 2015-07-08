@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"msu-button-title": "Wybierz pliki",
+	"msu-insert-link": "Wstaw link",
+	"msu-insert-gallery": "Wstaw wszystko jako galerię",
+	"msu-insert-files": "Wstaw wszystko jako pliki",
+	"msu-insert-links": "Wstaw wszystko jako linki",
+	"msu-insert-picture": "Wstaw zdjęcie",
+	"msu-insert-movie": "Wstaw film",
+	"msu-cancel-upload": "Anuluj przesyłanie",
+	"msu-clean-all": "Wyczyść listę",
+	"msu-upload-possible": "Plik można przesłać",
+	"msu-ext-not-allowed": "Dozwolone są następujące typy plików:",
+	"msu-upload-this": "Kliknij, aby przesłać ten plik",
+	"msu-upload-all": "Kliknij, aby przesłać wszystkie pliki",
+	"msu-comment": "Plik przesłany za pomocą MsUpload"
+}
