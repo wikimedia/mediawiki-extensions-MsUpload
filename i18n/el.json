@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Geraki"
+		]
+	},
+	"msu-insert-movie": "Εισαγωγή ταινίας",
+	"msu-cancel-upload": "Ακύρωση ανεβάσματος",
+	"msu-dropzone": "Αποθέστε τα αρχεία εδώ"
+}
