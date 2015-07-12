@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Luis Felipe Schenone"
+			"Luis Felipe Schenone",
+			"Robby"
 		]
 	},
 	"msu-desc": "{{desc|name=MsUpload|url=https://www.mediawiki.org/wiki/Extension:MsUpload}}",
-	"msu-button-title": "Button for selecting files from the users computer.",
-	"msu-insert-link": "Button for inserting a file link into the wikitext.",
+	"msu-button-title": "Button for selecting files from the users computer.\n{{Identical|Select file}}",
+	"msu-insert-link": "Button for inserting a file link into the wikitext.\n{{Identical|Insert link}}",
 	"msu-insert-gallery": "Button for inserting a gallery with all the uploaded files into the wikitext.",
 	"msu-insert-files": "Button for inserting calls to all the uploaded files into the wikitext.",
 	"msu-insert-links": "Button for inserting links to all the uploaded files into the wikitext.",

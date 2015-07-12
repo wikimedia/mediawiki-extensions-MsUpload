@@ -17,5 +17,6 @@
 	"msu-ext-not-allowed": "Dozwolone są następujące typy plików:",
 	"msu-upload-this": "Kliknij, aby przesłać ten plik",
 	"msu-upload-all": "Kliknij, aby przesłać wszystkie pliki",
+	"msu-dropzone": "Przeciągnij pliki tutaj",
 	"msu-comment": "Plik przesłany za pomocą MsUpload"
 }
