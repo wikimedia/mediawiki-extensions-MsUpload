@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Marc MORA"
+			"Marc MORA",
+			"Windes"
 		]
 	},
 	"msu-desc": "Permet le téléversement facile (si valable le drag&drop aussi) pour un ou plusieurs fichiers",
@@ -11,6 +12,7 @@
 	"msu-insert-picture": "Insère l'image",
 	"msu-insert-movie": "Insère un film",
 	"msu-cancel-upload": "Annule téléversement",
+	"msu-clean-all": "Effacer la liste",
 	"msu-upload-possible": "Ce fichier peut être téléversé",
 	"msu-ext-not-allowed": "Seuls les types suivants sont autorisés:",
 	"msu-upload-this": "Click ici pour téléverser le fichier",
