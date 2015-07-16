@@ -6,7 +6,7 @@
 			"kotra"
 		]
 	},
-	"msu-desc": "Enables easy uploads (when available also via drag&drop) for one or multiple files simultaneously",
+	"msu-desc": "Enables easy uploads for one file or multiple files simultaneously",
 	"msu-button-title": "Select files",
 	"msu-insert-link": "Insert link",
 	"msu-insert-gallery": "Insert all as gallery",
