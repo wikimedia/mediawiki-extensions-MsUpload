@@ -38,7 +38,6 @@ $wgResourceModules['ext.MsUpload'] = array(
 	'remoteExtPath' => 'MsUpload',
 );
 
-$wgExtensionMessagesFiles['MsUpload'] = __DIR__ . '/MsUpload.i18n.php';
 $wgMessagesDirs['MsUpload'] = __DIR__ . '/i18n';
 
 $wgAutoloadClasses['MsUpload'] = __DIR__ . '/MsUpload.body.php';
