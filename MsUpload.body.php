@@ -3,13 +3,12 @@
 class MsUpload {
 
 	static function start() {
-		global $wgOut, $wgScriptPath, $wgMSL_FileTypes, $wgMSU_useMsLinks, $wgMSU_showAutoCat,
-			$wgMSU_autoIndex, $wgMSU_checkAutoCat, $wgMSU_confirmReplace, $wgMSU_useDragDrop,
-			$wgMSU_imgParams, $wgFileExtensions;
+		global $wgOut, $wgScriptPath, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_checkAutoCat,
+			$wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions;
 
 		$wgOut->addJsConfigVars( array(
 			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) ),
-		));
+		) );
 
 		if ( $wgMSU_imgParams ) {
 			$wgMSU_imgParams = '|' . $wgMSU_imgParams;
@@ -32,17 +31,17 @@ class MsUpload {
 	}
 
 	static function saveCat( $filename, $category ) {
-        global $wgContLang, $wgUser;
+		global $wgContLang, $wgUser;
 		$mediaString = strtolower( $wgContLang->getNsText( NS_FILE ) );
 		$title = $mediaString . ':' . $filename;
 		$text = "\n[[" . $category . "]]";
-		$wgEnableWriteAPI = true;    
-		$params = new FauxRequest(array (
+		$wgEnableWriteAPI = true;
+		$params = new FauxRequest( array(
 			'action' => 'edit',
 			'section'=> 'new',
 			'title' =>  $title,
 			'text' => $text,
-			'token' => $wgUser->editToken(),//$token."%2B%5C",
+			'token' => $wgUser->editToken(), // $token."%2B%5C",
 		), true, $_SESSION );
 		$enableWrite = true;
 		$api = new ApiMain( $params, $enableWrite );
@@ -54,7 +53,8 @@ class MsUpload {
 		}
 		return $mediaString;
 
-/* The code below does the same and is better, but for some reason it doesn't update the categorylinks table, so it's no good
+		/* The code below does the same and is better,
+			but for some reason it doesn't update the categorylinks table, so it's no good
 		global $wgContLang, $wgUser;
 		$title = Title::newFromText( $filename, NS_FILE );
 		$page = new WikiPage( $title );
@@ -66,6 +66,6 @@ class MsUpload {
 		$revision = $value['revision'];
 		$page->doEditUpdates( $revision, $wgUser );
 		return true;
-*/
+		*/
 	}
 }
