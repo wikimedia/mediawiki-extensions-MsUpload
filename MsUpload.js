@@ -95,7 +95,7 @@ function build( file ) {
 		}).change( function () {
 			file.cat = this.checked; // Save
 		}).appendTo( file.li );
-	
+
 		$( '<span/>' ).attr( 'class', 'check-span' ).text( wgPageName.replace( /_/g, ' ' ) ).appendTo( file.li );
 	}
 	file.li.title.mouseover( function () {
@@ -183,7 +183,9 @@ function checkExtension( file, uploader ) {
 			uploader.removeFile( file );
 			uploader.refresh();
 		});
-		fileError( uploader, file, mw.msg( 'msu-ext-not-allowed' ) + ' ' + mw.config.get( 'wgFileExtensions' ).join( ',' ) );
+		fileError( uploader, file, mw.msg(
+			'msu-ext-not-allowed', mw.config.get( 'wgFileExtensions' ).length ) +
+			' ' + mw.config.get( 'wgFileExtensions' ).join( ',' ) );
 	}
 }
 

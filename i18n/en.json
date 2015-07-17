@@ -17,7 +17,7 @@
 	"msu-cancel-upload": "Cancel upload",
 	"msu-clean-all": "Clear list",
 	"msu-upload-possible": "File can be uploaded",
-	"msu-ext-not-allowed": "Only the following file types are allowed:",
+	"msu-ext-not-allowed": "Only the following file {{PLURAL:$1|type is|types are}} allowed:",
 	"msu-upload-this": "Upload this file",
 	"msu-upload-all": "Upload all files",
 	"msu-dropzone": "Drop files here",
