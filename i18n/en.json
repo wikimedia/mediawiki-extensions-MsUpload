@@ -17,9 +17,9 @@
 	"msu-cancel-upload": "Cancel upload",
 	"msu-clean-all": "Clear list",
 	"msu-upload-possible": "File can be uploaded",
-	"msu-ext-not-allowed": "Only the following filetypes are allowed:",
-	"msu-upload-this": "Click here to upload this file",
-	"msu-upload-all": "Click here to upload all files",
+	"msu-ext-not-allowed": "Only the following file types are allowed:",
+	"msu-upload-this": "Upload this file",
+	"msu-upload-all": "Upload all files",
 	"msu-dropzone": "Drop files here",
 	"msu-comment": "File uploaded with MsUpload"
 }
