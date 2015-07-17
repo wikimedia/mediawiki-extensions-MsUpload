@@ -18,8 +18,8 @@
 	"msu-clean-all": "Effacer la liste",
 	"msu-upload-possible": "Ce fichier peut être téléversé",
 	"msu-ext-not-allowed": "Seuls les types suivants sont autorisés:",
-	"msu-upload-this": "Click ici pour téléverser le fichier",
-	"msu-upload-all": "Click ici pour téléverser tous les fichiers",
+	"msu-upload-this": "Téléverser ce fichier",
+	"msu-upload-all": "Téléverser tous les fichiers",
 	"msu-dropzone": "Glisser ici les fichiers",
 	"msu-comment": "MsUpload"
 }
