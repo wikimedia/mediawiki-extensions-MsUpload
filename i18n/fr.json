@@ -6,7 +6,7 @@
 			"Wladek92"
 		]
 	},
-	"msu-desc": "Permet le téléversement facile (si valable le drag&drop aussi) pour un ou plusieurs fichiers",
+	"msu-desc": "Permet les téléversements faciles d'un seul ou de plusieurs fichiers en même temps",
 	"msu-button-title": "Sélectionnez les fichiers",
 	"msu-insert-link": "Insère le lien",
 	"msu-insert-gallery": "Insère les images en gallery",
@@ -17,7 +17,7 @@
 	"msu-cancel-upload": "Annule téléversement",
 	"msu-clean-all": "Effacer la liste",
 	"msu-upload-possible": "Ce fichier peut être téléversé",
-	"msu-ext-not-allowed": "Seuls les types suivants sont autorisés:",
+	"msu-ext-not-allowed": "Seulement {{PLURAL:$1|le type de fichier suivant est autorisé|les types de fichiers suivants sont autorisés}} :",
 	"msu-upload-this": "Téléverser ce fichier",
 	"msu-upload-all": "Téléverser tous les fichiers",
 	"msu-dropzone": "Glisser ici les fichiers",

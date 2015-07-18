@@ -5,7 +5,7 @@
 			"Liuxinyu970226"
 		]
 	},
-	"msu-desc": "为一个或多个文件同时开启轻松上传（当通过拖放也能实现时）",
+	"msu-desc": "为一个或多个文件同时开启轻松上传",
 	"msu-button-title": "选择文件",
 	"msu-insert-link": "插入链接",
 	"msu-insert-gallery": "将所有插入为图库",
@@ -16,9 +16,9 @@
 	"msu-cancel-upload": "取消上传",
 	"msu-clean-all": "清空列表",
 	"msu-upload-possible": "文件可以被上传",
-	"msu-ext-not-allowed": "只允许以下文件类型：",
-	"msu-upload-this": "点此上传该文件",
-	"msu-upload-all": "点此上传所有文件",
+	"msu-ext-not-allowed": "只允许以下文件{{PLURAL:$1|类型}}：",
+	"msu-upload-this": "上传此文件",
+	"msu-upload-all": "上传所有文件",
 	"msu-dropzone": "拖动文件至此",
 	"msu-comment": "基于MsUpload的文件上传"
 }

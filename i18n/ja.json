@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kouichi Nishizawa"
+			"Kouichi Nishizawa",
+			"Sujiniku"
 		]
 	},
 	"msu-desc": "ひとつまたは複数の同時ファイルアップロード（可能な場合はドラッグ＆ドロップで）をすることができます。",
@@ -13,7 +14,7 @@
 	"msu-cancel-upload": "アップロードをキャンセル",
 	"msu-clean-all": "Clear list",
 	"msu-upload-possible": "ファイルをアップロードすることができます",
-	"msu-ext-not-allowed": "次の形式のファイルのみアップロードできます:",
+	"msu-ext-not-allowed": "次の{{PLURAL:$1|形式|形式}}のファイルのみアップロードできます:",
 	"msu-upload-this": "このファイルをアップロードするにはここをクリックしてください",
 	"msu-upload-all": "すべてのファイルをアップロード",
 	"msu-dropzone": "ファイルをここにドロップしてください",

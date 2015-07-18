@@ -14,7 +14,8 @@
 	"msu-cancel-upload": "Eroplueden ofbriechen",
 	"msu-clean-all": "Lëscht eidelmaachen",
 	"msu-upload-possible": "Fichier kann net eropgeluede ginn",
-	"msu-ext-not-allowed": "Nëmmen dëse Type vu Fichiere sinn erlaabt:",
-	"msu-upload-this": "Klickt hei fir dëse Fichier eropzelueden",
-	"msu-upload-all": "Klickt hei fir all Fichieren eropzelueden"
+	"msu-ext-not-allowed": "Nëmmen {{PLURAL:$1|dësen Typ vu Fichier ass|dës Type vu Fichiere sinn}} erlaabt:",
+	"msu-upload-this": "Dëse Fichier eroplueden",
+	"msu-upload-all": "all Fichieren eroplueden",
+	"msu-comment": "Fichier mat MsUpload eropgelueden"
 }

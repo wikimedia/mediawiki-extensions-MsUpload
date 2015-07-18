@@ -5,7 +5,7 @@
 			"Macofe"
 		]
 	},
-	"msu-desc": "Permite la transferencia sencilla (si está disponible también a través de arrastrar y soltar) para uno o varios archivos al mismo tiempo",
+	"msu-desc": "Permite la subida sencilla de uno o varios archivos al mismo tiempo",
 	"msu-button-title": "Seleccionar archivos",
 	"msu-insert-link": "Insertar enlace",
 	"msu-insert-gallery": "Insertar todos como una galería",
@@ -16,9 +16,9 @@
 	"msu-cancel-upload": "Cancelar la subida",
 	"msu-clean-all": "Vaciar la lista",
 	"msu-upload-possible": "El archivo puede subirse",
-	"msu-ext-not-allowed": "Sólo se permiten los siguientes tipos de archivos:",
-	"msu-upload-this": "Pulsa aquí para subir este archivo",
-	"msu-upload-all": "Pulsa aquí para subir todos los archivos",
+	"msu-ext-not-allowed": "Sólo se {{PLURAL:$1|permite el siguiente tipo|permiten los siguientes tipos}} de archivos:",
+	"msu-upload-this": "Subir este archivo",
+	"msu-upload-all": "Subir todos los archivos",
 	"msu-dropzone": "Soltar los archivos aquí",
 	"msu-comment": "Archivo subido con MsUpload"
 }

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"F3RaN"
+		]
+	},
+	"msu-desc": "Permet càrregues simples per un o múltiples fitxers simultàniament",
+	"msu-ext-not-allowed": "Només {{PLURAL:$1|el següent tipus de fitxer és permès| els següents tipus de fitxer són permesos}}:",
+	"msu-upload-this": "Carrega aquest fitxer",
+	"msu-upload-all": "Carrega tots els fitxers"
+}
