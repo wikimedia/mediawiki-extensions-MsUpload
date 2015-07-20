@@ -4,6 +4,15 @@
 			"Ananth subray"
 		]
 	},
+	"msu-button-title": "ಕಡತಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ",
 	"msu-insert-link": "ಸಂಪರ್ಕವನ್ನು ಅಳವಡಿಸಿ",
-	"msu-clean-all": "ಸ್ಪಷ್ಟ ಪಟ್ಟಿ"
+	"msu-insert-files": "ಎಲ್ಲವನ್ನೂ ಕಡತಗಳನ್ನಾಗಿ ಸೇರಿಸಿ",
+	"msu-insert-links": "ಎಲ್ಲವನ್ನೂ ಲಿಂಕ್ಗಳನ್ನಾಗಿ ಸೇರಿಸಿ",
+	"msu-insert-picture": "ಚಿತ್ರವನ್ನು ಸೇರಿಸಿ",
+	"msu-insert-movie": "ಚಲನಚಿತ್ರ ಸೇರಿಸಿ",
+	"msu-cancel-upload": "ಅಪ್ಲೋಡನ್ನು ರದ್ದು ಮಾಡಿ",
+	"msu-clean-all": "ಸ್ಪಷ್ಟ ಪಟ್ಟಿ",
+	"msu-upload-this": "ಈ ಕಡತವನ್ನು ಅಪ್ಲೋಡ್ ಮಾಡಿ",
+	"msu-upload-all": "ಎಲ್ಲಾ ಕಡತಗಳನ್ನು ಅಪ್ಲೋಡ್ ಮಾಡಿ",
+	"msu-dropzone": "ಇಲ್ಲಿ ಕಡತಗಳನ್ನು ಬಿಡಿ"
 }
