@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mervat Salman"
+		]
+	},
+	"msu-desc": "يتيح تحميل ملف واحد أو عدة ملفات معاً بسهولة",
+	"msu-ext-not-allowed": "الملف {{PLURAL:$1|type is|types are}} متاح فقط:"
+}

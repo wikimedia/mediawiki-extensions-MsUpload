@@ -18,5 +18,6 @@
 	"msu-ext-not-allowed": "Nëmmen {{PLURAL:$1|dësen Typ vu Fichier ass|dës Type vu Fichiere sinn}} erlaabt:",
 	"msu-upload-this": "Dëse Fichier eroplueden",
 	"msu-upload-all": "all Fichieren eroplueden",
+	"msu-dropzone": "Fichieren hei ofleeën",
 	"msu-comment": "Fichier mat MsUpload eropgelueden"
 }
