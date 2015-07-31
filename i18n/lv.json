@@ -4,5 +4,7 @@
 			"Papuass"
 		]
 	},
-	"msu-cancel-upload": "Atcelt augšupielādi"
+	"msu-cancel-upload": "Atcelt augšupielādi",
+	"msu-upload-this": "Augšupielādēt šo failu",
+	"msu-upload-all": "Augšupielādēt visus failus"
 }
