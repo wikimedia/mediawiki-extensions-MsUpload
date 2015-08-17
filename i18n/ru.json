@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"alexandr"
+			"alexandr",
+			"Okras"
 		]
 	},
-	"msu-desc": "Используется для удобной загрузки (при поддержке - через drag&drop) одного или нескольких файлов одновременно",
+	"msu-desc": "Позволяет удобно загружать один или несколько файлов одновременно",
 	"msu-button-title": "Выберите файлы",
 	"msu-insert-link": "Вставить ссылку",
 	"msu-insert-gallery": "Вставить картинки как галерея",
@@ -13,9 +14,9 @@
 	"msu-cancel-upload": "Отменить загрузку",
 	"msu-clean-all": "Clear list",
 	"msu-upload-possible": "Файл можно загрузить",
-	"msu-ext-not-allowed": "Разрешены следующие типы файлов:",
-	"msu-upload-this": "Щелкните, чтобы загрузить этот файл",
-	"msu-upload-all": "Щелкните, чтобы загрузить все файлы",
+	"msu-ext-not-allowed": "Разрешен{{PLURAL:$1||ы}} только {{PLURAL:$1|следующий тип|следующие типы}} файлов:",
+	"msu-upload-this": "Загрузить этот файл",
+	"msu-upload-all": "Загрузить все файлы",
 	"msu-dropzone": "Перетащите файлы сюда",
 	"msu-comment": "MsUpload"
 }
