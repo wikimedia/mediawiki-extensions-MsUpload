@@ -5,7 +5,7 @@
 			"Sujiniku"
 		]
 	},
-	"msu-desc": "ひとつまたは複数の同時ファイルアップロード（可能な場合はドラッグ＆ドロップで）をすることができます。",
+	"msu-desc": "ひとつまたは複数のファイルを同時にアップロードすることができます",
 	"msu-button-title": "ファイル選択",
 	"msu-insert-link": "リンクを挿入",
 	"msu-insert-gallery": "ギャラリーとして画像を挿入",
@@ -15,7 +15,7 @@
 	"msu-clean-all": "Clear list",
 	"msu-upload-possible": "ファイルをアップロードすることができます",
 	"msu-ext-not-allowed": "次の{{PLURAL:$1|形式|形式}}のファイルのみアップロードできます:",
-	"msu-upload-this": "このファイルをアップロードするにはここをクリックしてください",
+	"msu-upload-this": "このファイルをアップロード",
 	"msu-upload-all": "すべてのファイルをアップロード",
 	"msu-dropzone": "ファイルをここにドロップしてください",
 	"msu-comment": "MsUpload"
