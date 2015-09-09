@@ -150,7 +150,7 @@
 	margin-left: 35px;
 }
 
-#upload-list .file .title_over {
+#upload-list .file .file-title:hover {
 	border: 1px solid #ddd;
 	padding: 2px 3px;
 	background-color: #fbfbfb;
@@ -235,18 +235,20 @@
 	font-style: italic;
 }
 
-#upload-list .file-warning p {
+#upload-list .file .file-warning p {
 	display: inline;
 }
 
-#upload-list .file .small-warn {
-	background: url(images/msu_error-small.png) no-repeat 0;
-	padding: 1px;
-	padding-left: 15px;
-	font-size: 95%; 
-	overflow: hidden; 
-	width: 500px;
-	background-color: #fff6bf;
+#upload-list .file .file-warning div.thumb {
+	display: none;
+	position: absolute;
+	right: 10px;
+}
+#upload-list .file .file-warning div.thumbinner {
+	background: none;
+	border: none;
+	overflow: visible;
+	padding: 0;
 }
 
 .neu {

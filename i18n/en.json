@@ -15,6 +15,7 @@
 	"msu-insert-picture": "Insert picture",
 	"msu-insert-movie": "Insert movie",
 	"msu-cancel-upload": "Cancel upload",
+	"msu-replace-file": "Replace file?",
 	"msu-clean-all": "Clear list",
 	"msu-upload-possible": "File can be uploaded",
 	"msu-ext-not-allowed": "Only the following file {{PLURAL:$1|type is|types are}} allowed:",

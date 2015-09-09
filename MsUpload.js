@@ -1,6 +1,6 @@
-var $ = jQuery;
-var mw = mediaWiki;
-var msuVars = window.msuVars;
+var $ = jQuery,
+	mw = mediaWiki,
+	msuVars = window.msuVars;
 
 function fileError( uploader, file, errorText ) {
 	file.li.warning.text( errorText );
@@ -33,52 +33,78 @@ function addLinks() {
 	}
 }
 
-function warningText( fileItem, warning ) {
-	if ( warning === '' || warning === '&nbsp;' || warning ==='&#160;' ) {
-		fileItem.warning.text( mw.msg( 'msu-upload-possible' ) ).removeClass( 'small-warn' );
-	} else {
-		// Error handling
-		warning = warning.replace( /( <( [^>]+ )> )/ig, '' );
-		var warningSplit = warning.split( '. ' ); // split error
-		$( '<span/>' ).attr( 'class', 'small-warn' ).html( warningSplit[0] ).click( function () {
-			$( this ).html( warningSplit[0] + '. ' + warningSplit[1] );
-		}).appendTo( fileItem.warning );
+var unconfirmedReplacements = 0;
+function warningText( fileItem, warning, uploader ) {
+	switch ( warning ) {
+		case '':
+		case '&nbsp;':
+		case '&#160;':
+			$( fileItem.warning ).text( mw.msg( 'msu-upload-possible' ) );
+			break;
+
+		case 'Error: Unknown result from API':
+		case 'Error: Request failed':
+			$( fileItem.warning ).text( warning );
+			break;
+
+		default:
+			// IMPORTANT! The code below assumes that every warning not captured by the code above is about a file being replaced
+			$( fileItem.warning ).html( warning );
+
+			// When hovering over the link to the file about to be replaced, show the thumbnail
+			$( fileItem.warning ).find( 'a' ).mouseover( function () {
+				$( fileItem.warning ).find( 'div.thumb' ).show();
+			}).mouseout( function () {
+				$( fileItem.warning ).find( 'div.thumb' ).hide();
+			});
+
+			// If a file with the same name already exists, add a checkbox to confirm the replacement
+			if ( window.msuVars.confirmReplace === true ) {
+
+				var title = $( fileItem.warning ).siblings( '.file-title' );
+
+				var checkbox = $( '<input>' ).attr({ 'type': 'checkbox', 'checked': true }).click( function ( event ) {
+					if ( $( this ).is( ':checked' ) ) {
+						title.show().next().hide();
+						unconfirmedReplacements--;
+					} else {
+						title.hide().next().show().select();
+						unconfirmedReplacements++;
+					}
+					uploader.trigger( 'CheckFiles' );
+				}).click();
+				$( '<label>' ).append( checkbox ).append( mw.msg( 'msu-replace-file' ) ).appendTo( fileItem.warning );
+			}
+			break;
 	}
+	uploader.trigger( 'CheckFiles' );
 	fileItem.loading.hide();
 }
 
-function checkUploadWarning( filename, fileItem ) {
-	var mwVersion = parseInt( wgVersion.substr( 2, 2 ) );
-	if ( mwVersion > 21 ) {
-		$.ajax({ url: mw.util.wikiScript( 'api' ), dataType: 'json', type: 'POST',
-		data: {
-			format: 'json',
-			action: 'query',
-			titles: 'File:' + filename,
-			prop: 'imageinfo',
-			iiprop: 'uploadwarning'
-		}, success: function ( data ) {
-			if ( data && data.query && data.query.pages ) {
-				var pages = data.query.pages;
-				// warningText( fileItem, pages[Object.keys( pages )[0]].imageinfo[0].html ); // .keys possible in ie8
-				$.each( pages, function ( index, val ) {
-					warningText( fileItem, val.imageinfo[0].html );
-					return false; // Break out
-				});
-			} else {
-				warningText( fileItem, 'Error: Unknown result from API.' );
-			}
-		}, error: function () {
-			warningText( fileItem, 'Error: Request failed.' );
-		}});
-	} else {
-		sajax_do_call( 'SpecialUpload::ajaxGetExistsWarning', [filename], function ( result ) {
-			warningText( fileItem, result.responseText );
-		});
-	}
+function checkUploadWarning( filename, fileItem, uploader ) {
+	$.ajax({ url: mw.util.wikiScript( 'api' ), dataType: 'json', type: 'POST',
+	data: {
+		format: 'json',
+		action: 'query',
+		titles: 'File:' + filename,
+		prop: 'imageinfo',
+		iiprop: 'uploadwarning'
+	}, success: function ( data ) {
+		if ( data && data.query && data.query.pages ) {
+			var pages = data.query.pages;
+			$.each( pages, function ( index, val ) {
+				warningText( fileItem, val.imageinfo[0].html, uploader ); // Pass on the warning message
+				return false; // Break out
+			});
+		} else {
+			warningText( fileItem, 'Error: Unknown result from API', uploader );
+		}
+	}, error: function () {
+		warningText( fileItem, 'Error: Request failed', uploader );
+	}});
 }
 
-function build( file ) {
+function build( file, uploader ) {
 	/* Fileindexer
 	if ( autoIndex ) {
 		new Element( 'input', {name:'fi['+file.id+']', 'class':'check-index',type: 'checkbox', 'checked': true} ).inject( file.ui.title, 'after' );
@@ -86,9 +112,9 @@ function build( file ) {
 	}
 	*/
 	// Auto category
-	if ( msuVars.showAutoCat && wgNamespaceNumber === 14 ) {
+	if ( msuVars.showAutoCat && mw.config.get( 'wgNamespaceNumber' ) === 14 ) {
 		file.cat = msuVars.checkAutoCat; // Predefine
-		$( '<input/>' ).attr({
+		$( '<input>' ).attr({
 			'class': 'check-index',
 			'type': 'checkbox',
 			'checked': file.cat
@@ -96,27 +122,28 @@ function build( file ) {
 			file.cat = this.checked; // Save
 		}).appendTo( file.li );
 
-		$( '<span/>' ).attr( 'class', 'check-span' ).text( wgPageName.replace( /_/g, ' ' ) ).appendTo( file.li );
+		$( '<span>' ).attr( 'class', 'check-span' ).text( wgPageName.replace( /_/g, ' ' ) ).appendTo( file.li );
 	}
-	file.li.title.mouseover( function () {
-		$( this ).addClass( 'title_over' );
-	}).mouseleave( function () {
-		$( this ).removeClass( 'title_over' );
-	}).click( function () {
-		$( this ).hide();
-		var inputChange = $( '<input/>' ).attr({
-			//'id': 'input-change-' + file.id,
-			'class':'input-change',
-			'size': file.name.length,
-			'name': 'filename',
-			'value': file.name
-		}).insertAfter( $( this ) );
 
-		inputChange.change( function () {
-			file.name = this.value; // save new name
-			checkUploadWarning( this.value,file.li );
-		});
+	// Insert an input field for changing the file title
+	var inputChange = $( '<input>' ).attr({
+		//'id': 'input-change-' + file.id,
+		'class':'input-change',
+		'size': file.name.length,
+		'name': 'filename',
+		'value': file.name
+	}).change( function () {
+		file.name = this.value; // Save new name
+		unconfirmedReplacements = 0; // Hack! If the user renames a file to avoid replacing it, this forces the Upload button to appear, but it also does when a user just renames a file that wasn't about to replace another
+		checkUploadWarning( this.value, file.li, uploader );
+	}).hide().insertAfter( file.li.title );
+
+	file.li.title.click( function () {
+		file.li.title.hide();
+		inputChange.show().select();
 	});
+
+	// Insert the progress bar
 	file.li.append( '<div class="file-progress"><div class="file-progress-bar"></div><span class="file-progress-state"></span></div>' );
 }
 
@@ -128,47 +155,49 @@ function checkExtension( file, uploader ) {
 
 	if ( $.inArray( file.extension, mw.config.get( 'wgFileExtensions' ) ) !== -1 ) {
 		switch( file.extension ) {
-			case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff': // pictures
+			case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff': // Pictures
 				file.group = 'pic';
-				// file.li.type.addClass( 'picture' );
-				try { // preview picture
-					var img = new o.Image();
-					img.onload = function () {
-						// embed the current thumbnail
+				//file.li.type.addClass( 'picture' );
+				try { // Preview picture
+					var image = new o.Image();
+					image.onload = function () {
+						// Embed the current thumbnail
 						this.embed( file.li.type.get( 0 ), {
 							width: 30,
 							height: 40,
 							crop: false
 						});
-						// big thumbnail
+						// Big thumbnail
 						this.embed( file.li.type.get( 0 ), {
 							width: 300,
 							height: 300,
 							crop: false
 						});
 					};
-					img.load( file.getSource() );
+					image.load( file.getSource() );
 					file.li.type.addClass( 'picture_load' );
 				} catch( event ) {
 					file.li.type.addClass( 'picture' );
 				}
-			break;
+				break;
+
 			case 'mov':
 				file.group = 'mov';
 				file.li.type.addClass( 'film' );
-			break;
+				break;
+
 			case 'pdf':
 				file.li.type.addClass( 'pdf' );
-			break;
+				break;
 		}
-		checkUploadWarning( file.name, file.li );
+		checkUploadWarning( file.name, file.li, uploader );
 
-		file.li.cancel = $( '<span/>' ).attr( 'title', mw.msg( 'msu-cancel-upload' ) ).click( function () {
+		file.li.cancel = $( '<span>' ).attr( 'title', mw.msg( 'msu-cancel-upload' ) ).click( function () {
 			uploader.removeFile( file );
 			if ( file.group === 'pic' ) {
-				var idx = jQuery.inArray( file.name, galleryArray ); // Find the index ( indexOf not possible in ie8 )
-				if ( idx!==-1 ) galleryArray.splice( idx, 1 );	// Remove it if really found!
-				//uploader.trigger( 'CheckFiles', uploader );	// If Picture is removed
+				var index = jQuery.inArray( file.name, galleryArray ); // Find the index (indexOf not possible in IE8)
+				if ( index !== -1 ) galleryArray.splice( index, 1 ); // Remove it if it's really found!
+				uploader.trigger( 'CheckFiles' );
 			}
 			file.li.fadeOut( 'slow', function () {
 				$( this ).remove();
@@ -177,9 +206,9 @@ function checkExtension( file, uploader ) {
 			//uploader.refresh();
 		}).attr( 'class', 'file-cancel' ).appendTo( file.li );
 
-		build( file ); // alles aufbauen
-	} else { // wrong datatype
-		file.li.loading.hide( 1, function () { // create callback
+		build( file, uploader );
+	} else { // Wrong datatype
+		file.li.loading.hide( 1, function () { // Create callback
 			uploader.removeFile( file );
 			uploader.refresh();
 		});
@@ -191,17 +220,17 @@ function checkExtension( file, uploader ) {
 
 function createUpload( wikiEditor ) {
 	// Create upload button
-	var uploadButton = $( '<div/>' ).attr( 'id', 'upload-select' );
-	var uploadContainer = $( '<div/>' ).attr({
+	var uploadButton = $( '<div>' ).attr( 'id', 'upload-select' );
+	var uploadContainer = $( '<div>' ).attr({
 		'id': 'upload-container',
 		'title': mw.msg( 'msu-button-title' ),
 		'class': 'start-loading'
  	}).append( uploadButton );
 
-	var uploadDiv = $( '<div/>' ).attr( 'id', 'upload-div' );
+	var uploadDiv = $( '<div>' ).attr( 'id', 'upload-div' );
 	if ( wikiEditor === true ) {
 		// Insert upload button
-		var uploadTab = $( '<div/>' ).attr( 'class', 'group' ).appendTo( '#wikiEditor-ui-toolbar .section-main' );
+		var uploadTab = $( '<div>' ).attr( 'class', 'group' ).appendTo( '#wikiEditor-ui-toolbar .section-main' );
 		uploadContainer.appendTo( uploadTab );
 		// Create upload div
 		uploadDiv.insertAfter( '#wikiEditor-ui-toolbar' );
@@ -212,19 +241,19 @@ function createUpload( wikiEditor ) {
 		uploadDiv.insertAfter( '#toolbar' );
 	}
 
-	var statusDiv = $( '<div/>' ).attr( 'id', 'upload-status' ).html( 'No runtime found.' ).appendTo( uploadDiv ).hide();
-	var uploadList = $( '<ul/>' ).attr( 'id', 'upload-list' ).appendTo( uploadDiv );
-	var bottomDiv = $( '<div/>' ).attr( 'id', 'upload-bottom' ).appendTo( uploadDiv ).hide();
-	var startButton = $( '<a/>' ).attr( 'id', 'upload-files' ).appendTo( bottomDiv ).hide();
-	var spacer1 = $( '<span/>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
-	var cleanAll = $( '<a/>' ).attr( 'id', 'cleanAll' ).text( mw.msg( 'msu-clean-all' ) ).appendTo( bottomDiv ).hide();
-	var spacer2 = $( '<span/>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
-	var galleryInsert = $( '<a/>' ).attr( 'id', 'gallery-insert' ).appendTo( bottomDiv ).hide();
-	var spacer3 = $( '<span/>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
-	var filesInsert = $( '<a/>' ).attr( 'id', 'files-insert' ).appendTo( bottomDiv ).hide();
-	var spacer4 = $( '<span/>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
-	var linksInsert = $( '<a/>' ).attr( 'id', 'links-insert' ).appendTo( bottomDiv ).hide();
-	var uploadDrop = $( '<div/>' ).attr( 'id', 'upload-drop' ).insertAfter( statusDiv ).hide();
+	var statusDiv = $( '<div>' ).attr( 'id', 'upload-status' ).html( 'No runtime found.' ).appendTo( uploadDiv ).hide();
+	var uploadList = $( '<ul>' ).attr( 'id', 'upload-list' ).appendTo( uploadDiv );
+	var bottomDiv = $( '<div>' ).attr( 'id', 'upload-bottom' ).appendTo( uploadDiv ).hide();
+	var startButton = $( '<a>' ).attr( 'id', 'upload-files' ).appendTo( bottomDiv ).hide();
+	var spacer1 = $( '<span>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
+	var cleanAll = $( '<a>' ).attr( 'id', 'cleanAll' ).text( mw.msg( 'msu-clean-all' ) ).appendTo( bottomDiv ).hide();
+	var spacer2 = $( '<span>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
+	var galleryInsert = $( '<a>' ).attr( 'id', 'gallery-insert' ).appendTo( bottomDiv ).hide();
+	var spacer3 = $( '<span>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
+	var filesInsert = $( '<a>' ).attr( 'id', 'files-insert' ).appendTo( bottomDiv ).hide();
+	var spacer4 = $( '<span>' ).attr( 'class', 'spacer' ).appendTo( bottomDiv ).hide();
+	var linksInsert = $( '<a>' ).attr( 'id', 'links-insert' ).appendTo( bottomDiv ).hide();
+	var uploadDrop = $( '<div>' ).attr( 'id', 'upload-drop' ).insertAfter( statusDiv ).hide();
 
 	var uploader = new plupload.Uploader({
 		'runtimes': 'html5,flash,silverlight,html4',
@@ -245,10 +274,10 @@ function createUpload( wikiEditor ) {
 		'silverlight_xap_url': msuVars.path + '/plupload/Moxie.xap'
 	});
 
-	uploader.bind( 'PostInit', function ( up ) {
-		mw.log( 'MsUpload DEBUG: runtime: ' + up.runtime + ' features: ' + JSON.stringify( up.features ) );
+	uploader.bind( 'PostInit', function ( uploader ) {
+		mw.log( 'MsUpload DEBUG: runtime: ' + uploader.runtime + ' features: ' + JSON.stringify( uploader.features ) );
 		uploadContainer.removeClass( 'start-loading' );
-		if ( up.features.dragdrop && msuVars.useDragDrop ) {
+		if ( uploader.features.dragdrop && msuVars.useDragDrop ) {
 			uploadDrop.text( mw.msg( 'msu-dropzone' ) ).show();
 			uploadDrop.bind( 'dragover',function () {
 				 $( this ).addClass( 'drop-over' ).css( 'padding', '20px' );
@@ -262,48 +291,48 @@ function createUpload( wikiEditor ) {
 	 	}
 	});
 
-	uploader.bind( 'FilesAdded', function ( up, files ) {
+	uploader.bind( 'FilesAdded', function ( uploader, files ) {
 		$.each( files, function ( i, file ) {
 			// iOS6 by SLBoat
 			if ( ( navigator.platform === 'iPad' || navigator.platform === 'iPhone' ) ) {
-				if ( file.name.indexOf( 'image' ) > -1 && file.name.length < 11 ) {
+				if ( file.name.indexOf( 'image' ) !== -1 && file.name.length < 11 ) {
 					var heute = new Date();
 					var fileNameApple = navigator.platform + '_image_' + heute.getFullYear() + '-' + heute.getMonth() + '-' + heute.getDate() + '-' + heute.getTime(); // Because each image is named 'image.jpg' in iOS6
 					file.name = fileNameApple + '_' + i + '.' + file.name.split( '.' ).pop(); // image_Y-M-D_0.jpg
 				}
 			}
-			file.li = $( '<li/>' ).attr( 'id',file.id ).attr( 'class', 'file' ).appendTo( uploadList );
-			file.li.type = $( '<span/>' ).attr( 'class', 'file-type' ).appendTo( file.li );
-			file.li.title = $( '<span/>' ).attr( 'class', 'file-title' ).text( file.name ).appendTo( file.li );
-			file.li.size = $( '<span/>' ).attr( 'class', 'file-size' ).text( plupload.formatSize( file.size ) ).appendTo( file.li );
-			file.li.loading = $( '<span/>' ).attr( 'class', 'file-loading' ).appendTo( file.li );
-			file.li.warning = $( '<span/>' ).attr( 'class', 'file-warning' ).appendTo( file.li );
-			checkExtension( file, up );
+			file.li = $( '<li>' ).attr( 'id',file.id ).attr( 'class', 'file' ).appendTo( uploadList );
+			file.li.type = $( '<span>' ).attr( 'class', 'file-type' ).appendTo( file.li );
+			file.li.title = $( '<span>' ).attr( 'class', 'file-title' ).text( file.name ).appendTo( file.li );
+			file.li.size = $( '<span>' ).attr( 'class', 'file-size' ).text( plupload.formatSize( file.size ) ).appendTo( file.li );
+			file.li.loading = $( '<span>' ).attr( 'class', 'file-loading' ).appendTo( file.li );
+			file.li.warning = $( '<span>' ).attr( 'class', 'file-warning' ).appendTo( file.li );
+			checkExtension( file, uploader );
 		});
-		up.refresh(); // Reposition Flash/Silverlight
-		up.trigger( 'CheckFiles' );
+		uploader.refresh(); // Reposition Flash/Silverlight
+		uploader.trigger( 'CheckFiles' );
 	});
 
-	uploader.bind( 'QueueChanged', function ( up ) {
-		up.trigger( 'CheckFiles' );
+	uploader.bind( 'QueueChanged', function ( uploader ) {
+		uploader.trigger( 'CheckFiles' );
 	});
 
-	uploader.bind( 'StateChanged', function ( up ) {
-		mw.log( up.state );
-		if ( up.files.length === ( up.total.uploaded + up.total.failed ) ) {
-			//mw.log( 'State: ' + up.files.length ) // All files uploaded --> trigger
+	uploader.bind( 'StateChanged', function ( uploader ) {
+		mw.log( uploader.state );
+		if ( uploader.files.length === ( uploader.total.uploaded + uploader.total.failed ) ) {
+			//mw.log( 'State: ' + uploader.files.length ) // All files uploaded
 		}
 	});
 
-	uploader.bind( 'FilesRemoved', function ( up, files ) {
+	uploader.bind( 'FilesRemoved', function ( uploader, files ) {
 		mw.log( 'Files removed' );
-		//uploader.trigger( 'CheckFiles', up );
+		//uploader.trigger( 'CheckFiles' );
 	});
 
-	uploader.bind( 'BeforeUpload', function ( up, file ) {
+	uploader.bind( 'BeforeUpload', function ( uploader, file ) {
 		file.li.title.text( file.name ).show(); // Show title
 		$( '#' + file.id + ' input.input-change' ).hide(); // Hide input
-		up.settings.multipart_params = {
+		uploader.settings.multipart_params = {
 			'filename': file.name,
 			'token': mw.user.tokens.get( 'editToken' ),
 			'action': 'upload',
@@ -315,21 +344,22 @@ function createUpload( wikiEditor ) {
 		$( '#' + file.id + ' span.file-progress-state' ).html( '0%' );
 	});
 
-	uploader.bind( 'UploadProgress', function (up, file) {
+	uploader.bind( 'UploadProgress', function ( uploader, file ) {
 		$( '#' + file.id + ' span.file-progress-state' ).html( file.percent + '%' );
 		$( '#' + file.id + ' div.file-progress-bar' ).progressbar({ 'value': file.percent });
 		$( '#' + file.id + ' div.file-progress-bar .ui-progressbar-value' ).removeClass( 'ui-corner-left' );
 	});
 
-	uploader.bind( 'Error', function ( up, err ) {
-		$( '#' + err.file.id + ' span.file-warning' ).html(
-			'Error: ' + err.code + ', Message: ' + err.message + ( err.file ? ', File: ' + err.file.name : '' )
+	uploader.bind( 'Error', function ( uploader, error ) {
+		mw.log( error );
+		$( '#' + error.file.id + ' span.file-warning' ).html(
+			'Error: ' + error.code + ', Message: ' + error.message + ( error.file ? ', File: ' + error.file.name : '' )
 		);
-		statusDiv.append( err.message );
-		up.refresh(); // Reposition Flash/Silverlight
+		statusDiv.append( error.message );
+		uploader.refresh(); // Reposition Flash/Silverlight
 	});
 
-	uploader.bind( 'FileUploaded', function ( up, file, success ) {
+	uploader.bind( 'FileUploaded', function ( uploader, file, success ) {
 		mw.log( success );
 		file.li.title.unbind( 'click' );
 		file.li.title.unbind( 'mouseover' );
@@ -340,20 +370,20 @@ function createUpload( wikiEditor ) {
 		try {
 			var result = jQuery.parseJSON( success.response );
 			if ( result.error ) {
-				fileError( up, file, result.error.info );
+				fileError( uploader, file, result.error.info );
 			} else {
 				file.li.type.addClass( 'ok' );
 				file.li.addClass( 'green' );
 				file.li.warning.fadeOut( 'slow' );
 
-				if ( file.cat && wgNamespaceNumber === 14 ) { // Should the categroy be set?
+				if ( file.cat && mw.config.get( 'wgNamespaceNumber' ) === 14 ) { // Should the categroy be set?
 					$.get( mw.util.wikiScript(), {
 						action: 'ajax',
 						rs: 'MsUpload::saveCat',
 						rsargs: [ file.name, wgPageName ]
 					}, 'json' );
 				}
-				$( '<a/>' ).text( mw.msg( 'msu-insert-link' ) ).click( function () {
+				$( '<a>' ).text( mw.msg( 'msu-insert-link' ) ).click( function () {
 					if ( msuVars.useMsLinks === true ) {
 						mw.toolbar.insertTags( '{{#l:' + file.name + '}}', '', '', '' ); // Insert link
 					} else {
@@ -365,13 +395,13 @@ function createUpload( wikiEditor ) {
 					if ( galleryArray.length === 2 ) { // Bind click function only the first time
 						galleryInsert.click( addGallery ).text( mw.msg( 'msu-insert-gallery' ) ).show();
 					}
-					$( '<span/>' ).text( ' | ' ).appendTo( file.li );
-					$( '<a/>' ).text( mw.msg('msu-insert-picture' ) ).click( function () {
+					$( '<span>' ).text( ' | ' ).appendTo( file.li );
+					$( '<a>' ).text( mw.msg('msu-insert-picture' ) ).click( function () {
 						mw.toolbar.insertTags( '[[File:' + file.name + msuVars.imgParams + ']]', '', '', '' );
 					}).appendTo( file.li );
 				} else if ( file.group === 'mov' ) {
-					$( '<span/>' ).text(' | ').appendTo( file.li );
-					$( '<a/>' ).text( mw.msg( 'msu-insert-movie' ) ).click( function () {
+					$( '<span>' ).text(' | ').appendTo( file.li );
+					$( '<a>' ).text( mw.msg( 'msu-insert-movie' ) ).click( function () {
 						mw.toolbar.insertTags( '[[File:' + file.name + ']]', '', '', '' );
 					}).appendTo( file.li );
 				}
@@ -382,30 +412,35 @@ function createUpload( wikiEditor ) {
 				}
 			}
 		} catch( error ) {
-			fileError( up, file, 'Error: ' + success.response.replace( /(<([^>]+)>)/ig, '' ) ); // Remove html tags
+			fileError( uploader, file, 'Error: ' + success.response.replace( /(<([^>]+)>)/ig, '' ) ); // Remove html tags
 		}
-		up.removeFile( file ); // For preventing a second upload afterwards
+		uploader.removeFile( file ); // For preventing a second upload afterwards
 	});
 
-	uploader.bind( 'UploadComplete', function ( up, files ) {
-		uploader.trigger( 'CheckFiles' ); // trigger --> state changed
+	uploader.bind( 'UploadComplete', function ( uploader, files ) {
+		uploader.trigger( 'CheckFiles' );
 		//startButton.hide();
 	});
 
 	uploader.bind( 'CheckFiles', function () {
-		var fileLen = uploader.files.length;
-		var listLen = $( '#upload-list li' ).length;
-		mw.log( 'files:' + fileLen + ' gallery:' + galleryArray.length + ' list: ' + listLen );
+		var filesLength = uploader.files.length;
+		var listLength = $( '#upload-list li' ).length;
+		mw.log( 'files: ' + filesLength + ', gallery: ' + galleryArray.length + ', list: ' + listLength );
 
-		if ( fileLen > 0 ) {
+		if ( filesLength > 0 ) {
 			bottomDiv.show();
-			if ( fileLen === 1 ) {
+			if ( filesLength === 1 ) {
 				startButton.text( mw.msg( 'msu-upload-this' ) ).show();
 			} else {
 				startButton.text( mw.msg( 'msu-upload-all' ) ).show();
 			}
 			spacer1.show();
 		} else { // 0 files in list
+			startButton.hide();
+			spacer1.hide();
+		}
+
+		if ( unconfirmedReplacements ) {
 			startButton.hide();
 			spacer1.hide();
 		}
@@ -431,7 +466,7 @@ function createUpload( wikiEditor ) {
 			spacer2.hide();
 		}
 
-		if ( listLen > 0 ) {
+		if ( listLength > 0 ) {
 			bottomDiv.show();
 			cleanAll.text( mw.msg( 'msu-clean-all' ) ).click( function () {
 				galleryArray.length = 0; // Reset
@@ -454,19 +489,13 @@ function createUpload( wikiEditor ) {
 		uploader.start();
 		event.preventDefault();
 	});
-	/*
-	$( 'uploadfiles' ).onclick = function () {
-		uploader.start();
-		return false;
-	};
-	*/
+
 	uploader.init();
 }
 
 $( function () {
 	// Check if we are in edit mode and the required modules are available and then customize the toolbar
 	if ( $.inArray( mw.config.get( 'wgAction' ), [ 'edit', 'submit' ] ) !== -1 ) {
-	//mw.loader.using( 'user.options', function () {
 		if ( mw.user.options.get( 'usebetatoolbar' ) ) {
 			mw.loader.using( 'ext.wikiEditor.toolbar', function () {
 				createUpload( true );
@@ -474,6 +503,5 @@ $( function () {
 		} else {
 			createUpload( false );
 		}
-	//});
 	}
 });

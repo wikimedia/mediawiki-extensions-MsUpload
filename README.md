@@ -11,13 +11,14 @@ $wgEnableUploads = true; // Enable uploads
 $wgFileExtensions = array('png','gif','jpg','jpeg','doc','xls','mpp','pdf','ppt','tiff','bmp','docx', 'xlsx','pptx','ps','odt','ods','odp','odg');
 $wgAllowJavaUploads = true; // Solves problem with Office 2007 and newer files (docx, xlsx, etc.)
 
-# Then include the extension and set its configuration. The values shown below are the defaults:
-require_once "$IP/extensions/MsUpload/MsUpload.php";
+# Then load the extension and configure it as needed. The values shown below are the defaults, so they may be omitted:
+wfLoadExtension( 'MsUpload' );
 $wgMSU_useDragDrop = true;
 $wgMSU_showAutoCat = true;
 $wgMSU_checkAutoCat = true;
-$wgMSU_imgParams = '400px'; // Default 400px
 $wgMSU_useMsLinks = false;
+$wgMSU_confirmReplace = true;
+$wgMSU_imgParams = '400px';
 
 Credits
 -------

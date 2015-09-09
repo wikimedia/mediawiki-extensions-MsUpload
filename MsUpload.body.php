@@ -3,12 +3,12 @@
 class MsUpload {
 
 	static function start() {
-		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgMSL_FileTypes, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_autoIndex, $wgMSU_checkAutoCat, $wgMSU_imgParams, $wgMSU_useDragDrop, $wgFileExtensions;
+		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgMSL_FileTypes, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_autoIndex, $wgMSU_checkAutoCat, $wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions;
 
 		$wgOut->addModules( 'ext.MsUpload' );
 		$wgOut->addJsConfigVars( array(
 			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) ),
-		) );
+		));
 
 		if ( $wgMSU_imgParams ) {
 			$wgMSU_imgParams = '|' . $wgMSU_imgParams;
@@ -20,6 +20,7 @@ class MsUpload {
 			'showAutoCat' => $wgMSU_showAutoCat,
 			'checkAutoCat' => $wgMSU_checkAutoCat,
 			'useMsLinks' => $wgMSU_useMsLinks,
+			'confirmReplace' => $wgMSU_confirmReplace,
 			'imgParams' => $wgMSU_imgParams,
 			//'autoIndex' => $wgMSU_autoIndex,
 		);
@@ -53,7 +54,7 @@ class MsUpload {
 		}
 		return $mediaString;
 
-/* This code does the same and is better, but for some reason it doesn't update the categorylinks table
+/* The code below does the same and is better, but for some reason it doesn't update the categorylinks table
 		global $wgContLang, $wgUser;
 		$title = Title::newFromText( $filename, NS_FILE );
 		$page = new WikiPage( $title );

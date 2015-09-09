@@ -14,6 +14,7 @@
 	"msu-insert-picture": "als Bild einfügen",
 	"msu-insert-movie": "als Film einfügen",
 	"msu-cancel-upload": "Upload abbrechen",
+	"msu-replace-file": "Datei ersetzen?",
 	"msu-clean-all": "Liste leeren",
 	"msu-upload-possible": "Datei kann hochgeladen werden",
 	"msu-ext-not-allowed": "Es {{PLURAL:$1|ist nur folgender Dateityp|sind nur folgende Dateitypen}} erlaubt:",
