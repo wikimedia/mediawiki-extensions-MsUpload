@@ -14,7 +14,7 @@
 	"msu-insert-movie": "Wstaw film",
 	"msu-cancel-upload": "Anuluj przesyłanie",
 	"msu-clean-all": "Wyczyść listę",
-	"msu-upload-possible": "Plik można przesłać",
+	"msu-upload-possible": "Wybrane plik(i) można przesłać",
 	"msu-ext-not-allowed": "{{PLURAL:$1|Dozwolony jest następujący typ pliku|Dozwolone są następujące typy plików}}:",
 	"msu-upload-this": "Prześlij ten plik",
 	"msu-upload-all": "Prześlij wszystkie pliki",
