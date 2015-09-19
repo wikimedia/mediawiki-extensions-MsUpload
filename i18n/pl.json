@@ -13,6 +13,7 @@
 	"msu-insert-picture": "Wstaw zdjęcie",
 	"msu-insert-movie": "Wstaw film",
 	"msu-cancel-upload": "Anuluj przesyłanie",
+	"msu-replace-file": "Zamienić plik?",
 	"msu-clean-all": "Wyczyść listę",
 	"msu-upload-possible": "Wybrane plik(i) można przesłać",
 	"msu-ext-not-allowed": "{{PLURAL:$1|Dozwolony jest następujący typ pliku|Dozwolone są następujące typy plików}}:",
