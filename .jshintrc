@@ -19,6 +19,8 @@
 
 	"globals": {
 		"mediaWiki": false,
-		"OO": false
+		"OO": false,
+		"window.msuVars": false,
+		"o": false
 	}
 }

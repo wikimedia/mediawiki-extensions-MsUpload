@@ -11,7 +11,9 @@ module.exports = function ( grunt ) {
 				jshintrc: true
 			},
 			all: [
-				'*.js'
+				'**/*.js',
+				'!node_modules/**',
+				'!plupload/**'
 			]
 		},
 		jscs: {
@@ -22,8 +24,7 @@ module.exports = function ( grunt ) {
 		},
 		jsonlint: {
 			all: [
-				'*.json',
-				'i18n/*.json',
+				'**/*.json',
 				'!node_modules/**'
 			]
 		}
