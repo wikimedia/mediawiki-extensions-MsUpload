@@ -4,7 +4,8 @@
 			"Marc MORA",
 			"Windes",
 			"Wladek92",
-			"TomT0m"
+			"TomT0m",
+			"Orlodrim"
 		]
 	},
 	"msu-desc": "Permet les téléversements faciles d'un seul ou de plusieurs fichiers en même temps",
@@ -16,7 +17,7 @@
 	"msu-insert-picture": "Insère l'image",
 	"msu-insert-movie": "Insère un film",
 	"msu-cancel-upload": "Annule téléversement",
-	"msu-replace-file": "Remplacer le fichier?",
+	"msu-replace-file": "Remplacer le fichier ?",
 	"msu-clean-all": "Effacer la liste",
 	"msu-upload-possible": "Le(s) fichier(s) sélectionné(s) peuvent être téléchargés",
 	"msu-ext-not-allowed": "Seulement {{PLURAL:$1|le type de fichier suivant est autorisé|les types de fichiers suivants sont autorisés}} :",
