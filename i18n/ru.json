@@ -13,7 +13,7 @@
 	"msu-insert-movie": "Вставить видео",
 	"msu-cancel-upload": "Отменить загрузку",
 	"msu-clean-all": "Clear list",
-	"msu-upload-possible": "Файл можно загрузить",
+	"msu-upload-possible": "Файл(ы) можно загрузить",
 	"msu-ext-not-allowed": "Разрешен{{PLURAL:$1||ы}} только {{PLURAL:$1|следующий тип|следующие типы}} файлов:",
 	"msu-upload-this": "Загрузить этот файл",
 	"msu-upload-all": "Загрузить все файлы",
