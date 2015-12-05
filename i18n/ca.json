@@ -2,14 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"F3RaN",
-			"Vriullop"
+			"Vriullop",
+			"Jaumeortola"
 		]
 	},
 	"msu-desc": "Permet càrregues simples per un o múltiples fitxers simultàniament",
 	"msu-button-title": "Seleccioneu els fitxers",
 	"msu-insert-link": "Inserir un enllaç",
 	"msu-insert-gallery": "Inserir-ho tot com a galeria",
-	"msu-insert-links": "Inserir-ho tot com a enllaços",
+	"msu-insert-links": "Insereix-los tots com a enllaços",
 	"msu-insert-picture": "Inserir imatge",
 	"msu-insert-movie": "Inserir pel·lícula",
 	"msu-cancel-upload": "Cancel·lar la càrrega",
