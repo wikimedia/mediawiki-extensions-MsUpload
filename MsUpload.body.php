@@ -42,7 +42,7 @@ class MsUpload {
 			'section'=> 'new',
 			'title' =>  $title,
 			'text' => $text,
-			'token' => $wgUser->editToken(),//$token."%2B%5C",
+			'token' => $wgUser->getEditToken(),//$token."%2B%5C",
 		), true, $_SESSION );
 		$enableWrite = true; // This is set to false by default, in the ApiMain constructor
 		$api = new ApiMain( $params, $enableWrite );
