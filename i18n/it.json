@@ -4,7 +4,8 @@
 			"teokraba",
 			"Fringio",
 			"The Polish",
-			"F. Cosoleto"
+			"F. Cosoleto",
+			"Beta16"
 		]
 	},
 	"msu-desc": "Consente il caricamento veloce per uno o più file contemporaneamente",
@@ -15,7 +16,7 @@
 	"msu-insert-movie": "Inserisci film",
 	"msu-cancel-upload": "Cancella upload",
 	"msu-clean-all": "Clear list",
-	"msu-upload-possible": "Il file o i file selezionati possono essere caricati",
+	"msu-upload-possible": "Il file selezionato può essere caricato",
 	"msu-ext-not-allowed": "Solo {{PLURAL:$1|il seguente tipo di file è permesso|i seguenti tipi di file sono permessi}}:",
 	"msu-upload-this": "Carica questo file",
 	"msu-upload-all": "Carica tutti i file",

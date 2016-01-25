@@ -16,7 +16,7 @@
 	"msu-cancel-upload": "Upload abbrechen",
 	"msu-replace-file": "Datei ersetzen?",
 	"msu-clean-all": "Liste leeren",
-	"msu-upload-possible": "Die ausgewählte(n) Datei(en) kann/können hochgeladen werden",
+	"msu-upload-possible": "Die ausgewählte Datei kann hochgeladen werden",
 	"msu-ext-not-allowed": "Es {{PLURAL:$1|ist nur folgender Dateityp|sind nur folgende Dateitypen}} erlaubt:",
 	"msu-upload-this": "Diese Datei hochladen",
 	"msu-upload-all": "Alle Dateien hochladen",
