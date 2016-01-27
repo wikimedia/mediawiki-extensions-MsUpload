@@ -16,7 +16,7 @@
 	"msu-cancel-upload": "Cancelar la subida",
 	"msu-replace-file": "¿Reemplazar archivo?",
 	"msu-clean-all": "Vaciar la lista",
-	"msu-upload-possible": "Los archivos seleccionados pueden subirse",
+	"msu-upload-possible": "El archivo seleccionado puede subirse",
 	"msu-ext-not-allowed": "Sólo se {{PLURAL:$1|permite el siguiente tipo|permiten los siguientes tipos}} de archivos:",
 	"msu-upload-this": "Subir este archivo",
 	"msu-upload-all": "Subir todos los archivos",

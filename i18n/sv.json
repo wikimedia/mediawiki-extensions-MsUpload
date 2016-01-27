@@ -9,6 +9,7 @@
 	"msu-insert-movie": "Infoga film",
 	"msu-cancel-upload": "Avbryt uppladdning",
 	"msu-clean-all": "Rensa lista",
+	"msu-upload-possible": "Den valda filen kan laddas upp",
 	"msu-upload-all": "Ladda upp alla filer",
 	"msu-dropzone": "Släpp filer här"
 }
