@@ -1,317 +1,243 @@
-#upload-container {
-	padding: 2px;
+#msupload-container {
+	display: inline-block;
+	padding: 3px;
 }
 
-#upload-container.start-loading {
-	background: url(images/msu_loading.png) no-repeat 5px 5px;
+#msupload-container.start-loading {
+	background: url(images/msu-loading.png) no-repeat 5px 5px;
 }
 
-#upload-select {
-	background: url(images/msu_upload_button.png) no-repeat 0;
+#msupload-select {
+	background: url(images/msu-upload-button.png) no-repeat 0;
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
 }
 
-#upload-select.old-button {
-	background: url(images/msu_upload_button_old.gif) no-repeat 0;
-	display: inline-block;
-	vertical-align: middle;
-}
-
-#upload-select:hover {
-	zoom: 1;
-	-moz-opacity: 0.7; 
+#msupload-select:hover {
 	opacity: 0.7; 
-	filter: alpha(opacity = 70);
+	zoom: 1;
 }
 
-#upload-div {
-	padding: 0px 0px;
-	width: 99.9%;
-	background: #657D92;
-	background: #83AF9B;
-	background: #657D92;
-	box-shadow: 0 -45px 62px -62px rgba(0, 0, 0, 0.35) inset, 0 1px 0 rgba(255, 255, 255, 0.6);
-	border: 1px solid #AAAAAA;
-	/*margin: 2px 20px 2px 0px;*/
+#msupload-div {
+	padding: 0;
+	background: #657d91;
+	border: 1px solid #aaa;
+	z-index: 0;
 } 
 
-#upload-div a {
+#msupload-div a {
 	cursor: pointer;
 }
 
-#upload-div.nodragdrop {
+#msupload-div.nodragdrop {
 	border: none;
 }
 
-#upload-drop {
+#msupload-dropzone {
 	margin: 3px;
 	padding: 5px;
 	border: 1px dashed #ddd;
 	text-align: center;
 	height: 20px;
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 	color: #fff;
 }
 
 .drop-over {
-	background: #7092AD;
-	border: 3px dashed #AAAAAA;
+	background: #7092ad;
+	border: 3px dashed #aaa;
 }
 
-#upload-list {
-	list-style: none none;
+#msupload-list {
+	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-#upload-list li:hover { 
-	/*border: 1px solid #B0C4DE;*/	
-}
-
-#upload-list .file {
-	line-height: 2em;
-	box-shadow: 0 -45px 62px -62px rgba(0, 0, 0, 0.35) inset, 0 1px 0 rgba(255, 255, 255, 0.6);
-	background: #DEE9E9;
-	padding: 1px 0px 1px 10px;
-	border-top: 1px solid #eee;
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 1px;
-}
-
-#upload-list .yellow {
-	background: #F9CDAD;
-}
-
-#upload-list .red {
-	background: #F9CDAD;
-}
-
-#upload-list .green {
-	background: #A8DBA8;
-}
-
-#upload-list .file .file-type {
+#msupload-list .file {
+	background: #dee9e9;
+	border-top: 1px solid #657d91;
+	margin: 0;
 	padding: 10px;
-	background: url(images/msu_document-globe.png) no-repeat 0 0;
-	position: absolute;
-	margin-top: 5px;
-}
-
-#upload-list .file .picture {
-	background: url(images/msu_document-image.png) no-repeat 0 0;
-}
-
-#upload-list .file .film {
-	background: url(images/msu_document-film.png) no-repeat 0 0;
-}
-
-#upload-list .file .pdf {
-	background: url(images/msu_document-pdf.png) no-repeat 0 0;
-}
-
-#upload-list .file .document {
-	background: url(images/msu_document.png) no-repeat 0 0;
-}
-
-#upload-list .file .ok {
-	background: url(images/msu_tick.png) no-repeat 0 0;
-}
-
-#upload-list .file .error {
-	background: url(images/msu_error.png) no-repeat 0 0;
-}
-
-#upload-list .file .picture_load {
-	background: none;
-	padding: 2px;
-	height: 22px;
-	margin: 1px;
-	cursor: pointer;
-}
-
-#upload-list .file .picture_load canvas {
-	margin: 1px;
-}
-
-#upload-list .file .picture_load canvas:nth-child(2) {
-	display: none;
 	position: relative;
-	z-index: 10;
 }
 
-#upload-list .file .picture_load:hover canvas:nth-child(2) {
+#msupload-list .green {
+	background: #a8dba8;
+}
+
+#msupload-list .yellow {
+	background: #f9cdad;
+}
+
+#msupload-list .red {
+	background: #f9cdad;
+}
+
+#msupload-list .file .file-type {
+	padding: 10px;
+	background: url(images/msu-globe.png) no-repeat 0 0;
+	overflow: hidden;
+	position: absolute;
+}
+
+#msupload-list .file .image {
+	background: url(images/msu-thumb-image.png) no-repeat 0 0;
+}
+
+#msupload-list .file .video {
+	background: url(images/msu-thumb-video.png) no-repeat 0 0;
+}
+
+#msupload-list .file .pdf {
+	background: url(images/msu-thumb-pdf.png) no-repeat 0 0;
+}
+
+#msupload-list .file .document {
+	background: url(images/msu-thumb-document.png) no-repeat 0 0;
+}
+
+#msupload-list .file .ok {
+	background: url(images/msu-ok.png) no-repeat 0 0;
+}
+
+#msupload-list .file .error {
+	background: url(images/msu-error.png) no-repeat 0 0;
+}
+
+#msupload-list .file .file-load {
+	background: none;
+	cursor: pointer;
 	display: block;
+	margin: 0;
+	padding: 0;
+	top: 5px; left: 5px;
 }
 
-#upload-list .file .file-title {
+#msupload-list .file .file-load canvas {
+	display: block;
+	max-width: 30px;
+	min-height: 30px;
+}
+
+#msupload-list .file .file-title {
 	font-weight: bold;
 	margin-left: 35px;
+	padding: 3px;
 }
 
-#upload-list .file .file-title:hover {
-	border: 1px solid #ddd;
-	padding: 2px 3px;
-	background-color: #fbfbfb;
+#msupload-list .file .file-title:hover {
+	padding: 3px;
+	background-color: white;
 }
 
-#upload-list .file .file-size {
+#msupload-list .file .file-size {
 	color: #666;
+	margin: 0 10px;
 }
 
-#upload-list .file .file-progress {
-	width: 150px;
-	height: 10px;
-	display: inline;
+
+#msupload-list .file-progress-state {
+	float: right;
 }
 
-.ui-progressbar-value.ui-widget-header {
-	background: url(images/msu_progress_stripe.png) repeat-x 0 0;	
-}
-
-.ui-progressbar-value.ui-widget-content {
-	background: none;
-}
-
-.ui-progressbar-value {	
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-khtml-border-radius: 10px;
-	border: 1px solid #ccc;
-}
-
-#upload-list .file .file-progress-bar {
-	background: none;
-	display: inline;
-	width: 150px;
-	height: 10px;
-	/*
-	position: absolute; 
-	margin-top: 8px;
-	*/
-	position: absolute;
-	margin-top: 8px;
-	border: 1px solid #ccc;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-khtml-border-radius: 10px;
-}
-
-#upload-list .file .file-progress-state {
-	text-align: center;
-	font-size: 75%;
-	width: 150px;
-	position: absolute;
-	margin-top: 1px;
-}
-
-#upload-list .file .file-cancel {
-	background: url(images/msu_close.png) no-repeat 0 0;
-	margin-left: 5px;
-	margin-right: 5px;
-	padding: 3px 10px;
+#msupload-list .file .file-cancel {
+	background: url(images/msu-close.png) no-repeat 0 0;
 	cursor: pointer;
+	float: right;
+	height: 20px;
+	margin-left: 5px;
+	padding: 5px 10px;
 }
 
-#upload-list .file .file-cancel:hover {
-	-moz-opacity: 0.7; 
+#msupload-list .file .file-cancel:hover {
 	opacity: 0.7; 
 }
 
-#upload-list .file .file-loading {
-	background: url(images/msu_loading.png) no-repeat 0 0;
-	margin: 0px 5px;
+#msupload-list .file .file-loading {
+	background: url(images/msu-loading.png) no-repeat 0 0;
+	margin: 0 5px;
 	padding: 1px 8px;
 }
 
-#upload-list .file .file-warning {
+#msupload-list .file .file-warning {
 	color: #514721;
-	/*display: block;*/
 	font-size: 80%;
 	padding: 2px 5px;
 	font-style: italic;
 }
 
-#upload-list .file .file-warning p {
+#msupload-list .file .file-warning p {
 	display: inline;
 }
 
-#upload-list .file .file-warning div.thumb {
+#msupload-list .file .file-warning div.thumb {
 	display: none;
 	position: absolute;
 	right: 10px;
 }
-#upload-list .file .file-warning div.thumbinner {
+#msupload-list .file .file-warning div.thumbinner {
 	background: none;
 	border: none;
 	overflow: visible;
 	padding: 0;
 }
 
-.neu {
-	display: block;
-	/*border: 1px solid red;*/
-}
-
-.sel {
-	margin: 2px 5px 0 5px;
-}
-
-a.hover {
-	color: red;
-}
-
-#upload-list .file span,
-#upload-list .file a {
-	padding: 0 4px;
-}
-
-#upload-list .file .input-change {
-	margin: 0 10px 0 40px;
+#msupload-list .file .input-change {
+	background: white;
+	border: none;
 	display: inline;
+	font: inherit;
+	font-weight: bold;
+	line-height: normal;
+	margin-left: 35px;
+	outline: none;
+	padding: 3px;
 }
 
-#upload-list .file .file-size {
+#msupload-list .file .file-size {
 	color: #666;
 }
 
-#upload-list .file .file-error {
+#msupload-list .file .file-error {
 	color: #8a1f11;
 }
 
-.check-index {
+.msupload-check-index {
 	float: right;
 	margin-top: 7px;
 }
 
-.check-span {
+.msupload-check-span {
 	float: right;
 	color: #444;
 }
 
-#upload-bottom {
+#msupload-bottom {
 	 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 	 padding: 8px;
 	 height: 22px;
 }
 
-#upload-bottom a {
+#msupload-bottom a {
 	color: white;
 	font-weight: bold;
+	margin-right: 20px;
 }
 
-#upload-bottom #upload-files {
-	padding: 3px 0px 3px 25px;
-	background: url(images/msu_upload_icon.png) no-repeat 0 0;
+#msupload-bottom #msupload-files {
+	padding: 3px 0 3px 25px;
+	background: url(images/msu-upload-icon.png) no-repeat 0 0;
 	height: 12px;
 }
 
-#upload-bottom .spacer {
-	border-left: 1px solid #CCCCCC;
-	margin: 0px 8px;
+#msupload-bottom .spacer {
+	border-left: 1px solid #ccc;
+	margin: 0 8px;
 	width: 1px;
-	background-color: #CCCCCC;
+	background-color: #ccc;
+}
+
+#wikiEditor-section-advanced .options {
+	z-index: 1;
 }

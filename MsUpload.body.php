@@ -15,18 +15,17 @@ class MsUpload {
 		}
 
 		$msuVars = array(
-			'path' => $wgScriptPath . '/extensions/MsUpload',
+			'scriptPath' => $wgScriptPath,
 			'useDragDrop' => $wgMSU_useDragDrop,
 			'showAutoCat' => $wgMSU_showAutoCat,
 			'checkAutoCat' => $wgMSU_checkAutoCat,
 			'useMsLinks' => $wgMSU_useMsLinks,
 			'confirmReplace' => $wgMSU_confirmReplace,
 			'imgParams' => $wgMSU_imgParams,
-			//'autoIndex' => $wgMSU_autoIndex,
 		);
 
 		$msuVars = json_encode( $msuVars );
-		$wgOut->addScript( "<script type=\"$wgJsMimeType\">var msuVars = $msuVars;</script>\n" );
+		$wgOut->addScript( "<script type=\"$wgJsMimeType\">window.msuVars = $msuVars;</script>\n" );
 
 		return true;
 	}
@@ -42,9 +41,9 @@ class MsUpload {
 			'section'=> 'new',
 			'title' =>  $title,
 			'text' => $text,
-			'token' => $wgUser->getEditToken(),//$token."%2B%5C",
+			'token' => $wgUser->editToken(),//$token."%2B%5C",
 		), true, $_SESSION );
-		$enableWrite = true; // This is set to false by default, in the ApiMain constructor
+		$enableWrite = true;
 		$api = new ApiMain( $params, $enableWrite );
 		$api->execute();
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
@@ -54,7 +53,7 @@ class MsUpload {
 		}
 		return $mediaString;
 
-/* The code below does the same and is better, but for some reason it doesn't update the categorylinks table
+/* The code below does the same and is better, but for some reason it doesn't update the categorylinks table, so it's no good
 		global $wgContLang, $wgUser;
 		$title = Title::newFromText( $filename, NS_FILE );
 		$page = new WikiPage( $title );

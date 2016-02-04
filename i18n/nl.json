@@ -1,12 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"FabianRM",
-			"Sjoerddebruin"
+			"FabianRM"
 		]
 	},
 	"msu-desc": "Staat enkele of meerdere gelijktijdige uploads toe",
-	"msu-upload-possible": "Het geselecteerde bestand kan worden geupload",
 	"msu-ext-not-allowed": "\nAlleen de volgende bestandstypen zijn toegestaan:",
 	"msu-upload-this": "Dit bestand uploaden",
 	"msu-upload-all": "Alle bestanden uploaden"
