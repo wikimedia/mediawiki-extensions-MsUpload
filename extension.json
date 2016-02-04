@@ -1,6 +1,6 @@
 {
 	"name": "MsUpload",
-	"version": "10.3",
+	"version": "12.0",
 	"author": [
 		"[mailto:wiki@ratin.de Martin Schwindl]",
 		"[mailto:wiki@keyler-consult.de Martin Keyler]",
@@ -33,12 +33,11 @@
 				"msu-insert-gallery",
 				"msu-insert-files",
 				"msu-insert-links",
-				"msu-insert-picture",
-				"msu-insert-movie",
+				"msu-insert-image",
+				"msu-insert-video",
 				"msu-cancel-upload",
 				"msu-replace-file",
 				"msu-clean-all",
-				"msu-upload-possible",
 				"msu-ext-not-allowed",
 				"msu-upload-this",
 				"msu-upload-all",
@@ -66,6 +65,5 @@
 		"MSU_useMsLinks": false,
 		"MSU_confirmReplace": true,
 		"MSU_imgParams": "400px"
-	},
-	"manifest_version": 1
+	}
 }
