@@ -12,12 +12,13 @@
 	"msu-button-title": "Seleziona files",
 	"msu-insert-link": "Inserisci link",
 	"msu-insert-gallery": "Inserisci immagini come galleria",
+	"msu-insert-image": "Inserisci immagine",
+	"msu-insert-video": "Inserisci video",
 	"msu-cancel-upload": "Cancella upload",
 	"msu-clean-all": "Clear list",
-	"msu-upload-possible": "Il file selezionato può essere caricato",
 	"msu-ext-not-allowed": "Solo {{PLURAL:$1|il seguente tipo di file è permesso|i seguenti tipi di file sono permessi}}:",
 	"msu-upload-this": "Carica questo file",
 	"msu-upload-all": "Carica tutti i file",
-	"msu-dropzone": "Posiziona i files qui",
+	"msu-dropzone": "Posiziona i file qui",
 	"msu-comment": "MsUpload"
 }
