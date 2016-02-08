@@ -5,7 +5,9 @@
 			"Windes",
 			"Wladek92",
 			"TomT0m",
-			"Orlodrim"
+			"Orlodrim",
+			"Gomoko",
+			"Brenloch56"
 		]
 	},
 	"msu-desc": "Permet les téléversements faciles d'un seul ou de plusieurs fichiers en même temps",
@@ -14,8 +16,8 @@
 	"msu-insert-gallery": "Insère les images en gallery",
 	"msu-insert-files": "Insérer tout en tant que fichiers",
 	"msu-insert-links": "Insérer tout en tant que liens",
-	"msu-insert-image": "Insère l'image",
-	"msu-insert-video": "Insère un film",
+	"msu-insert-image": "Insérer l’image",
+	"msu-insert-video": "Insérer une vidéo",
 	"msu-cancel-upload": "Annule téléversement",
 	"msu-replace-file": "Remplacer le fichier ?",
 	"msu-clean-all": "Effacer la liste",
