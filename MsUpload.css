@@ -120,13 +120,13 @@
 	min-height: 30px;
 }
 
-#msupload-list .file .file-title {
+#msupload-list .file .file-name {
 	font-weight: bold;
 	margin-left: 35px;
 	padding: 3px;
 }
 
-#msupload-list .file .file-title:hover {
+#msupload-list .file .file-name:hover {
 	padding: 3px;
 	background-color: white;
 }
@@ -183,7 +183,7 @@
 	padding: 0;
 }
 
-#msupload-list .file .input-change {
+#msupload-list .file .file-name-input {
 	background: white;
 	border: none;
 	display: inline;
@@ -193,6 +193,10 @@
 	margin-left: 35px;
 	outline: none;
 	padding: 3px;
+}
+
+#msupload-list .file .file-extension {
+	font-weight: bold;
 }
 
 #msupload-list .file .file-size {

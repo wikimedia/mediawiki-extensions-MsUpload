@@ -37,9 +37,10 @@ var MsUpload = {
 			case '':
 			case '&nbsp;':
 			case '&#160;':
-				$( fileItem.warning ).text( '' )
-					.siblings( '.file-title' ).show()
-					.siblings( '.input-change' ).hide();
+				$( fileItem.warning ).empty()
+					.siblings( '.file-name' ).show()
+					.siblings( '.file-name-input' ).hide()
+					.siblings( '.file-extension' ).hide();
 				break;
 
 			case 'Error: Unknown result from API':
@@ -56,7 +57,7 @@ var MsUpload = {
 					break; // When the file name starts with "IMG", MediaWiki issues this warning. Display it and continue.
 				}
 				if ( warning.indexOf( 'Der Dateiname beginnt mit' ) === 0 ) {
-					break; // Make it work for German too. Must be done this way because the error response doesn't include an error code
+					break; // Make it work for German too. Must be done this way because the error response doesn't include an error code.
 				}
 
 				// When hovering over the link to the file about to be replaced, show the thumbnail
@@ -71,7 +72,7 @@ var MsUpload = {
 
 					MsUpload.unconfirmedReplacements++;
 
-					var title = $( fileItem.warning ).siblings( '.file-title' );
+					var title = $( fileItem.warning ).siblings( '.file-name' );
 
 					var checkbox = $( '<input>' ).attr( 'type', 'checkbox' ).click( function ( event ) {
 						if ( $( this ).is( ':checked' ) ) {
@@ -129,15 +130,15 @@ var MsUpload = {
 	
 			$( '<span>' ).attr( 'class', 'msupload-check-span' ).text( wgPageName.replace( /_/g, ' ' ) ).appendTo( file.li );
 		}
-	
+
 		// Insert an input field for changing the file title
-		var inputChange = $( '<input>' ).attr({
-			'class': 'input-change',
+		var fileNameInput = $( '<input>' ).attr({
+			'class': 'file-name-input',
 			'size': file.name.length,
 			'name': 'filename',
-			'value': file.name
+			'value': file.name.substr( 0, file.name.length - file.extension.length - 1 )
 		}).change( function () {
-			file.name = this.value; // Save new title
+			file.name = this.value + '.' + file.extension;
 			$( this ).prev().text( file.name );
 			MsUpload.unconfirmedReplacements = 0; // Hack! If the user renames a file to avoid replacing it, this forces the Upload button to appear, but it also does when a user just renames a file that wasn't about to replace another
 			MsUpload.checkUploadWarning( this.value, file.li, uploader );
@@ -148,12 +149,15 @@ var MsUpload = {
 				event.preventDefault();
 			}
 		}).hide().insertAfter( file.li.title );
-	
+
+		var fileExtension = $( '<span>' ).addClass( 'file-extension' ).text( '.' + file.extension ).hide().insertAfter( fileNameInput );
+
 		file.li.title.click( function () {
 			file.li.title.hide();
-			inputChange.show().select();
+			fileNameInput.show().select();
+			fileExtension.show();
 		});
-	
+
 		// Insert the progress bar
 		var progressState = $( '<span>' ).addClass( 'file-progress-state' );
 		file.li.children().first().after( progressState );
@@ -317,12 +321,12 @@ var MsUpload = {
 					file.name = fileNameApple + '_' + i + '.' + file.name.split( '.' ).pop(); // image_Y-M-D_0.jpg
 				}
 			}
-			file.li = $( '<li>' ).attr( 'id',file.id ).attr( 'class', 'file' ).appendTo( $( '#msupload-list' ) );
-			file.li.type = $( '<span>' ).attr( 'class', 'file-type' ).appendTo( file.li );
-			file.li.title = $( '<span>' ).attr( 'class', 'file-title' ).text( file.name ).appendTo( file.li );
-			file.li.size = $( '<span>' ).attr( 'class', 'file-size' ).text( plupload.formatSize( file.size ) ).appendTo( file.li );
-			file.li.loading = $( '<span>' ).attr( 'class', 'file-loading' ).appendTo( file.li );
-			file.li.warning = $( '<span>' ).attr( 'class', 'file-warning' ).appendTo( file.li );
+			file.li = $( '<li>' ).attr( 'id', file.id ).addClass( 'file' ).appendTo( $( '#msupload-list' ) );
+			file.li.type = $( '<span>' ).addClass( 'file-type' ).appendTo( file.li );
+			file.li.title = $( '<span>' ).addClass( 'file-name' ).text( file.name ).appendTo( file.li );
+			file.li.size = $( '<span>' ).addClass( 'file-size' ).text( plupload.formatSize( file.size ) ).appendTo( file.li );
+			file.li.loading = $( '<span>' ).addClass( 'file-loading' ).appendTo( file.li );
+			file.li.warning = $( '<span>' ).addClass( 'file-warning' ).appendTo( file.li );
 			MsUpload.checkExtension( file, uploader );
 		});
 		uploader.refresh(); // Reposition Flash/Silverlight
@@ -347,7 +351,8 @@ var MsUpload = {
 
 	onBeforeUpload: function ( uploader, file ) {
 		file.li.title.text( file.name ).show(); // Show title
-		$( '#' + file.id + ' input.input-change' ).hide(); // Hide input
+		$( '#' + file.id + ' .file-name-input' ).hide(); // Hide the file name input
+		$( '#' + file.id + ' .file-extension' ).hide(); // Hide the file extension
 		uploader.settings.multipart_params = {
 			'filename': file.name,
 			'token': mw.user.tokens.get( 'editToken' ),
