@@ -3,9 +3,10 @@
 class MsUpload {
 
 	static function start() {
-		global $wgOut, $wgScriptPath, $wgJsMimeType, $wgMSL_FileTypes, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_autoIndex, $wgMSU_checkAutoCat, $wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions;
+		global $wgOut, $wgScriptPath, $wgMSL_FileTypes, $wgMSU_useMsLinks, $wgMSU_showAutoCat,
+			$wgMSU_autoIndex, $wgMSU_checkAutoCat, $wgMSU_confirmReplace, $wgMSU_useDragDrop,
+			$wgMSU_imgParams, $wgFileExtensions;
 
-		$wgOut->addModules( 'ext.MsUpload' );
 		$wgOut->addJsConfigVars( array(
 			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) ),
 		));
@@ -24,8 +25,8 @@ class MsUpload {
 			'imgParams' => $wgMSU_imgParams,
 		);
 
-		$msuVars = json_encode( $msuVars );
-		$wgOut->addScript( "<script type=\"$wgJsMimeType\">window.msuVars = $msuVars;</script>\n" );
+		$wgOut->addJsConfigVars( 'msuVars', $msuVars );
+		$wgOut->addModules( 'ext.MsUpload' );
 
 		return true;
 	}

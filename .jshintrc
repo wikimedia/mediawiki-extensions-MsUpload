@@ -19,8 +19,7 @@
 
 	"globals": {
 		"mediaWiki": false,
-		"OO": false,
-		"window.msuVars": false,
-		"o": false
+		"o": false,
+		"plupload": false
 	}
 }
