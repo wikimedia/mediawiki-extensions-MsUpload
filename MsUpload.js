@@ -270,8 +270,8 @@
 				max_file_size: '100mb',
 				drop_element: 'msupload-dropzone',
 				url: msuVars.scriptPath + '/api.php',
-				flash_swf_url: msuVars.scriptPath + '/extensions/MsUpload/plupload/Moxie.swf',
-				silverlight_xap_url: msuVars.path + '/extensions/MsUpload/plupload/Moxie.xap'
+				flash_swf_url: msuVars.flash_swf_url,
+				silverlight_xap_url: msuVars.silverlight_xap_url
 			} );
 
 			// Bind events
