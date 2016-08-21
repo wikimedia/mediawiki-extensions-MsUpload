@@ -267,7 +267,7 @@
 				runtimes: 'html5,flash,silverlight,html4',
 				browse_button: 'msupload-select',
 				container: 'msupload-container',
-				max_file_size: '100mb',
+				max_file_size: msuVars.uploadsize,
 				drop_element: 'msupload-dropzone',
 				url: msuVars.scriptPath + '/api.php',
 				flash_swf_url: msuVars.flash_swf_url,

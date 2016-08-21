@@ -5,7 +5,7 @@ class MsUpload {
 	static function start() {
 		global $wgOut, $wgScriptPath, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_checkAutoCat,
 			$wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions,
-			$wgMSU_flash_swf_url, $wgMSU_silverlight_xap_url;
+			$wgMSU_uploadsize, $wgMSU_flash_swf_url, $wgMSU_silverlight_xap_url;
 
 		$wgMSU_flash_swf_url = __DIR__ . '/plupload/Moxie.swf';
 		$wgMSU_silverlight_xap_url = __DIR__ . '/plupload/Moxie.xap';
@@ -28,6 +28,7 @@ class MsUpload {
 			'useMsLinks' => $wgMSU_useMsLinks,
 			'confirmReplace' => $wgMSU_confirmReplace,
 			'imgParams' => $wgMSU_imgParams,
+			'uploadsize' => $wgMSU_uploadsize,
 		);
 
 		$wgOut->addJsConfigVars( 'msuVars', $msuVars );
