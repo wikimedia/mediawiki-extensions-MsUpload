@@ -360,7 +360,7 @@
 				token: mw.user.tokens.get( 'editToken' ),
 				action: 'upload',
 				ignorewarnings: true,
-				comment: mw.msg( 'msu-comment' ),
+				comment: mw.message( 'msu-comment' ).plain(),
 				format: 'json'
 			}; // Set multipart_params
 			$( '#' + file.id + ' .file-progress-state' ).text( '0%' );
