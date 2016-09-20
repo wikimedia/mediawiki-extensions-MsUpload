@@ -53,11 +53,7 @@ class MsUpload {
 		$enableWrite = true;
 		$api = new ApiMain( $params, $enableWrite );
 		$api->execute();
-		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$data = $api->getResult()->getResultData();
-		} else {
-			$data = &$api->getResultData();
-		}
+		$data = $api->getResult()->getResultData();
 		return $mediaString;
 
 		/* The code below does the same and is better,
