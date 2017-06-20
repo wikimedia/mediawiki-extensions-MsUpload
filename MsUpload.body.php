@@ -10,15 +10,15 @@ class MsUpload {
 		$wgMSU_flash_swf_url = __DIR__ . '/plupload/Moxie.swf';
 		$wgMSU_silverlight_xap_url = __DIR__ . '/plupload/Moxie.xap';
 
-		$wgOut->addJsConfigVars( array(
+		$wgOut->addJsConfigVars( [
 			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) ),
-		) );
+		] );
 
 		if ( $wgMSU_imgParams ) {
 			$wgMSU_imgParams = '|' . $wgMSU_imgParams;
 		}
 
-		$msuVars = array(
+		$msuVars = [
 			'scriptPath' => $wgScriptPath,
 			'flash_swf_url' => $wgMSU_flash_swf_url,
 			'silverlight_xap_url' => $wgMSU_silverlight_xap_url,
@@ -29,7 +29,7 @@ class MsUpload {
 			'confirmReplace' => $wgMSU_confirmReplace,
 			'imgParams' => $wgMSU_imgParams,
 			'uploadsize' => $wgMSU_uploadsize,
-		);
+		];
 
 		$wgOut->addJsConfigVars( 'msuVars', $msuVars );
 		$wgOut->addModules( 'ext.MsUpload' );
@@ -43,13 +43,13 @@ class MsUpload {
 		$title = $mediaString . ':' . $filename;
 		$text = "\n[[" . $category . "]]";
 		$wgEnableWriteAPI = true;
-		$params = new FauxRequest( array(
+		$params = new FauxRequest( [
 			'action' => 'edit',
 			'section'=> 'new',
 			'title' =>  $title,
 			'text' => $text,
 			'token' => $wgUser->editToken(), // $token."%2B%5C",
-		), true, $_SESSION );
+		], true, $_SESSION );
 		$enableWrite = true;
 		$api = new ApiMain( $params, $enableWrite );
 		$api->execute();
