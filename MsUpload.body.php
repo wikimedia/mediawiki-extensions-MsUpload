@@ -45,8 +45,8 @@ class MsUpload {
 		$wgEnableWriteAPI = true;
 		$params = new FauxRequest( [
 			'action' => 'edit',
-			'section'=> 'new',
-			'title' =>  $title,
+			'section' => 'new',
+			'title' => $title,
 			'text' => $text,
 			'token' => $wgUser->editToken(), // $token."%2B%5C",
 		], true, $_SESSION );
