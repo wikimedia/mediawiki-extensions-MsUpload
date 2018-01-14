@@ -69,7 +69,11 @@
 						$( fileItem.warning ).find( 'div.thumb' ).hide();
 					} );
 
-					// If a file with the same name already exists, add a checkbox to confirm the replacement
+					/**
+					 * If a file with the same name already exists, add a checkbox to confirm the replacement
+					 * This checkbox will also appear when the file name differs only in the file extension
+					 * so the confirmation message must be kept generic enough
+					 */
 					if ( msuVars.confirmReplace ) {
 
 						MsUpload.unconfirmedReplacements++;
@@ -86,7 +90,7 @@
 							}
 							uploader.trigger( 'CheckFiles' );
 						} );
-						$( '<label>' ).append( checkbox ).append( mw.msg( 'msu-replace-file' ) ).appendTo( fileItem.warning );
+						$( '<label>' ).append( checkbox ).append( mw.msg( 'msu-continue' ) ).appendTo( fileItem.warning );
 					}
 					break;
 			}

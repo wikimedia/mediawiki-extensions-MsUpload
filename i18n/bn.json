@@ -13,7 +13,6 @@
 	"msu-insert-image": "চিত্র হিসেবে সন্নিবেশ করুন",
 	"msu-insert-video": "ভিডিও সন্নিবেশ করুন",
 	"msu-cancel-upload": "আপলোড বাতিল করুন",
-	"msu-replace-file": "ফাইল প্রতিস্থাপন করবেন?",
 	"msu-clean-all": "তালিকা পরিষ্কার করুন",
 	"msu-ext-not-allowed": "কেবলমাত্র নিচের ফাইলের {{PLURAL:$1|ধরন|ধরনসমূহ}} অনুমোদিত:",
 	"msu-upload-this": "এই ফাইল ডাউনলোড করুন",

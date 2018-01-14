@@ -15,7 +15,6 @@
 	"msu-insert-image": "画像として挿入",
 	"msu-insert-video": "動画を挿入",
 	"msu-cancel-upload": "アップロードをキャンセル",
-	"msu-replace-file": "ファイルを置き換えますか?",
 	"msu-clean-all": "クリア",
 	"msu-ext-not-allowed": "次の{{PLURAL:$1|形式|形式}}のファイルのみアップロードできます:",
 	"msu-upload-this": "このファイルをアップロード",

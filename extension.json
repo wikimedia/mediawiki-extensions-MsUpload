@@ -35,7 +35,7 @@
 				"msu-insert-image",
 				"msu-insert-video",
 				"msu-cancel-upload",
-				"msu-replace-file",
+				"msu-continue",
 				"msu-clean-all",
 				"msu-ext-not-allowed",
 				"msu-upload-this",

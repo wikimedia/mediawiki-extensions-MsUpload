@@ -16,7 +16,6 @@
 	"msu-insert-image": "Inserir como imagem",
 	"msu-insert-video": "Inserir vídeo",
 	"msu-cancel-upload": "Cancelar carregamento",
-	"msu-replace-file": "Substituir ficheiro?",
 	"msu-clean-all": "Limpar lista",
 	"msu-ext-not-allowed": "Só {{PLURAL:$1|é permitido o seguinte tipo de ficheiro|são permitidos os seguintes tipos de ficheiro}}:",
 	"msu-upload-this": "Carregar este ficheiro",

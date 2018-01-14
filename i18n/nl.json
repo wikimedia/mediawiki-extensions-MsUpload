@@ -15,7 +15,6 @@
 	"msu-insert-image": "Voeg in als afbeelding",
 	"msu-insert-video": "Video invoegen",
 	"msu-cancel-upload": "Uploaden annuleren",
-	"msu-replace-file": "Bestand vervangen?",
 	"msu-clean-all": "Lijst wissen",
 	"msu-ext-not-allowed": "Alleen {{PLURAL:$1|het volgende bestandstype is|de volgende bestandstypen zijn}} toegestaan:",
 	"msu-upload-this": "Dit bestand uploaden",

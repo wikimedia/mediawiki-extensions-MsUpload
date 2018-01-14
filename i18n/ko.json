@@ -14,7 +14,6 @@
 	"msu-insert-image": "그림 넣기",
 	"msu-insert-video": "동영상 넣기",
 	"msu-cancel-upload": "올리기 취소",
-	"msu-replace-file": "파일을 대체할까요?",
 	"msu-clean-all": "목록 비우기",
 	"msu-ext-not-allowed": "다음 {{PLURAL:$1|형식의|형식의}} 파일만 허용됩니다:",
 	"msu-upload-this": "이 파일 올리기",
