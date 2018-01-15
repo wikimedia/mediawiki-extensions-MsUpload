@@ -4,7 +4,8 @@
 			"Vitorvicentevalente",
 			"Macofe",
 			"Fúlvio",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Athena in Wonderland"
 		]
 	},
 	"msu-desc": "Permite a transferência fácil de um ficheiro ou de vários ficheiros em simultâneo",
@@ -16,6 +17,7 @@
 	"msu-insert-image": "Inserir como imagem",
 	"msu-insert-video": "Inserir vídeo",
 	"msu-cancel-upload": "Cancelar carregamento",
+	"msu-continue": "Continuar mesmo assim?",
 	"msu-clean-all": "Limpar lista",
 	"msu-ext-not-allowed": "Só {{PLURAL:$1|é permitido o seguinte tipo de ficheiro|são permitidos os seguintes tipos de ficheiro}}:",
 	"msu-upload-this": "Carregar este ficheiro",
