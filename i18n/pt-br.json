@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Michael Siegwarth (msiegwarth@gmail.com)",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"msu-desc": "Habilita uploads fáceis para um ou vários arquivos, simultaneamente",
@@ -14,6 +15,7 @@
 	"msu-insert-image": "Inserir como imagem",
 	"msu-insert-video": "Inserir vídeo",
 	"msu-cancel-upload": "Cancelar upload",
+	"msu-continue": "Continuar mesmo assim?",
 	"msu-clean-all": "Clear list",
 	"msu-ext-not-allowed": "Somente {{PLURAL:$1|o seguinte tipo de arquivo é permitido|os seguintes tipos de arquivos são permitidos}}:",
 	"msu-upload-this": "Enviar este arquivo",

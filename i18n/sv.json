@@ -13,6 +13,7 @@
 	"msu-insert-image": "Infoga som bild",
 	"msu-insert-video": "Infoga video",
 	"msu-cancel-upload": "Avbryt uppladdning",
+	"msu-continue": "Fortsätt ändå",
 	"msu-clean-all": "Rensa lista",
 	"msu-ext-not-allowed": "Endast följande {{PLURAL:$1|filtyp|filtyper}} tillåts:",
 	"msu-upload-this": "Ladda upp denna fil",
