@@ -17,20 +17,29 @@
 		galleryArray: [],
 		insertGallery: function () {
 			var galleryText = 'File:' + MsUpload.galleryArray.join( '\nFile:' );
-			mw.toolbar.insertTags( '<gallery>\n' + galleryText + '\n</gallery>\n', '', '', '' );
+			MsUpload.insertText( '<gallery>\n' + galleryText + '\n</gallery>\n' );
 		},
 
 		filesArray: [],
 		insertFiles: function () {
-			mw.toolbar.insertTags( '[[File:' + MsUpload.filesArray.join( ']]\n[[File:' ) + ']]\n', '', '', '' );
+			MsUpload.insertText( '[[File:' + MsUpload.filesArray.join( ']]\n[[File:' ) + ']]\n' );
 		},
 
 		insertLinks: function () {
 			if ( msuVars.useMsLinks === true ) {
-				mw.toolbar.insertTags( '*{{#l:' + MsUpload.filesArray.join( '}}\n*{{#l:' ) + '}}\n', '', '', '' );
+				MsUpload.insertText( '*{{#l:' + MsUpload.filesArray.join( '}}\n*{{#l:' ) + '}}\n' );
 			} else {
-				mw.toolbar.insertTags( '*[[:File:' + MsUpload.filesArray.join( ']]\n*[[:File:' ) + ']]\n', '', '', '' );
+				MsUpload.insertText( '*[[:File:' + MsUpload.filesArray.join( ']]\n*[[:File:' ) + ']]\n' );
 			}
+		},
+
+		/**
+		 * Add text to selection in the main textarea.
+		 *
+		 * @param {string} text
+		 */
+		insertText: function ( text ) {
+			$( '#wpTextbox1' ).textSelection( 'encapsulateSelection', { pre: text } );
 		},
 
 		unconfirmedReplacements: 0,
@@ -408,9 +417,9 @@
 					}
 					$( '<a>' ).text( mw.msg( 'msu-insert-link' ) ).click( function () {
 						if ( msuVars.useMsLinks === true ) {
-							mw.toolbar.insertTags( '{{#l:' + file.name + '}}', '', '', '' ); // Insert link
+							MsUpload.insertText( '{{#l:' + file.name + '}}' ); // Insert link
 						} else {
-							mw.toolbar.insertTags( '[[:File:' + file.name + ']]', '', '', '' ); // Insert link
+							MsUpload.insertText( '[[:File:' + file.name + ']]' ); // Insert link
 						}
 					} ).appendTo( file.li );
 					if ( file.group === 'image' ) {
@@ -420,12 +429,12 @@
 						}
 						$( '<span>' ).text( ' | ' ).appendTo( file.li );
 						$( '<a>' ).text( mw.msg( 'msu-insert-image' ) ).click( function () {
-							mw.toolbar.insertTags( '[[File:' + file.name + msuVars.imgParams + ']]', '', '', '' );
+							MsUpload.insertText( '[[File:' + file.name + msuVars.imgParams + ']]' );
 						} ).appendTo( file.li );
 					} else if ( file.group === 'video' ) {
 						$( '<span>' ).text( ' | ' ).appendTo( file.li );
 						$( '<a>' ).text( mw.msg( 'msu-insert-video' ) ).click( function () {
-							mw.toolbar.insertTags( '[[File:' + file.name + ']]', '', '', '' );
+							MsUpload.insertText( '[[File:' + file.name + ']]' );
 						} ).appendTo( file.li );
 					}
 					MsUpload.filesArray.push( file.name );
@@ -489,11 +498,8 @@
 			if ( $.inArray( mw.config.get( 'wgAction' ), [ 'edit', 'submit' ] ) !== -1 ) {
 				mw.loader.using( 'user.options', function () {
 					if ( mw.user.options.get( 'usebetatoolbar' ) ) {
-						mw.loader.using( 'ext.wikiEditor.toolbar', function () {
-							$.when(
-								mw.loader.using( 'ext.wikiEditor.toolbar' ), $.ready
-							).then( MsUpload.createUploader );
-						} );
+						$.when( mw.loader.using( 'ext.wikiEditor' ), $.ready )
+							.then( MsUpload.createUploader );
 					}
 				} );
 			}
