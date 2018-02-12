@@ -16,6 +16,7 @@
 	"msu-insert-image": "插入為圖片",
 	"msu-insert-video": "插入影片",
 	"msu-cancel-upload": "取消上傳",
+	"msu-continue": "仍要繼續？",
 	"msu-clean-all": "清空清單",
 	"msu-ext-not-allowed": "只允許上傳下列{{PLURAL:$1|類型|類型}}檔案：",
 	"msu-upload-this": "上傳此檔案",
