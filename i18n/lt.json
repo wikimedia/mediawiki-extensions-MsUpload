@@ -14,7 +14,7 @@
 	"msu-insert-video": "Įterpti vaizdo įrašą",
 	"msu-cancel-upload": "Nutraukti pakrovimą",
 	"msu-clean-all": "Išvalyti sąrašą",
-	"msu-ext-not-allowed": "Leidžiami tik sekantys failų tipai:",
+	"msu-ext-not-allowed": "Leidžiami tik {{PLURAL:$1|sekantis failų tipas|sekantys failų tipai}}:",
 	"msu-upload-this": "Įkelti šią rinkmeną",
 	"msu-upload-all": "Įkelti visus failus",
 	"msu-dropzone": "Čia užtemk failus",
