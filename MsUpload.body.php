@@ -42,7 +42,6 @@ class MsUpload {
 		$mediaString = strtolower( $wgContLang->getNsText( NS_FILE ) );
 		$title = $mediaString . ':' . $filename;
 		$text = "\n[[" . $category . "]]";
-		$wgEnableWriteAPI = true;
 		$params = new FauxRequest( [
 			'action' => 'edit',
 			'section' => 'new',

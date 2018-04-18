@@ -5,7 +5,6 @@
 To install MsUpload, add the following to your LocalSettings.php:
 
 // If necessary, adjust the global configuration:
-$wgEnableWriteAPI = true; // Enable the API
 $wgEnableUploads = true; // Enable uploads
 $wgFileExtensions = array('png','gif','jpg','jpeg','doc','xls','mpp','pdf','ppt','tiff','bmp','docx','xlsx','pptx','ps','odt','ods','odp','odg');
 $wgAllowJavaUploads = true; // Solves problem with Office 2007 and newer files (docx, xlsx, etc.)
