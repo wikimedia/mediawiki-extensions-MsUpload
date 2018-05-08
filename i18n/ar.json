@@ -7,7 +7,19 @@
 		]
 	},
 	"msu-desc": "يتيح تحميل ملف واحد أو عدة ملفات معاً بسهولة",
+	"msu-button-title": "اختر الملفات",
+	"msu-insert-link": "إدراج وصلة",
+	"msu-insert-gallery": "إدراج الكل كمعرض",
+	"msu-insert-files": "إدراج الكل كملفات",
+	"msu-insert-links": "إدراج الكل كروابط",
 	"msu-insert-image": "إدراج كصورة",
 	"msu-insert-video": "أضف فيديو",
-	"msu-ext-not-allowed": "الملف {{PLURAL:$1|type is|types are}} متاح فقط:"
+	"msu-cancel-upload": "إلغاء الرفع",
+	"msu-continue": "المتابعة على أية حال؟",
+	"msu-clean-all": "مسح القائمة",
+	"msu-ext-not-allowed": "الملف {{PLURAL:$1|type is|types are}} متاح فقط:",
+	"msu-upload-this": "رفع هذا الملف",
+	"msu-upload-all": "رفع جميع الملفات",
+	"msu-dropzone": "إسقاط الملفات هنا",
+	"msu-comment": "الملف الذي تم رفعه باستخدام MsUpload"
 }
