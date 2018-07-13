@@ -1,6 +1,8 @@
 #msupload-container {
 	display: inline-block;
 	padding: 3px;
+	line-height: normal;
+	vertical-align: middle;
 }
 
 #msupload-container.start-loading {
@@ -245,3 +247,4 @@
 #wikiEditor-section-advanced .options {
 	z-index: 1;
 }
+
