@@ -3,7 +3,8 @@
 		"authors": [
 			"alexandr",
 			"Okras",
-			"Iniquity"
+			"Iniquity",
+			"Shaleych"
 		]
 	},
 	"msu-desc": "Позволяет удобно загружать один или несколько файлов одновременно",
@@ -16,10 +17,10 @@
 	"msu-insert-video": "Вставить видео",
 	"msu-cancel-upload": "Отменить загрузку",
 	"msu-continue": "Всё равно продолжить?",
-	"msu-clean-all": "Clear list",
+	"msu-clean-all": "Очистить список",
 	"msu-ext-not-allowed": "Разрешен{{PLURAL:$1||ы}} только {{PLURAL:$1|следующий тип|следующие типы}} файлов:",
 	"msu-upload-this": "Загрузить этот файл",
 	"msu-upload-all": "Загрузить все файлы",
 	"msu-dropzone": "Перетащите файлы сюда",
-	"msu-comment": "MsUpload"
+	"msu-comment": "Файл, загруженный с помощью MsUpload"
 }
