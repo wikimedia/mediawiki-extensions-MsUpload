@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"JNF"
+			"JNF",
+			"Amire80"
 		]
 	},
 	"msu-desc": "מאפשר העלאת קבצים בקלות. כולל אפשרות לקבצים מרובים וממשק גרירת קבצים",
@@ -10,7 +11,7 @@
 	"msu-insert-gallery": "הפוך תמונות לגלריה",
 	"msu-insert-image": "הכנס תמונה",
 	"msu-insert-video": "הכנס סרטון",
-	"msu-cancel-upload": "בטל העלאה",
+	"msu-cancel-upload": "ביטול ההעלאה",
 	"msu-clean-all": "נקה רשימה",
 	"msu-ext-not-allowed": "רק סוגי הקבצים הבאים מורשים:",
 	"msu-upload-this": "לחצו כאן להעלאת קובץ זה",
