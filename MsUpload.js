@@ -17,7 +17,7 @@
 		galleryArray: [],
 		insertGallery: function () {
 			var galleryText = 'File:' + MsUpload.galleryArray.join( '\nFile:' );
-			MsUpload.insertText( '<gallery ' + msuVars.gallParams + '>\n' + galleryText + '\n</gallery>\n' );
+			MsUpload.insertText( '<gallery' + msuVars.gallParams + '>\n' + galleryText + '\n</gallery>\n' );
 		},
 
 		filesArray: [],
