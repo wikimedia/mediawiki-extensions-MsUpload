@@ -17,6 +17,10 @@ class MsUpload {
 		if ( $wgMSU_imgParams ) {
 			$wgMSU_imgParams = '|' . $wgMSU_imgParams;
 		}
+		
+		if ( $wgMSU_gallParams ) {
+			$wgMSU_gallParams = ' ' . $wgMSU_gallParams;
+		}
 
 		$msuVars = [
 			'scriptPath' => $wgScriptPath,
