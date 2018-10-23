@@ -17,12 +17,12 @@
 		galleryArray: [],
 		insertGallery: function () {
 			var galleryText = 'File:' + MsUpload.galleryArray.join( '\nFile:' );
-			MsUpload.insertText( '<gallery>\n' + galleryText + '\n</gallery>\n' );
+			MsUpload.insertText( '<gallery ' + msuVars.gallParams + '>\n' + galleryText + '\n</gallery>\n' );
 		},
 
 		filesArray: [],
 		insertFiles: function () {
-			MsUpload.insertText( '[[File:' + MsUpload.filesArray.join( ']]\n[[File:' ) + ']]\n' );
+			MsUpload.insertText( '[[File:' + MsUpload.filesArray.join( msuVars.imgParams + ']]\n[[File:' ) + msuVars.imgParams + ']]\n' );
 		},
 
 		insertLinks: function () {
