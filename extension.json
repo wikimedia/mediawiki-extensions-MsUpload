@@ -64,6 +64,7 @@
 		"MSU_useMsLinks": false,
 		"MSU_confirmReplace": true,
 		"MSU_imgParams": "400px",
+		"MSU_gallParams": "",
 		"MSU_uploadsize": "100mb"
 	},
 	"manifest_version": 1
