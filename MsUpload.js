@@ -189,7 +189,7 @@
 					case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff':
 						file.group = 'image';
 						try {
-							var image = new o.Image();
+							var image = new moxie.image.Image();
 							image.onload = function () {
 								this.embed( file.li.type.get( 0 ), {
 									width: 30,

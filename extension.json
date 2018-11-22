@@ -1,6 +1,6 @@
 {
 	"name": "MsUpload",
-	"version": "12.0",
+	"version": "13.0",
 	"author": [
 		"[mailto:wiki@ratin.de Martin Schwindl]",
 		"[mailto:wiki@keyler-consult.de Martin Keyler]",
@@ -21,7 +21,6 @@
 	"ResourceModules": {
 		"ext.MsUpload": {
 			"scripts": [
-				"plupload/plupload.full.min.js",
 				"MsUpload.js"
 			],
 			"dependencies": "jquery.ui.progressbar",

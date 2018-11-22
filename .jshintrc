@@ -19,7 +19,7 @@
 
 	"globals": {
 		"mediaWiki": false,
-		"o": false,
+		"moxie": false,
 		"plupload": false
 	}
 }

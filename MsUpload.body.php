@@ -11,7 +11,7 @@ class MsUpload {
 		$wgMSU_silverlight_xap_url = __DIR__ . '/plupload/Moxie.xap';
 
 		$wgOut->addJsConfigVars( [
-			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) ),
+			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) )
 		] );
 
 		if ( $wgMSU_imgParams ) {
@@ -33,6 +33,7 @@ class MsUpload {
 
 		$wgOut->addJsConfigVars( 'msuVars', $msuVars );
 		$wgOut->addModules( 'ext.MsUpload' );
+		$wgOut->addScriptFile( "$wgScriptPath/extensions/MsUpload/plupload/plupload.full.min.js" );
 
 		return true;
 	}
