@@ -16,15 +16,15 @@
 		]
 	},
 	"AutoloadClasses": {
-		"MsUpload": "MsUpload.body.php"
+		"MsUpload\\Hooks": "includes/Hooks.php"
 	},
 	"ResourceModules": {
 		"ext.MsUpload": {
 			"scripts": [
-				"MsUpload.js"
+				"resources/MsUpload.js"
 			],
 			"dependencies": "jquery.ui.progressbar",
-			"styles": "MsUpload.css",
+			"styles": "resources/MsUpload.css",
 			"messages": [
 				"msu-button-title",
 				"msu-insert-link",
@@ -50,11 +50,11 @@
 	},
 	"Hooks": {
 		"EditPage::showEditForm:initial": [
-			"MsUpload::start"
+			"MsUpload\\Hooks::start"
 		]
 	},
 	"AjaxExportList": [
-		"MsUpload::saveCat"
+		"MsUpload\\Hooks::saveCat"
 	],
 	"config": {
 		"MSU_useDragDrop": true,

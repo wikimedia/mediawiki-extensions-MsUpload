@@ -14,7 +14,7 @@ module.exports = function ( grunt ) {
 				'**/*.js',
 				'!node_modules/**',
 				'!vendor/**',
-				'!plupload/**'
+				'!resources/plupload/**'
 			]
 		},
 		jscs: {

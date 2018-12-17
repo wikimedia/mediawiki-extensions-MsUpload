@@ -411,7 +411,7 @@
 					if ( file.cat && mw.config.get( 'wgNamespaceNumber' ) === 14 ) { // Should the categroy be set?
 						$.get( mw.util.wikiScript(), {
 							action: 'ajax',
-							rs: 'MsUpload::saveCat',
+							rs: 'MsUpload\\Hooks::saveCat',
 							rsargs: [ file.name, mw.config.get( 'wgPageName' ) ]
 						}, 'json' );
 					}

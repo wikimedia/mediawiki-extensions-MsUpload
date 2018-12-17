@@ -1,14 +1,23 @@
 <?php
 
-class MsUpload {
+namespace MsUpload;
 
-	static function start() {
+use FauxRequest;
+use ApiMain;
+
+class Hooks {
+	/**
+	 * Main Function
+	 *
+	 * @return bool
+	 */
+	public static function start() {
 		global $wgOut, $wgScriptPath, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_checkAutoCat,
 			$wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions,
 			$wgMSU_uploadsize, $wgMSU_flash_swf_url, $wgMSU_silverlight_xap_url;
 
-		$wgMSU_flash_swf_url = __DIR__ . '/plupload/Moxie.swf';
-		$wgMSU_silverlight_xap_url = __DIR__ . '/plupload/Moxie.xap';
+		$wgMSU_flash_swf_url = __DIR__ . '/../resources/plupload/Moxie.swf';
+		$wgMSU_silverlight_xap_url = __DIR__ . '/../resources/plupload/Moxie.xap';
 
 		$wgOut->addJsConfigVars( [
 			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) )
@@ -33,12 +42,22 @@ class MsUpload {
 
 		$wgOut->addJsConfigVars( 'msuVars', $msuVars );
 		$wgOut->addModules( 'ext.MsUpload' );
-		$wgOut->addScriptFile( "$wgScriptPath/extensions/MsUpload/plupload/plupload.full.min.js" );
 
+		// @todo Figure out how to load this in a module without resource loader crashing.
+		$wgOut->addScriptFile(
+			"$wgScriptPath/extensions/MsUpload/resources/plupload/plupload.full.min.js"
+		);
 		return true;
 	}
 
-	static function saveCat( $filename, $category ) {
+	/**
+	 * Save category
+	 *
+	 * @param string $filename
+	 * @param string $category
+	 * @return string
+	 */
+	public static function saveCat( $filename, $category ) {
 		global $wgContLang, $wgUser;
 		$mediaString = strtolower( $wgContLang->getNsText( NS_FILE ) );
 		$title = $mediaString . ':' . $filename;
@@ -55,20 +74,5 @@ class MsUpload {
 		$api->execute();
 		$data = $api->getResult()->getResultData();
 		return $mediaString;
-
-		/* The code below does the same and is better,
-			but for some reason it doesn't update the categorylinks table, so it's no good
-		global $wgContLang, $wgUser;
-		$title = Title::newFromText( $filename, NS_FILE );
-		$page = new WikiPage( $title );
-		$text = $page->getText();
-		$text .= "\n\n[[" . $category . "]]";
-		$summary = wfMessage( 'msu-comment' );
-		$status = $page->doEditContent( $text, $summary, EDIT_UPDATE, false, $wgUser );
-		$value = $status->value;
-		$revision = $value['revision'];
-		$page->doEditUpdates( $revision, $wgUser );
-		return true;
-		*/
 	}
 }
