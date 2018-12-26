@@ -2,9 +2,6 @@
 
 namespace MsUpload;
 
-use FauxRequest;
-use ApiMain;
-
 class Hooks {
 	/**
 	 * Main Function
@@ -48,31 +45,5 @@ class Hooks {
 			"$wgScriptPath/extensions/MsUpload/resources/plupload/plupload.full.min.js"
 		);
 		return true;
-	}
-
-	/**
-	 * Save category
-	 *
-	 * @param string $filename
-	 * @param string $category
-	 * @return string
-	 */
-	public static function saveCat( $filename, $category ) {
-		global $wgContLang, $wgUser;
-		$mediaString = strtolower( $wgContLang->getNsText( NS_FILE ) );
-		$title = $mediaString . ':' . $filename;
-		$text = "\n[[" . $category . "]]";
-		$params = new FauxRequest( [
-			'action' => 'edit',
-			'section' => 'new',
-			'title' => $title,
-			'text' => $text,
-			'token' => $wgUser->editToken(), // $token."%2B%5C",
-		], true, $_SESSION );
-		$enableWrite = true;
-		$api = new ApiMain( $params, $enableWrite );
-		$api->execute();
-		$data = $api->getResult()->getResultData();
-		return $mediaString;
 	}
 }

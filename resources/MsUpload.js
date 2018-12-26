@@ -132,8 +132,8 @@
 
 		build: function ( file, uploader ) {
 
-			// Auto category
-			if ( msuVars.showAutoCat && mw.config.get( 'wgNamespaceNumber' ) === 14 ) {
+			// Show auto-category (AutoCat) checkbox?
+			if ( msuVars.showAutoCat && mw.config.get( 'wgCanonicalNamespace' ) === 'Category' ) {
 				file.cat = msuVars.checkAutoCat; // Predefine
 				$( '<input>' ).attr( {
 					'class': 'msupload-check-index',
@@ -365,15 +365,21 @@
 		},
 
 		onBeforeUpload: function ( uploader, file ) {
+			var editComment = mw.message( 'msu-comment' ).plain();
 			file.li.title.text( file.name ).show(); // Show title
 			$( '#' + file.id + ' .file-name-input' ).hide(); // Hide the file name input
 			$( '#' + file.id + ' .file-extension' ).hide(); // Hide the file extension
+			// Add auto-category (AutoCat) to the edit-comment if requested and we're in a Category page.
+			if ( file.cat && mw.config.get( 'wgCanonicalNamespace' ) === 'Category' ) {
+				// wgPageName already includes the 'Category:' prefix.
+				editComment += '\n\n[[' + mw.config.get( 'wgPageName' ) + ']]';
+			}
 			uploader.settings.multipart_params = {
 				filename: file.name,
 				token: mw.user.tokens.get( 'editToken' ),
 				action: 'upload',
 				ignorewarnings: true,
-				comment: mw.message( 'msu-comment' ).plain(),
+				comment: editComment,
 				format: 'json'
 			}; // Set multipart_params
 			$( '#' + file.id + ' .file-progress-state' ).text( '0%' );
@@ -408,13 +414,6 @@
 					file.li.addClass( 'green' );
 					file.li.warning.fadeOut( 'fast' );
 
-					if ( file.cat && mw.config.get( 'wgNamespaceNumber' ) === 14 ) { // Should the categroy be set?
-						$.get( mw.util.wikiScript(), {
-							action: 'ajax',
-							rs: 'MsUpload\\Hooks::saveCat',
-							rsargs: [ file.name, mw.config.get( 'wgPageName' ) ]
-						}, 'json' );
-					}
 					$( '<a>' ).text( mw.msg( 'msu-insert-link' ) ).click( function () {
 						if ( msuVars.useMsLinks === true ) {
 							MsUpload.insertText( '{{#l:' + file.name + '}}' ); // Insert link
