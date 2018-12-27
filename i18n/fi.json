@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nike"
+			"Nike",
+			"Pyscowicz"
 		]
 	},
-	"msu-insert-image": "Lisää kuva",
-	"msu-insert-video": "Lisää elokuva",
+	"msu-insert-image": "Lisää kuvana",
+	"msu-insert-video": "Lisää video",
 	"msu-cancel-upload": "Peru tallennus",
 	"msu-dropzone": "Pudota tiedostoja tähän"
 }
