@@ -167,6 +167,8 @@
 	font-size: 80%;
 	padding: 2px 5px;
 	font-style: italic;
+	display: block;
+	margin-left: 35px;
 }
 
 #msupload-list .file .file-warning p {
@@ -177,6 +179,7 @@
 	display: none;
 	position: absolute;
 	right: 10px;
+	z-index: 10;
 }
 #msupload-list .file .file-warning div.thumbinner {
 	background: none;
@@ -247,4 +250,3 @@
 #wikiEditor-section-advanced .options {
 	z-index: 1;
 }
-

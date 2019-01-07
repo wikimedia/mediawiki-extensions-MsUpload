@@ -1,4 +1,4 @@
-( function ( $, mw  ) {
+( function ( $, mw ) {
 	var msuVars = mw.config.get( 'msuVars' );
 	var MsUpload = {
 
@@ -43,6 +43,16 @@
 		},
 
 		unconfirmedReplacements: 0,
+
+		countUnconfirmed: function ( uploader ) {
+			var count = 0;
+			uploader.files.forEach( function ( file ) {
+				if ( file.li.unconfirmed ) {
+					count++;
+				}
+			} );
+			MsUpload.unconfirmedReplacements = count;
+		},
 		warningText: function ( fileItem, warning, uploader ) {
 			switch ( warning ) {
 				case '':
@@ -63,7 +73,7 @@
 					// IMPORTANT! The code below assumes that every warning not captured by the code above is about a file being replaced
 					$( fileItem.warning ).html( warning );
 
-					// We break when the particula warning when a file name starts with IMG
+					// We break when the particular warning when a file name starts with IMG
 					if ( warning.indexOf( 'The name of the file you are uploading begins with' ) === 0 ) {
 						break; // When the file name starts with "IMG", MediaWiki issues this warning. Display it and continue.
 					}
@@ -84,18 +94,17 @@
 					 * so the confirmation message must be kept generic enough
 					 */
 					if ( msuVars.confirmReplace ) {
-
-						MsUpload.unconfirmedReplacements++;
+						fileItem.unconfirmed = true;
 
 						var title = $( fileItem.warning ).siblings( '.file-name' );
 
 						var checkbox = $( '<input>' ).attr( 'type', 'checkbox' ).click( function () {
 							if ( $( this ).is( ':checked' ) ) {
 								title.show().next().hide();
-								MsUpload.unconfirmedReplacements--;
+								fileItem.unconfirmed = false;
 							} else {
 								title.hide().next().show().select();
-								MsUpload.unconfirmedReplacements++;
+								fileItem.unconfirmed = true;
 							}
 							uploader.trigger( 'CheckFiles' );
 						} );
@@ -108,42 +117,44 @@
 		},
 
 		checkUploadWarning: function ( filename, fileItem, uploader ) {
-			$.ajax( { url: mw.util.wikiScript( 'api' ), dataType: 'json', type: 'POST',
-			data: {
-				format: 'json',
-				action: 'query',
-				titles: 'File:' + filename,
-				prop: 'imageinfo',
-				iiprop: 'uploadwarning'
-			}, success: function ( data ) {
-				if ( data && data.query && data.query.pages ) {
-					var pages = data.query.pages;
-					$.each( pages, function ( index, value ) {
-						MsUpload.warningText( fileItem, value.imageinfo[ 0 ].html, uploader ); // Pass on the warning message
-						return false; // Break out
-					} );
-				} else {
-					MsUpload.warningText( fileItem, 'Error: Unknown result from API', uploader );
+			$.ajax( {
+				url: mw.util.wikiScript( 'api' ), dataType: 'json', type: 'POST',
+				data: {
+					format: 'json',
+					action: 'query',
+					titles: 'File:' + filename,
+					prop: 'imageinfo',
+					iiprop: 'uploadwarning'
+				}, success: function ( data ) {
+					if ( data && data.query && data.query.pages ) {
+						var pages = data.query.pages;
+						$.each( pages, function ( index, value ) {
+							MsUpload.warningText( fileItem, value.imageinfo[ 0 ].html, uploader ); // Pass on the warning message
+							return false; // Break out
+						} );
+					} else {
+						MsUpload.warningText( fileItem, 'Error: Unknown result from API', uploader );
+					}
+				}, error: function () {
+					MsUpload.warningText( fileItem, 'Error: Request failed', uploader );
 				}
-			}, error: function () {
-				MsUpload.warningText( fileItem, 'Error: Request failed', uploader );
-			} } );
+			} );
 		},
 
 		build: function ( file, uploader ) {
 
 			// Show auto-category (AutoCat) checkbox?
 			if ( msuVars.showAutoCat && mw.config.get( 'wgCanonicalNamespace' ) === 'Category' ) {
-				file.cat = msuVars.checkAutoCat; // Predefine
+				file.cat = msuVars.checkAutoCat; // Predefined
 				$( '<input>' ).attr( {
 					'class': 'msupload-check-index',
 					type: 'checkbox',
 					checked: file.cat
 				} ).change( function () {
 					file.cat = this.checked; // Save
-				} ).appendTo( file.li );
+				} ).insertBefore( file.li.warning );
 
-				$( '<span>' ).attr( 'class', 'msupload-check-span' ).text( mw.config.get( 'wgPageName' ).replace( /_/g, ' ' ) ).appendTo( file.li );
+				$( '<span>' ).attr( 'class', 'msupload-check-span' ).text( mw.config.get( 'wgPageName' ).replace( /_/g, ' ' ) ).insertBefore( file.li.warning );
 			}
 
 			// Insert an input field for changing the file title
@@ -155,7 +166,8 @@
 			} ).change( function () {
 				file.name = this.value + '.' + file.extension;
 				$( this ).prev().text( file.name );
-				MsUpload.unconfirmedReplacements = 0; // Hack! If the user renames a file to avoid replacing it, this forces the Upload button to appear, but it also does when a user just renames a file that wasn't about to replace another
+				file.li.unconfirmed = false;
+				MsUpload.countUnconfirmed( uploader );
 				MsUpload.checkUploadWarning( this.value, file.li, uploader );
 			} ).keydown( function ( event ) {
 				// For convenience, when pressing enter, save the new title
@@ -243,11 +255,12 @@
 		},
 
 		cleanAll: function () {
+			MsUpload.unconfirmedReplacements = 0;
 			MsUpload.galleryArray.length = 0; // Reset
 			MsUpload.uploader.splice( 0, MsUpload.uploader.files.length );
 			$( '#msupload-list .file' ).hide( 'fast', function () {
 				$( this ).remove();
-				$( '#msupload-insert-gallery' ).unbind( 'click' );
+				$( '#msupload-insert-gallery' ).off( 'click' );
 				$( '#msupload-bottom' ).hide();
 			} );
 		},
@@ -273,7 +286,7 @@
 			uploadDiv.append( statusDiv, uploadDrop, uploadList, bottomDiv );
 			$( '#wikiEditor-ui-toolbar' ).after( uploadDiv );
 			uploadContainer.append( uploadButton );
-			$( '#wikiEditor-ui-toolbar .group-insert' ).append( uploadContainer );
+			$( '#wikiEditor-section-main .group-insert' ).append( uploadContainer );
 
 			// Create the Uploader object
 			MsUpload.uploader = new plupload.Uploader( {
@@ -301,11 +314,30 @@
 			MsUpload.uploader.bind( 'UploadComplete', MsUpload.onCheckFiles );
 
 			startButton.click( function ( event ) {
+				// Handle upload good request
+				if ( this.text === mw.msg( 'msu-upload-good' ) ) {
+					var remove = [];
+					var file = [];
+					for ( var x in MsUpload.uploader.files ) {
+						file = MsUpload.uploader.files[ x ];
+						if ( typeof file.li.unconfirmed !== 'undefined' && file.li.unconfirmed !== false ) {
+							remove.push( file );
+						}
+					}
+					var removeThis = function () {
+						$( this ).remove();
+					};
+					for ( var i in remove ) {
+						MsUpload.uploader.removeFile( remove[ i ] );
+						$( '#' + remove[ i ].id ).hide( 'fast', removeThis );
+					}
+					MsUpload.countUnconfirmed( MsUpload.uploader );
+				}
 				MsUpload.uploader.start();
 				event.preventDefault();
 			} );
 
-			// Initialise
+			// Initialize
 			MsUpload.uploader.init();
 		},
 
@@ -314,11 +346,11 @@
 			$( '#msupload-container' ).removeClass( 'start-loading' );
 			if ( uploader.features.dragdrop && msuVars.useDragDrop ) {
 				$( '#msupload-dropzone' ).text( mw.msg( 'msu-dropzone' ) ).show();
-				$( '#msupload-dropzone' ).bind( 'dragover', function () {
+				$( '#msupload-dropzone' ).on( 'dragover', function () {
 					$( this ).addClass( 'drop-over' ).css( 'padding', 20 );
-				} ).bind( 'dragleave', function () {
+				} ).on( 'dragleave', function () {
 					$( this ).removeClass( 'drop-over' ).css( 'padding', 0 );
-				} ).bind( 'drop', function () {
+				} ).on( 'drop', function () {
 					$( this ).removeClass( 'drop-over' ).css( 'padding', 0 );
 				} );
 			} else {
@@ -400,13 +432,13 @@
 
 		onFileUploaded: function ( uploader, file, success ) {
 			mw.log( success );
-			file.li.title.unbind( 'click' );
-			file.li.title.unbind( 'mouseover' );
+			file.li.title.off( 'click' );
+			file.li.title.off( 'mouseover' );
 			$( '#' + file.id + ' .file-cancel' ).fadeOut( 'fast' );
 			$( '#' + file.id + ' .file-progress-state' ).fadeOut( 'fast' );
 
 			try {
-				var result = $.parseJSON( success.response );
+				var result = JSON.parse( success.response );
 				if ( result.error ) {
 					MsUpload.fileError( uploader, file, result.error.info );
 				} else {
@@ -449,23 +481,37 @@
 		},
 
 		onCheckFiles: function ( uploader ) {
+			MsUpload.countUnconfirmed( uploader );
 			var filesLength = uploader.files.length,
 				listLength = $( '#msupload-list li' ).length;
+			mw.log( 'files: ' + filesLength + ', gallery: ' + MsUpload.galleryArray.length + ', list: ' + listLength + ', unconfirmed: ' + MsUpload.unconfirmedReplacements );
 
-			mw.log( 'files: ' + filesLength + ', gallery: ' + MsUpload.galleryArray.length + ', list: ' + listLength );
-
-			if ( filesLength ) {
-				$( '#msupload-bottom' ).show();
-				if ( filesLength === 1 ) {
-					$( '#msupload-files' ).text( mw.msg( 'msu-upload-this' ) ).show();
-				} else {
-					$( '#msupload-files' ).text( mw.msg( 'msu-upload-all' ) ).show();
-				}
-			} else {
-				$( '#msupload-files' ).hide();
+			var showUpload = false;
+			var uploadMsg = '';
+			// Show Upload This File when only one file and its confirmed
+			if ( filesLength === 1 && MsUpload.unconfirmedReplacements === 0 ) {
+				showUpload = true;
+				uploadMsg = mw.msg( 'msu-upload-this' );
 			}
 
-			if ( MsUpload.unconfirmedReplacements ) {
+			if ( filesLength > 1 ) {
+				// Show Upload All Files when more than one file and all are confirmed
+				if ( MsUpload.unconfirmedReplacements === 0 ) {
+					showUpload = true;
+					uploadMsg = mw.msg( 'msu-upload-all' );
+				}
+
+				// Show Upload Good Files when there are a mix of good and unconfirmed files
+				if ( filesLength > MsUpload.unconfirmedReplacements && MsUpload.unconfirmedReplacements !== 0 ) {
+					showUpload = true;
+					uploadMsg = mw.msg( 'msu-upload-good', filesLength - MsUpload.unconfirmedReplacements, filesLength );
+				}
+			}
+
+			if ( showUpload ) {
+				$( '#msupload-bottom' ).show();
+				$( '#msupload-files' ).text( uploadMsg ).show();
+			} else {
 				$( '#msupload-files' ).hide();
 			}
 

@@ -1,6 +1,6 @@
 {
 	"name": "MsUpload",
-	"version": "13.0",
+	"version": "13.1",
 	"author": [
 		"[mailto:wiki@ratin.de Martin Schwindl]",
 		"[mailto:wiki@keyler-consult.de Martin Keyler]",
@@ -39,6 +39,7 @@
 				"msu-ext-not-allowed",
 				"msu-upload-this",
 				"msu-upload-all",
+				"msu-upload-good",
 				"msu-dropzone",
 				"msu-comment"
 			]

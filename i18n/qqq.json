@@ -21,6 +21,7 @@
 	"msu-ext-not-allowed": "Message that alerts the user that one or more of the selected files are of a forbidden type.\n$1 is the number of file types listed after this message. It is to used for PLURAL.",
 	"msu-upload-this": "Button for uploading the selected file.",
 	"msu-upload-all": "Button for uploading all the selected files.",
+	"msu-upload-good": "Button for uploading files that can be uploaded. Provides a count of files from the total. \n$1 is the number of files to be uploaded and $2 is the number of files total.",
 	"msu-dropzone": "Message in the area where files can be dropped.",
 	"msu-comment": "Comment left as an edit summary when uploading a file, and in the page of the uploaded file."
 }
