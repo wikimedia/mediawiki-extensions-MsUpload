@@ -20,6 +20,7 @@
 	"msu-ext-not-allowed": "Solo {{PLURAL:$1|il seguente tipo di file è permesso|i seguenti tipi di file sono permessi}}:",
 	"msu-upload-this": "Carica questo file",
 	"msu-upload-all": "Carica tutti i file",
+	"msu-upload-good": "Caricati $1 di $2 file",
 	"msu-dropzone": "Posiziona i file qui",
 	"msu-comment": "MsUpload"
 }

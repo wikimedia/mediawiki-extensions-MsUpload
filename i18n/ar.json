@@ -20,6 +20,7 @@
 	"msu-ext-not-allowed": "الملف {{PLURAL:$1|type is|types are}} متاح فقط:",
 	"msu-upload-this": "رفع هذا الملف",
 	"msu-upload-all": "رفع جميع الملفات",
+	"msu-upload-good": "رفع $1 من الملفات الـ$2",
 	"msu-dropzone": "إسقاط الملفات هنا",
 	"msu-comment": "الملف الذي تم رفعه باستخدام MsUpload"
 }

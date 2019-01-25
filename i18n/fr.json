@@ -25,6 +25,7 @@
 	"msu-ext-not-allowed": "Seulement {{PLURAL:$1|le type de fichier suivant est autorisé|les types de fichiers suivants sont autorisés}} :",
 	"msu-upload-this": "Téléverser ce fichier",
 	"msu-upload-all": "Téléverser tous les fichiers",
+	"msu-upload-good": "Téléversement de $1 sur $2 fichiers",
 	"msu-dropzone": "Glisser ici les fichiers",
 	"msu-comment": "Fichier téléversé avec MsUpload"
 }
