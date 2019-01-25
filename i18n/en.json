@@ -20,7 +20,7 @@
 	"msu-ext-not-allowed": "Only the following file {{PLURAL:$1|type is|types are}} allowed:",
 	"msu-upload-this": "Upload this file",
 	"msu-upload-all": "Upload all files",
-	"msu-upload-good": "Upload $1 of $2 files",
+	"msu-upload-good": "Upload $1 of $2 {{PLURAL:$2|file|files}}",
 	"msu-dropzone": "Drop files here",
 	"msu-comment": "File uploaded with MsUpload"
 }
