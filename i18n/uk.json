@@ -20,6 +20,7 @@
 	"msu-ext-not-allowed": "Дозволено лише {{PLURAL:$1|такий тип|такі типи}} файлів:",
 	"msu-upload-this": "Завантажити цей файл",
 	"msu-upload-all": "Завантажити усі файли",
+	"msu-upload-good": "Завантажити $1 із $2 файлів",
 	"msu-dropzone": "Перемістіть файли сюди",
 	"msu-comment": "Файл завантажений з MsUpload"
 }
