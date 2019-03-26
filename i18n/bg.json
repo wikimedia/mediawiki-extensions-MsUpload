@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"Ted Masters"
 		]
 	},
-	"msu-upload-good": "Качване $1 от $2 файла"
+	"msu-upload-good": "Качване $1 от $2 {{PLURAL:$2|файл|файла}}"
 }

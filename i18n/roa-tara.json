@@ -4,5 +4,6 @@
 			"Joetaras"
 		]
 	},
-	"msu-clean-all": "Pulizze l'elenghe"
+	"msu-clean-all": "Pulizze l'elenghe",
+	"msu-upload-good": "Carecamende $1 de $2 {{PLURAL:$2|file}}"
 }

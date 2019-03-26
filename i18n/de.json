@@ -19,7 +19,7 @@
 	"msu-ext-not-allowed": "Es {{PLURAL:$1|ist nur folgender Dateityp|sind nur folgende Dateitypen}} erlaubt:",
 	"msu-upload-this": "Diese Datei hochladen",
 	"msu-upload-all": "Alle Dateien hochladen",
-	"msu-upload-good": "$1 von $2 Dateien hochladen",
+	"msu-upload-good": "$1 von {{PLURAL:$2|einer Datei|$2 Dateien}} hochladen",
 	"msu-dropzone": "Datei(en) hier ablegen",
 	"msu-comment": "Datei hochgeladen mit MsUpload"
 }
