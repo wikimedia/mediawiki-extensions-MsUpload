@@ -21,7 +21,7 @@
 	"msu-ext-not-allowed": "只允許上傳下列{{PLURAL:$1|類型|類型}}檔案：",
 	"msu-upload-this": "上傳此檔案",
 	"msu-upload-all": "上傳所有檔案",
-	"msu-upload-good": "上傳 $2 個中的 $1 個檔案",
+	"msu-upload-good": "上傳 $2 個中的 $1 個{{PLURAL:$2|檔案}}",
 	"msu-dropzone": "拖曳檔案到此處",
 	"msu-comment": "使用 MsUpload 上傳檔案"
 }

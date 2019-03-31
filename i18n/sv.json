@@ -18,6 +18,7 @@
 	"msu-ext-not-allowed": "Endast följande {{PLURAL:$1|filtyp|filtyper}} tillåts:",
 	"msu-upload-this": "Ladda upp denna fil",
 	"msu-upload-all": "Ladda upp alla filer",
+	"msu-upload-good": "Ladda upp $1 av $2 {{PLURAL:$2|fil|filer}}",
 	"msu-dropzone": "Släpp filer här",
 	"msu-comment": "Fil laddades upp med MsUpload"
 }
