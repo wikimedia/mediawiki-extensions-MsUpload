@@ -8,5 +8,6 @@
 	"msu-insert-image": "Lisää kuvana",
 	"msu-insert-video": "Lisää video",
 	"msu-cancel-upload": "Peru tallennus",
+	"msu-upload-good": "Tallenna $1/$2 {{PLURAL:$2|tiedosto|tiedostoa}}",
 	"msu-dropzone": "Pudota tiedostoja tähän"
 }
