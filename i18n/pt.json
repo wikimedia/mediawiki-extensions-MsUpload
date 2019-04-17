@@ -22,7 +22,7 @@
 	"msu-ext-not-allowed": "Só {{PLURAL:$1|é permitido o seguinte tipo de ficheiro|são permitidos os seguintes tipos de ficheiro}}:",
 	"msu-upload-this": "Carregar este ficheiro",
 	"msu-upload-all": "Carregar todos os ficheiros",
-	"msu-upload-good": "Carregar $1 de $2 ficheiros",
+	"msu-upload-good": "Carregar $1 de $2 {{PLURAL:$2|ficheiro|ficheiros}}",
 	"msu-dropzone": "Solte os ficheiros aqui",
 	"msu-comment": "Ficheiro carregado com MsUpload"
 }
