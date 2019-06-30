@@ -4,6 +4,21 @@
 			"Joetaras"
 		]
 	},
+	"msu-desc": "Abbilite le carecaminde facile pe 'nu file o cchiù file 'nzieme",
+	"msu-button-title": "Scacchie le file",
+	"msu-insert-link": "'Nzerisce 'nu collegamende",
+	"msu-insert-gallery": "'Nzerisce tutte cumme gallerie",
+	"msu-insert-files": "'Nzerisce tutte cumme file",
+	"msu-insert-links": "'Nzerisce tutte cumme collegaminde",
+	"msu-insert-image": "'Nzerisce cumme immaggine",
+	"msu-insert-video": "'Nzerisce 'u video",
+	"msu-cancel-upload": "Annulle 'u carecamende",
+	"msu-continue": "Condinue 'u stesse?",
 	"msu-clean-all": "Pulizze l'elenghe",
-	"msu-upload-good": "Carecamende $1 de $2 {{PLURAL:$2|file}}"
+	"msu-ext-not-allowed": "Sulamende {{PLURAL:$1|stu tipe de file jè|ste tipe file sò}} permesse:",
+	"msu-upload-this": "Careche stu file",
+	"msu-upload-all": "Careche tutte le file",
+	"msu-upload-good": "Carecamende $1 de $2 {{PLURAL:$2|file}}",
+	"msu-dropzone": "Scitte le file aqquà",
+	"msu-comment": "File carecate cu MsUpload"
 }
