@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geopoet"
+			"Geopoet",
+			"Brazal.dang"
 		]
 	},
-	"msu-insert-video": "Isingit an sine",
+	"msu-insert-video": "Isingit an vidyo",
 	"msu-ext-not-allowed": "An sagunson sana na arog kaining {{PLURAL:$1|tipo|mga tipo}} an pinagtutugot:",
 	"msu-upload-all": "Ikarga an gabos na mga sagunson",
 	"msu-dropzone": "Hulugon an mga sagunson digde"
