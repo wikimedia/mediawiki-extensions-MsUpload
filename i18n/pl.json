@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
 	"msu-desc": "Umożliwia łatwe przesyłanie jednego pliku lub jednocześnie wielu plików",
@@ -18,6 +19,7 @@
 	"msu-ext-not-allowed": "{{PLURAL:$1|Dozwolony jest następujący typ pliku|Dozwolone są następujące typy plików}}:",
 	"msu-upload-this": "Prześlij ten plik",
 	"msu-upload-all": "Prześlij wszystkie pliki",
+	"msu-upload-good": "Prześlij $1 z $2 {{PLURAL:$2|pliku|plików}}",
 	"msu-dropzone": "Przeciągnij pliki tutaj",
 	"msu-comment": "Plik przesłany za pomocą MsUpload"
 }
