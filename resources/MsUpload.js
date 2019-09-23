@@ -408,7 +408,7 @@
 			}
 			uploader.settings.multipart_params = {
 				filename: file.name,
-				token: mw.user.tokens.get( 'editToken' ),
+				token: mw.user.tokens.get( 'csrfToken' ),
 				action: 'upload',
 				ignorewarnings: true,
 				comment: editComment,
