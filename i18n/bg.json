@@ -2,8 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Vlad5250",
-			"Ted Masters"
+			"Ted Masters",
+			"StanProg"
 		]
 	},
+	"msu-cancel-upload": "Отмяна на качването",
 	"msu-upload-good": "Качване $1 от $2 {{PLURAL:$2|файл|файла}}"
 }
