@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"msu-desc": "Slå på enkle opplastinger for én fil eller flere filer samtidig",
+	"msu-button-title": "Velg filer",
+	"msu-insert-link": "Sett inn lenke",
+	"msu-insert-gallery": "Sett inn alle som galleri",
+	"msu-insert-files": "Sett inn alle som filer",
+	"msu-insert-links": "Sett inn alle som lenker",
+	"msu-insert-image": "Sett inn som bilde",
+	"msu-insert-video": "Sett inn video",
+	"msu-cancel-upload": "Avbryt opplasting",
+	"msu-continue": "Fortsette likevel?",
+	"msu-clean-all": "Tøm listen",
+	"msu-ext-not-allowed": "Kun {{PLURAL:$1|den|de}} følgende {{PLURAL:$1|filtypen|filtypene}} er tillatt:",
+	"msu-upload-this": "Last opp denne fila",
+	"msu-upload-all": "Last opp alle filer",
+	"msu-upload-good": "Last opp $1 av $2 {{PLURAL:$2|fil|filer}}",
+	"msu-dropzone": "Slipp filer her",
+	"msu-comment": "Filopplasting med MsUpload"
+}
