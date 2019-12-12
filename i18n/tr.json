@@ -4,12 +4,25 @@
 			"Ömer Berkay",
 			"Kincki",
 			"KorkmazO",
-			"Sayginer"
+			"Sayginer",
+			"BaRaN6161 TURK"
 		]
 	},
 	"msu-desc": "Aynı anda tek bir dosya veya birden fazla dosya için kolay yükleme sağlar",
+	"msu-button-title": "Dosyaları seç",
+	"msu-insert-link": "Bağlantı ekle",
+	"msu-insert-gallery": "Tümünü galeri olarak ekle",
+	"msu-insert-files": "Tümünü dosya olarak ekle",
+	"msu-insert-links": "Tümünü bağlantı olarak ekle",
+	"msu-insert-image": "Resim olarak ekle",
 	"msu-insert-video": "Video ekle",
+	"msu-cancel-upload": "Yüklemeyi iptal et",
+	"msu-continue": "Yine de devam edilsin mi?",
+	"msu-clean-all": "Listeyi temizle",
 	"msu-ext-not-allowed": "Sadece aşağıdaki dosya {{ÇOĞUL:$1|tipi|tipleri}} kullanılabilir:",
 	"msu-upload-this": "Dosyayı yükle",
-	"msu-upload-all": "Tüm dosyaları yükle"
+	"msu-upload-all": "Tüm dosyaları yükle",
+	"msu-upload-good": "$1 ile $2 {{PLURAL:$2|dosya|dosya}} yükle",
+	"msu-dropzone": "Dosyaları buraya bırak",
+	"msu-comment": "MsUpload ile yüklenen dosya"
 }
