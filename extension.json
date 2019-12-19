@@ -10,6 +10,9 @@
 	"descriptionmsg": "msu-desc",
 	"license-name": "GPL-2.0-or-later",
 	"type": "parserhook",
+	"requires" : {
+		"MediaWiki": ">= 1.32.0"
+	},
 	"MessagesDirs": {
 		"MsUpload": [
 			"i18n"
@@ -23,7 +26,6 @@
 			"scripts": [
 				"resources/MsUpload.js"
 			],
-			"dependencies": "jquery.ui.progressbar",
 			"styles": "resources/MsUpload.css",
 			"messages": [
 				"msu-button-title",
