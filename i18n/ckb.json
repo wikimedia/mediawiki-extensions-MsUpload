@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Pirehelokan"
+			"Pirehelokan",
+			"ئارام بکر"
 		]
 	},
 	"msu-button-title": "پەڕگەکان ھەڵبژێرە",
@@ -10,7 +11,7 @@
 	"msu-insert-files": "ھەموویان وەکوو فایل زیاد بکە",
 	"msu-insert-links": "ھەموویان وەکوو بەستەر زیاد بکە",
 	"msu-insert-image": "وێنە زیاد بکە",
-	"msu-insert-video": "فیلم زیاد بکە",
+	"msu-insert-video": "ڤیدیۆ زیاد بکە",
 	"msu-cancel-upload": "بارکردن پووچەڵ بکەرەوە",
 	"msu-clean-all": "لیستەکە پاک بکەرەوە",
 	"msu-ext-not-allowed": "تەنیا ئەم جۆرە فایلانە ڕێگەیان پێ دراوە:",
