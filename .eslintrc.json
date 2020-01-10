@@ -16,6 +16,7 @@
 		"no-jquery/no-animate-toggle": "off",
 		"camelcase": "off",
 		"no-jquery/no-each-util": "off",
-		"no-jquery/no-fade": "off"
+		"no-jquery/no-fade": "off",
+		"no-jquery/variable-pattern": "warn"
 	}
 }
