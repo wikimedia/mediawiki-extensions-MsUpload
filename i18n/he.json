@@ -2,20 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"JNF",
-			"Amire80"
+			"Amire80",
+			"Ghsuvr"
 		]
 	},
 	"msu-desc": "מאפשר העלאת קבצים בקלות. כולל אפשרות לקבצים מרובים וממשק גרירת קבצים",
 	"msu-button-title": "בחרו קבצים",
 	"msu-insert-link": "הכנס קישור",
 	"msu-insert-gallery": "הפוך תמונות לגלריה",
-	"msu-insert-image": "הכנס תמונה",
-	"msu-insert-video": "הכנס סרטון",
+	"msu-insert-image": "להכניס כתמונה",
+	"msu-insert-video": "להכניס סרטון",
 	"msu-cancel-upload": "ביטול ההעלאה",
 	"msu-clean-all": "נקה רשימה",
-	"msu-ext-not-allowed": "רק סוגי הקבצים הבאים מורשים:",
-	"msu-upload-this": "לחצו כאן להעלאת קובץ זה",
-	"msu-upload-all": "לחצו כאן להעלאת כל הקבצים",
+	"msu-ext-not-allowed": "רק {{PLURAL:$1|סוג הקובץ הבא מורשה|סוגי הקבצים הבאים מורשים}}:",
+	"msu-upload-this": "להעלות קובץ זה",
+	"msu-upload-all": "להעלות את כל הקבצים",
 	"msu-dropzone": "גררו קבצים לכאן",
 	"msu-comment": "MsUpload"
 }
