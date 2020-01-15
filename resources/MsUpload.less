@@ -1,3 +1,5 @@
+@import 'mediawiki.ui/variables';
+
 #msupload-container {
 	display: inline-block;
 	padding: 3px;
@@ -17,18 +19,19 @@
 }
 
 #msupload-select:hover {
-	opacity: 0.7; 
+	opacity: 0.7;
 	zoom: 1;
 }
 
 #msupload-div {
 	padding: 0;
-	background: #657d91;
-	border: 1px solid #aaa;
+	background: @colorGray15;
+	border-top: 1px solid @colorGray12;
 	z-index: 0;
-} 
+}
 
 #msupload-div a {
+	color: @colorProgressive;
 	cursor: pointer;
 }
 
@@ -39,15 +42,14 @@
 #msupload-dropzone {
 	margin: 3px;
 	padding: 5px;
-	border: 1px dashed #ddd;
+	border: 1px dashed @colorFieldBorder;
 	text-align: center;
 	height: 20px;
-	color: #fff;
+	color: @colorGray2;
 }
 
 .drop-over {
-	background: #7092ad;
-	border: 3px dashed #aaa;
+	background-color: @backgroundColorSuccess;
 }
 
 #msupload-list {
@@ -57,23 +59,23 @@
 }
 
 #msupload-list .file {
-	background: #dee9e9;
-	border-top: 1px solid #657d91;
+	background: @colorShadow;
+	border-top: 1px solid @colorGray12;
 	margin: 0;
 	padding: 10px;
 	position: relative;
 }
 
 #msupload-list .green {
-	background: #a8dba8;
+	background: @backgroundColorSuccess;
 }
 
 #msupload-list .yellow {
-	background: #f9cdad;
+	background: @backgroundColorWarning;
 }
 
 #msupload-list .red {
-	background: #f9cdad;
+	background: @backgroundColorError;
 }
 
 #msupload-list .file .file-type {
@@ -153,7 +155,7 @@
 }
 
 #msupload-list .file .file-cancel:hover {
-	opacity: 0.7; 
+	opacity: 0.7;
 }
 
 #msupload-list .file .file-loading {
@@ -223,13 +225,12 @@
 }
 
 #msupload-bottom {
-	 text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+	border-top: 1px solid @colorGray12;
 	 padding: 8px;
 	 height: 22px;
 }
 
 #msupload-bottom a {
-	color: white;
 	font-weight: bold;
 	margin-right: 20px;
 }
