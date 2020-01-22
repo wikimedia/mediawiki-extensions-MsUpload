@@ -290,14 +290,14 @@
 
 			// Create the Uploader object
 			MsUpload.uploader = new plupload.Uploader( {
-				runtimes: 'html5,flash,silverlight,html4',
-				browse_button: 'msupload-select',
-				container: 'msupload-container',
-				max_file_size: msuVars.uploadsize,
-				drop_element: 'msupload-dropzone',
-				url: msuVars.scriptPath + '/api.php',
-				flash_swf_url: msuVars.flash_swf_url,
-				silverlight_xap_url: msuVars.silverlight_xap_url
+				'runtimes': 'html5,flash,silverlight,html4',
+				'browse_button': 'msupload-select',
+				'container': 'msupload-container',
+				'max_file_size': msuVars.uploadsize,
+				'drop_element': 'msupload-dropzone',
+				'url': msuVars.scriptPath + '/api.php',
+				'flash_swf_url': msuVars.flash_swf_url,
+				'silverlight_xap_url': msuVars.silverlight_xap_url
 			} );
 
 			// Bind events
@@ -406,6 +406,7 @@
 				// wgPageName already includes the 'Category:' prefix.
 				editComment += '\n\n[[' + mw.config.get( 'wgPageName' ) + ']]';
 			}
+			// eslint-disable-next-line camelcase
 			uploader.settings.multipart_params = {
 				filename: file.name,
 				token: mw.user.tokens.get( 'csrfToken' ),
