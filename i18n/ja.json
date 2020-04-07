@@ -2,8 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kouichi Nishizawa",
-			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"Sujiniku"
 		]
 	},
 	"msu-desc": "ひとつまたは複数のファイルを同時にアップロードできるようにする",

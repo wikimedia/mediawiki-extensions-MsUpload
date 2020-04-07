@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fitoschido",
 			"Hernan Hegykozi",
-			"Macofe",
-			"Fitoschido"
+			"Macofe"
 		]
 	},
 	"msu-desc": "Permite la subida sencilla de uno o varios archivos al mismo tiempo",

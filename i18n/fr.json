@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brenloch56",
+			"Gomoko",
 			"Marc MORA",
+			"Orlodrim",
+			"Thibaut120094",
+			"TomT0m",
 			"Windes",
 			"Wladek92",
-			"TomT0m",
-			"Orlodrim",
-			"Gomoko",
-			"Brenloch56",
-			"Yzelf",
-			"Thibaut120094"
+			"Yzelf"
 		]
 	},
 	"msu-desc": "Permet les téléversements faciles d'un seul ou de plusieurs fichiers en même temps",

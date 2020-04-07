@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"teokraba",
+			"Beta16",
+			"F. Cosoleto",
 			"Fringio",
 			"The Polish",
-			"F. Cosoleto",
-			"Beta16"
+			"teokraba"
 		]
 	},
 	"msu-desc": "Consente il caricamento veloce per uno o più file contemporaneamente",

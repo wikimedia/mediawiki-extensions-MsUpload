@@ -1,11 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Elroy",
 			"FabianRM",
-			"Sjoerddebruin",
-			"Romaine",
 			"Mainframe98",
-			"Elroy"
+			"Romaine",
+			"Sjoerddebruin"
 		]
 	},
 	"msu-desc": "Staat enkele of meerdere gelijktijdige uploads toe",

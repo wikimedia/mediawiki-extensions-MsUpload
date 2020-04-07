@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"alexandr",
-			"Okras",
 			"Iniquity",
+			"Movses",
+			"Okras",
 			"Shaleych",
 			"Vlad5250",
-			"Movses"
+			"alexandr"
 		]
 	},
 	"msu-desc": "Позволяет удобно загружать один или несколько файлов одновременно",
