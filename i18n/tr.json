@@ -19,7 +19,7 @@
 	"msu-cancel-upload": "Yüklemeyi iptal et",
 	"msu-continue": "Yine de devam edilsin mi?",
 	"msu-clean-all": "Listeyi temizle",
-	"msu-ext-not-allowed": "Sadece aşağıdaki dosya {{ÇOĞUL:$1|tipi|tipleri}} kullanılabilir:",
+	"msu-ext-not-allowed": "Sadece aşağıdaki dosya {{PLURAL:$1|tipi|tipleri}} kullanılabilir:",
 	"msu-upload-this": "Dosyayı yükle",
 	"msu-upload-all": "Tüm dosyaları yükle",
 	"msu-upload-good": "$1 ile $2 {{PLURAL:$2|dosya|dosya}} yükle",
