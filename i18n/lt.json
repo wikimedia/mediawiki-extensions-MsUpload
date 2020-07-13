@@ -1,7 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Manvydasz"
+			"Manvydasz",
+			"Vitas Povilaitis",
+			"Zygimantus"
 		]
 	},
 	"msu-desc": "Leidžia lengviau pakrauti vieną arba keletą failų vienu metu. Yra galimybė naudoti drag&drop.",
