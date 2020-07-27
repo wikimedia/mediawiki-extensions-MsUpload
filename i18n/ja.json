@@ -19,6 +19,7 @@
 	"msu-ext-not-allowed": "次の{{PLURAL:$1|形式|形式}}のファイルのみアップロードできます:",
 	"msu-upload-this": "このファイルをアップロード",
 	"msu-upload-all": "すべてのファイルをアップロード",
+	"msu-upload-good": "$2 {{PLURAL:$2|ファイル}}中 $1 ファイルをアップロード",
 	"msu-dropzone": "ファイルをここにドロップしてください",
 	"msu-comment": "MsUpload によるアップロード"
 }
