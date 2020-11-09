@@ -52,7 +52,7 @@
 		"remoteExtPath": "MsUpload"
 	},
 	"Hooks": {
-		"EditPage::showEditForm:initial": "MsUpload\\Hooks::start"
+		"EditPage::showEditForm:initial": "MsUpload\\Hooks::onEditPageShowEditFormInitial"
 	},
 	"config": {
 		"MSU_useDragDrop": true,

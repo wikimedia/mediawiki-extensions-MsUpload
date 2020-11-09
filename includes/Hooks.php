@@ -2,21 +2,31 @@
 
 namespace MsUpload;
 
+use EditPage;
+use OutputPage;
+
 class Hooks {
 	/**
 	 * Main Function
 	 *
+	 * @param EditPage $editPage
+	 * @param OutputPage $out
 	 * @return bool
 	 */
-	public static function start() {
-		global $wgOut, $wgScriptPath, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_checkAutoCat,
+	public static function onEditPageShowEditFormInitial( EditPage $editPage, OutputPage $out ) {
+		global $wgScriptPath, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_checkAutoCat,
 			$wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions,
 			$wgMSU_uploadsize, $wgMSU_flash_swf_url, $wgMSU_silverlight_xap_url;
+
+		// Don't show the upload bar outside of wikitext pages (T267563)
+		if ( $out->getWikiPage()->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
+			return true;
+		}
 
 		$wgMSU_flash_swf_url = __DIR__ . '/../resources/plupload/Moxie.swf';
 		$wgMSU_silverlight_xap_url = __DIR__ . '/../resources/plupload/Moxie.xap';
 
-		$wgOut->addJsConfigVars( [
+		$out->addJsConfigVars( [
 			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) )
 		] );
 
@@ -37,11 +47,11 @@ class Hooks {
 			'uploadsize' => $wgMSU_uploadsize,
 		];
 
-		$wgOut->addJsConfigVars( 'msuVars', $msuVars );
-		$wgOut->addModules( 'ext.MsUpload' );
+		$out->addJsConfigVars( 'msuVars', $msuVars );
+		$out->addModules( 'ext.MsUpload' );
 
 		// @todo Figure out how to load this in a module without resource loader crashing.
-		$wgOut->addScriptFile(
+		$out->addScriptFile(
 			"$wgScriptPath/extensions/MsUpload/resources/plupload/plupload.full.min.js"
 		);
 		return true;
