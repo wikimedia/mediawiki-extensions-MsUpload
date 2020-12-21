@@ -3,6 +3,7 @@
 		"authors": [
 			"Mervat Salman",
 			"ديفيد",
+			"علاء",
 			"محمد أحمد عبد الفتاح"
 		]
 	},
@@ -21,6 +22,6 @@
 	"msu-upload-this": "رفع هذا الملف",
 	"msu-upload-all": "رفع جميع الملفات",
 	"msu-upload-good": "رفع $1 من $2 {{PLURAL:$2|ملف|ملفات}}",
-	"msu-dropzone": "إسقاط الملفات هنا",
+	"msu-dropzone": "أسقط الملفات هنا",
 	"msu-comment": "الملف الذي تم رفعه باستخدام MsUpload"
 }
