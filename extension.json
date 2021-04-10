@@ -1,6 +1,6 @@
 {
 	"name": "MsUpload",
-	"version": "13.2.1",
+	"version": "13.3",
 	"author": [
 		"[mailto:wiki@ratin.de Martin Schwindl]",
 		"[mailto:wiki@keyler-consult.de Martin Keyler]",
@@ -23,10 +23,8 @@
 	},
 	"ResourceModules": {
 		"ext.MsUpload": {
-			"scripts": [
-				"resources/MsUpload.js"
-			],
-			"styles": "resources/MsUpload.less",
+			"packageFiles": "MsUpload.js",
+			"styles": "MsUpload.less",
 			"messages": [
 				"msu-button-title",
 				"msu-insert-link",
@@ -48,8 +46,8 @@
 		}
 	},
 	"ResourceFileModulePaths": {
-		"localBasePath": "",
-		"remoteExtPath": "MsUpload"
+		"localBasePath": "resources",
+		"remoteExtPath": "MsUpload/resources"
 	},
 	"Hooks": {
 		"EditPage::showEditForm:initial": "MsUpload\\Hooks::onEditPageShowEditFormInitial"
