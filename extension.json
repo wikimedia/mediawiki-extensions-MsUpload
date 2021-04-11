@@ -23,7 +23,7 @@
 	},
 	"ResourceModules": {
 		"ext.MsUpload": {
-			"packageFiles": "MsUpload.js",
+			"scripts": "MsUpload.js",
 			"styles": "MsUpload.less",
 			"messages": [
 				"msu-button-title",
