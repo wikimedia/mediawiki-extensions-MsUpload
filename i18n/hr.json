@@ -4,5 +4,21 @@
 			"MaGa"
 		]
 	},
-	"msu-dropzone": "Povucite datoteke ovdje"
+	"msu-desc": "Omogućava jednostavno postavljanje jednog ili više datoteka odjednom",
+	"msu-button-title": "Odaberi datoteke",
+	"msu-insert-link": "Umetni poveznicu",
+	"msu-insert-gallery": "Umetni sve kao galeriju",
+	"msu-insert-files": "Umetni sve kao datoteke",
+	"msu-insert-links": "Umetni sve kao poveznice",
+	"msu-insert-image": "Umetni kao sliku",
+	"msu-insert-video": "Umetni video",
+	"msu-cancel-upload": "Prekini postavljanje",
+	"msu-continue": "Ipak nastaviti?",
+	"msu-clean-all": "Očisti popis",
+	"msu-ext-not-allowed": "{{PLURAL:$1|Dopuštena je samo sljedeća vrsta:|Dopuštene su samo sljedeće vrste:}}",
+	"msu-upload-this": "Postavi ovu datoteku",
+	"msu-upload-all": "Postavi sve datoteke",
+	"msu-upload-good": "Postavljeno $1 od $2 {{PLURAL:$2|datoteke|datoteke|datoteka}}",
+	"msu-dropzone": "Povucite datoteke ovdje",
+	"msu-comment": "Datoteke postavljene s MsUploadom"
 }
