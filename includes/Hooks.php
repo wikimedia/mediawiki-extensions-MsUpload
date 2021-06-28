@@ -3,6 +3,7 @@
 namespace MsUpload;
 
 use EditPage;
+use MediaWiki\MediaWikiServices;
 use OutputPage;
 
 class Hooks {
@@ -19,7 +20,14 @@ class Hooks {
 			$wgMSU_uploadsize, $wgMSU_flash_swf_url, $wgMSU_silverlight_xap_url;
 
 		// Don't show the upload bar outside of wikitext pages (T267563)
-		if ( $out->getWikiPage()->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
+		if ( method_exists( MediaWikiServices::getInstance(), 'getWikiPageFactory' ) ) {
+			// MW >= 1.36
+			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $out->getTitle() );
+		} else {
+			// MW < 1.36
+			$wikiPage = $out->getWikiPage();
+		}
+		if ( $wikiPage->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
 			return true;
 		}
 
