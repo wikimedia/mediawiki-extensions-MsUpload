@@ -11,7 +11,6 @@
 		"no-jquery/no-event-shorthand": "off",
 		"no-jquery/no-global-selector": "off",
 		"vars-on-top": "off",
-		"one-var": "off",
 		"quote-props": "off",
 		"no-jquery/no-in-array": "off",
 		"no-jquery/no-animate-toggle": "off",
