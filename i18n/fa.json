@@ -2,9 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"Alifakoor",
+			"Jeeputer",
 			"Reza1615"
 		]
 	},
+	"msu-button-title": "انتخاب پرونده‌ها",
 	"msu-insert-link": "درج پیوند",
-	"msu-continue": "به هر قیمتی ادامه می‌دهید؟"
+	"msu-insert-gallery": "درج همه به‌عنوان نگارخانه",
+	"msu-insert-files": "درج همه به‌عنوان پرونده",
+	"msu-insert-links": "درج همه به‌عنوان پیوند",
+	"msu-insert-image": "درج به‌عنوان تصویر",
+	"msu-insert-video": "درج ویدئو",
+	"msu-cancel-upload": "لغو بارگذاری",
+	"msu-continue": "به هر قیمتی ادامه می‌دهید؟",
+	"msu-clean-all": "پاکسازی فهرست",
+	"msu-upload-this": "بارگذاری این پرونده",
+	"msu-upload-all": "بارگذاری همهٔ پرونده‌ها",
+	"msu-upload-good": "بارگذاری $1 از $2 {{PLURAL:$2|پرونده}}"
 }
