@@ -476,7 +476,11 @@
 					}
 				}
 			} catch ( error ) {
-				MsUpload.fileError( uploader, file, 'Error: ' + success.response.replace( /(<([^>]+)>)/ig, '' ) ); // Remove html tags
+				var message = success.response.replace( /(<([^>]+)>)/ig, '' ); // Remove html tags
+				if ( message.length > 999 ) {
+					message = 'Unknown error.';
+				}
+				MsUpload.fileError( uploader, file, 'Error: ' + message );
 			}
 			uploader.removeFile( file ); // For preventing a second upload afterwards
 		},
