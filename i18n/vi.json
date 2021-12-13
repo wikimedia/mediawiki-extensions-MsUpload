@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Minh Nguyen"
+		]
+	},
+	"msu-button-title": "Chọn tập tin",
+	"msu-insert-link": "Chèn liên kết",
+	"msu-insert-gallery": "Chèn tất cả như tập ảnh",
+	"msu-insert-files": "Chèn tất cả như tập tin",
+	"msu-insert-links": "Chèn tất cả như liên kết",
+	"msu-insert-image": "Chèn như hình ảnh",
+	"msu-insert-video": "Chèn video",
+	"msu-cancel-upload": "Hủy bỏ tải lên",
+	"msu-continue": "Kệ cứ tiếp tục?",
+	"msu-clean-all": "Tẩy trống danh sách",
+	"msu-ext-not-allowed": "Chỉ cho phép {{PLURAL:$1|kiểu tập tin|các kiểu tập tin}} sau:",
+	"msu-upload-this": "Tải tập tin này lên",
+	"msu-upload-all": "Tải tất cả tập tin lên",
+	"msu-upload-good": "Tải lên $1 trên $2 tập tin",
+	"msu-dropzone": "Thả tập tin vào đây",
+	"msu-comment": "Tải lên tập tin dùng MsUpload"
+}

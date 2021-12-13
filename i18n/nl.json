@@ -5,7 +5,8 @@
 			"FabianRM",
 			"Mainframe98",
 			"Romaine",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"McDutchie"
 		]
 	},
 	"msu-desc": "Staat enkele of meerdere gelijktijdige uploads toe",
@@ -22,7 +23,7 @@
 	"msu-ext-not-allowed": "Alleen {{PLURAL:$1|het volgende bestandstype is|de volgende bestandstypen zijn}} toegestaan:",
 	"msu-upload-this": "Dit bestand uploaden",
 	"msu-upload-all": "Alle bestanden uploaden",
-	"msu-upload-good": "$1 van $2 bestanden plaatsen",
+	"msu-upload-good": "$1 van $2 bestand{{PLURAL:$2||en}} uploaden",
 	"msu-dropzone": "Sleep hier bestanden heen",
 	"msu-comment": "Bestand is geüpload met MsUpload"
 }
