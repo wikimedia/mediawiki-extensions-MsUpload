@@ -162,7 +162,7 @@
 				'class': 'file-name-input',
 				size: file.name.length,
 				name: 'filename',
-				value: file.name.substr( 0, file.name.length - file.extension.length - 1 )
+				value: file.name.slice( 0, Math.max( 0, file.name.length - file.extension.length - 1 ) )
 			} ).change( function () {
 				file.name = this.value + '.' + file.extension;
 				$( this ).prev().text( file.name );
