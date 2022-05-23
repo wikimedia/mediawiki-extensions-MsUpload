@@ -19,10 +19,16 @@ class Hooks {
 			$wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions,
 			$wgMSU_uploadsize, $wgMSU_flash_swf_url, $wgMSU_silverlight_xap_url;
 
+		// First check if the page is editable
+		$title = $out->getTitle();
+		if ( $title->isSpecialPage() ) {
+			return true;
+		}
+
 		// Don't show the upload bar outside of wikitext pages (T267563)
 		if ( method_exists( MediaWikiServices::getInstance(), 'getWikiPageFactory' ) ) {
 			// MW >= 1.36
-			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $out->getTitle() );
+			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
 		} else {
 			// MW < 1.36
 			$wikiPage = $out->getWikiPage();
