@@ -53,13 +53,27 @@
 		"EditPage::showEditForm:initial": "MsUpload\\Hooks::onEditPageShowEditFormInitial"
 	},
 	"config": {
-		"MSU_useDragDrop": true,
-		"MSU_showAutoCat": true,
-		"MSU_checkAutoCat": true,
-		"MSU_useMsLinks": false,
-		"MSU_confirmReplace": true,
-		"MSU_imgParams": "400px",
-		"MSU_uploadsize": "100mb"
+		"MSU_useDragDrop": {
+			"value": true
+		},
+		"MSU_showAutoCat": {
+			"value": true
+		},
+		"MSU_checkAutoCat": {
+			"value": true
+		},
+		"MSU_useMsLinks": {
+			"value": false
+		},
+		"MSU_confirmReplace": {
+			"value": true
+		},
+		"MSU_imgParams": {
+			"value": "400px"
+		},
+		"MSU_uploadsize": {
+			"value": "100mb"
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
