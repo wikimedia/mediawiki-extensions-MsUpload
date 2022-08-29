@@ -1,8 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Karmwiki"
+			"Karmwiki",
+			"McDutchie"
 		]
 	},
-	"msu-continue": "Continuar comocunque?"
+	"msu-desc": "Permitte le incargamento facile de un o plure files simultaneemente",
+	"msu-button-title": "Seliger files",
+	"msu-insert-link": "Inserer ligamine",
+	"msu-insert-gallery": "Inserer totes como galeria",
+	"msu-insert-files": "Inserer totes como files",
+	"msu-insert-links": "Inserer totes como ligamines",
+	"msu-insert-image": "Inserer como imagine",
+	"msu-insert-video": "Inserer video",
+	"msu-cancel-upload": "Cancellar incargamento",
+	"msu-continue": "Continuar comocunque?",
+	"msu-clean-all": "Rader lista",
+	"msu-ext-not-allowed": "Solmente le sequente typo{{PLURAL:$1||s}} de file es permittite:",
+	"msu-upload-this": "Incargar iste file",
+	"msu-upload-all": "Incargar tote le files",
+	"msu-upload-good": "Incargar $1 de $2 file{{PLURAL:$2||s}}",
+	"msu-dropzone": "Depone files hic",
+	"msu-comment": "File incargate con MsUpload"
 }
