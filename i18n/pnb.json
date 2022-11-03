@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abbas dhothar"
+			"Abbas dhothar",
+			"Bgo eiu"
 		]
 	},
 	"msu-insert-link": "جوڑ پاؤ",
 	"msu-insert-files": "ساریاں فائلاں پاؤ",
 	"msu-insert-image": "بطور مورت پاؤ",
-	"msu-cancel-upload": "اپلوڈ مکاؤ",
+	"msu-cancel-upload": "چڑھاوݨ رد کرو",
 	"msu-upload-this": "اس فائل نوں اُتے چاڑھو"
 }
