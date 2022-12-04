@@ -358,7 +358,18 @@
 			}
 		},
 
+		editComment: null,
 		onFilesAdded: function ( uploader, files ) {
+			if ( !MsUpload.editComment ) {
+				// Prefer content language rather than user language for the edit comment
+				var contentLanguage = mw.config.get( 'wgContentLanguage' );
+				new mw.Api().getMessages( 'msu-comment', { amlang: contentLanguage } ).done( function ( data ) {
+					if ( data[ 'msu-comment' ] ) {
+						MsUpload.editComment = data[ 'msu-comment' ];
+					}
+				} );
+			}
+
 			$.each( files, function ( i, file ) {
 				// iOS6 by SLBoat
 				if ( ( navigator.platform === 'iPad' || navigator.platform === 'iPhone' ) ) {
@@ -397,32 +408,24 @@
 		},
 
 		onBeforeUpload: function ( uploader, file ) {
-			var editComment = mw.message( 'msu-comment' ).plain();
-			// Prefer content language rather than user language for the edit comment
-			var contentLanguage = mw.config.get( 'wgContentLanguage' );
-			new mw.Api().getMessages( 'msu-comment', { amlang: contentLanguage } ).done( function ( data ) {
-				if ( data[ 'msu-comment' ] ) {
-					editComment = data[ 'msu-comment' ];
-				}
-				file.li.title.text( file.name ).show(); // Show title
-				$( '#' + file.id + ' .file-name-input' ).hide(); // Hide the file name input
-				$( '#' + file.id + ' .file-extension' ).hide(); // Hide the file extension
-				// Add auto-category (AutoCat) to the edit-comment if requested and we're in a Category page.
-				if ( file.cat && mw.config.get( 'wgCanonicalNamespace' ) === 'Category' ) {
-					// wgPageName already includes the 'Category:' prefix.
-					editComment += '\n\n[[' + mw.config.get( 'wgPageName' ) + ']]';
-				}
-				// eslint-disable-next-line camelcase
-				uploader.settings.multipart_params = {
-					filename: file.name,
-					token: mw.user.tokens.get( 'csrfToken' ),
-					action: 'upload',
-					ignorewarnings: true,
-					comment: editComment,
-					format: 'json'
-				}; // Set multipart_params
-				$( '#' + file.id + ' .file-progress-state' ).text( '0%' );
-			} );
+			var editComment = MsUpload.editComment || mw.message( 'msu-comment' ).plain();
+			file.li.title.text( file.name ).show(); // Show title
+			$( '#' + file.id + ' .file-name-input' ).hide(); // Hide the file name input
+			$( '#' + file.id + ' .file-extension' ).hide(); // Hide the file extension
+			// Add auto-category (AutoCat) to the edit-comment if requested and we're in a Category page.
+			if ( file.cat && mw.config.get( 'wgCanonicalNamespace' ) === 'Category' ) {
+				// wgPageName already includes the 'Category:' prefix.
+				editComment += '\n\n[[' + mw.config.get( 'wgPageName' ) + ']]';
+			}
+			uploader.setOption( 'multipart_params', {
+				format: 'json',
+				action: 'upload',
+				filename: file.name,
+				ignorewarnings: true,
+				comment: editComment,
+				token: mw.user.tokens.get( 'csrfToken' )
+			} ); // Set multipart_params
+			$( '#' + file.id + ' .file-progress-state' ).text( '0%' );
 		},
 
 		onUploadProgress: function ( uploader, file ) {
