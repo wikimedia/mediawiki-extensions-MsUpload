@@ -10,13 +10,17 @@
 	"msu-button-title": "בחרו קבצים",
 	"msu-insert-link": "הכנס קישור",
 	"msu-insert-gallery": "הפוך תמונות לגלריה",
+	"msu-insert-files": "להוסיף את הכול בתור קבצים",
+	"msu-insert-links": "להוסיף את הכול בתור קישורים",
 	"msu-insert-image": "להכניס כתמונה",
 	"msu-insert-video": "להכניס סרטון",
 	"msu-cancel-upload": "ביטול ההעלאה",
+	"msu-continue": "להמשיך בכל־זאת?",
 	"msu-clean-all": "נקה רשימה",
 	"msu-ext-not-allowed": "רק {{PLURAL:$1|סוג הקובץ הבא מורשה|סוגי הקבצים הבאים מורשים}}:",
 	"msu-upload-this": "להעלות קובץ זה",
 	"msu-upload-all": "להעלות את כל הקבצים",
+	"msu-upload-good": "להעלות $1 מתוך {{PLURAL:$2|קובץ אחד|$2 קבצים}}",
 	"msu-dropzone": "גררו קבצים לכאן",
 	"msu-comment": "MsUpload"
 }
