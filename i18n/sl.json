@@ -5,6 +5,21 @@
 			"Upwinxp"
 		]
 	},
+	"msu-desc": "Omogoča preprosto nalaganje ene datoteke ali več datotek hkrati",
+	"msu-button-title": "Izberite datoteke",
+	"msu-insert-link": "Vstavi povezavo",
+	"msu-insert-gallery": "Vstavi vse kot galerijo",
+	"msu-insert-files": "Vstavi vse kot datoteke",
+	"msu-insert-links": "Vstavi vse kot povezave",
+	"msu-insert-image": "Vstavi kot sliko",
+	"msu-insert-video": "Vstavi video",
 	"msu-cancel-upload": "Prekliči nalaganje",
-	"msu-dropzone": "Izpustite datoteke tukaj"
+	"msu-continue": "Vseeno nadaljujem?",
+	"msu-clean-all": "Počisti seznam",
+	"msu-ext-not-allowed": "{{PLURAL:$1|Dovoljena je|Dovoljeni sta|Dovoljene so}} samo {{PLURAL:$1|naslednja vrsta datotek|samo naslednji vrsti datotek|aamo naslednje vrste datotek}}:",
+	"msu-upload-this": "Naloži to datoteko",
+	"msu-upload-all": "Naloži vse datoteke",
+	"msu-upload-good": "Naloži $1 od $2 {{PLURAL:$2|datoteke|datotek}}",
+	"msu-dropzone": "Izpustite datoteke tukaj",
+	"msu-comment": "Datoteka, naložena z MsUpload"
 }
