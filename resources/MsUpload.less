@@ -1,8 +1,3 @@
-// Locally define these for backwards-compatibility to MediaWiki 1.32, as they were only introduced in 1.34.
-@backgroundColorError: #fee7e6;
-@backgroundColorWarning: #fef6e7;
-@backgroundColorSuccess: #d5fdf4;
-
 @import 'mediawiki.ui/variables';
 
 #msupload-container {
@@ -29,14 +24,14 @@
 }
 
 #msupload-div {
-	background: @colorGray15;
-	border-top: 1px solid @colorGray12;
+	background: #f8f9fa;
+	border-top: 1px solid #c8ccd1;
 	padding: 0;
 	z-index: 0;
 }
 
 #msupload-div a {
-	color: @colorProgressive;
+	color: @color-primary;
 	cursor: pointer;
 }
 
@@ -47,14 +42,14 @@
 #msupload-dropzone {
 	margin: 3px;
 	padding: 5px;
-	border: 1px dashed @colorFieldBorder;
+	border: 1px dashed @border-color-base;
 	text-align: center;
 	height: 20px;
-	color: @colorGray2;
+	color: @color-base;
 }
 
 .drop-over {
-	background-color: @backgroundColorSuccess;
+	background-color: @background-color-success;
 }
 
 #msupload-list {
@@ -64,23 +59,23 @@
 }
 
 #msupload-list .file {
-	background: @colorGray14;
-	border-top: 1px solid @colorGray12;
+	background: #eaecf0;
+	border-top: 1px solid #c8ccd1;
 	margin: 0;
 	padding: 10px;
 	position: relative;
 }
 
 #msupload-list .green {
-	background: @backgroundColorSuccess;
+	background: @background-color-success;
 }
 
 #msupload-list .yellow {
-	background: @backgroundColorWarning;
+	background: @background-color-warning;
 }
 
 #msupload-list .red {
-	background: @backgroundColorError;
+	background: @background-color-error;
 }
 
 #msupload-list .file .file-type {
@@ -141,7 +136,7 @@
 }
 
 #msupload-list .file .file-size {
-	color: #666;
+	color: @color-base--subtle;
 	margin: 0 10px;
 }
 
@@ -170,7 +165,7 @@
 }
 
 #msupload-list .file .file-warning {
-	color: #514721;
+	color: @color-base--emphasized;
 	font-size: 80%;
 	padding: 2px 5px;
 	font-style: italic;
@@ -212,11 +207,11 @@
 }
 
 #msupload-list .file .file-size {
-	color: #666;
+	color: @color-base--subtle;
 }
 
 #msupload-list .file .file-error {
-	color: #8a1f11;
+	color: @color-base--emphasized;
 }
 
 .msupload-check-index {
@@ -226,13 +221,13 @@
 
 .msupload-check-span {
 	float: right;
-	color: #444;
+	color: #404244;
 }
 
 #msupload-bottom {
-	border-top: 1px solid @colorGray12;
-	 padding: 8px;
-	 height: 22px;
+	border-top: 1px solid #c8ccd1;
+	padding: 8px;
+	height: 22px;
 }
 
 #msupload-bottom a {
@@ -247,10 +242,10 @@
 }
 
 #msupload-bottom .spacer {
-	border-left: 1px solid #ccc;
+	border-left: 1px solid @border-color-base;
 	margin: 0 8px;
 	width: 1px;
-	background-color: #ccc;
+	background-color: #c8ccd1;
 }
 
 #wikiEditor-section-advanced .options {
