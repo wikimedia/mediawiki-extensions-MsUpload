@@ -1,4 +1,4 @@
-@import 'mediawiki.ui/variables';
+@import 'mediawiki.skin.variables.less';
 
 #msupload-container {
 	display: inline-block;
@@ -16,40 +16,39 @@
 	width: 20px;
 	height: 20px;
 	cursor: pointer;
-}
 
-#msupload-select:hover {
-	opacity: 0.7;
-	zoom: 1;
+	&:hover {
+		opacity: @opacity-icon-base--hover;
+	}
 }
 
 #msupload-div {
 	background: #f8f9fa;
-	border-top: 1px solid #c8ccd1;
+	border-top: @border-width-base @border-style-base @border-color-subtle;
 	padding: 0;
 	z-index: 0;
 }
 
 #msupload-div a {
-	color: @color-primary;
+	color: @color-progressive;
 	cursor: pointer;
 }
 
 #msupload-div.nodragdrop {
-	border: none;
+	border: 0;
 }
 
 #msupload-dropzone {
 	margin: 3px;
 	padding: 5px;
-	border: 1px dashed @border-color-base;
+	border: @border-width-base dashed @border-color-base;
 	text-align: center;
 	height: 20px;
 	color: @color-base;
 }
 
 .drop-over {
-	background-color: @background-color-success;
+	background-color: @background-color-success-subtle;
 }
 
 #msupload-list {
@@ -60,22 +59,22 @@
 
 #msupload-list .file {
 	background: #eaecf0;
-	border-top: 1px solid #c8ccd1;
+	border-top: @border-width-base @border-style-base @border-color-subtle;
 	margin: 0;
 	padding: 10px;
 	position: relative;
 }
 
 #msupload-list .green {
-	background: @background-color-success;
+	background-color: @background-color-success-subtle;
 }
 
 #msupload-list .yellow {
-	background: @background-color-warning;
+	background-color: @background-color-warning-subtle;
 }
 
 #msupload-list .red {
-	background: @background-color-error;
+	background-color: @background-color-error-subtle;
 }
 
 #msupload-list .file .file-type {
@@ -152,10 +151,10 @@
 	height: 20px;
 	margin-left: 5px;
 	padding: 5px 10px;
-}
 
-#msupload-list .file .file-cancel:hover {
-	opacity: 0.7;
+	&:hover {
+		opacity: @opacity-icon-base--hover;
+	}
 }
 
 #msupload-list .file .file-loading {
@@ -165,7 +164,7 @@
 }
 
 #msupload-list .file .file-warning {
-	color: @color-base--emphasized;
+	color: @color-emphasized;
 	font-size: 80%;
 	padding: 2px 5px;
 	font-style: italic;
@@ -185,14 +184,14 @@
 }
 #msupload-list .file .file-warning div.thumbinner {
 	background: none;
-	border: none;
+	border: 0;
 	overflow: visible;
 	padding: 0;
 }
 
 #msupload-list .file .file-name-input {
 	background: white;
-	border: none;
+	border: 0;
 	display: inline;
 	font: inherit;
 	font-weight: bold;
@@ -207,11 +206,11 @@
 }
 
 #msupload-list .file .file-size {
-	color: @color-base--subtle;
+	color: @color-subtle;
 }
 
 #msupload-list .file .file-error {
-	color: @color-base--emphasized;
+	color: @color-emphasized;
 }
 
 .msupload-check-index {
@@ -221,11 +220,11 @@
 
 .msupload-check-span {
 	float: right;
-	color: #404244;
+	color: @color-base;
 }
 
 #msupload-bottom {
-	border-top: 1px solid #c8ccd1;
+	border-top: @border-width-base @border-style-base @border-color-subtle;
 	padding: 8px;
 	height: 22px;
 }
@@ -242,7 +241,7 @@
 }
 
 #msupload-bottom .spacer {
-	border-left: 1px solid @border-color-base;
+	border-left: @border-width-base @border-style-base @border-color-base;
 	margin: 0 8px;
 	width: 1px;
 	background-color: #c8ccd1;
