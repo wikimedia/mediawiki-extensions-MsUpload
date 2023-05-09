@@ -13,10 +13,10 @@
 			"Verdy p"
 		]
 	},
-	"msu-desc": "Permet les téléversements faciles d'un seul ou de plusieurs fichiers en même temps",
+	"msu-desc": "Permet des téléversements faciles d’un ou plusieurs fichiers en même temps",
 	"msu-button-title": "Sélectionnez les fichiers",
 	"msu-insert-link": "Insérer le lien",
-	"msu-insert-gallery": "Insérer l'ensemble en tant que galerie",
+	"msu-insert-gallery": "Insérer tout en tant que galerie",
 	"msu-insert-files": "Insérer tout en tant que fichiers",
 	"msu-insert-links": "Insérer tout en tant que liens",
 	"msu-insert-image": "Insérer en tant qu’image",
@@ -24,10 +24,10 @@
 	"msu-cancel-upload": "Annuler le téléversement",
 	"msu-continue": "Continuer malgré tout ?",
 	"msu-clean-all": "Effacer la liste",
-	"msu-ext-not-allowed": "Seulement {{PLURAL:$1|le type de fichier suivant est autorisé|les types de fichiers suivants sont autorisés}} :",
+	"msu-ext-not-allowed": "Le{{PLURAL:$1||s}} seul{{PLURAL:$1||s}} type{{PLURAL:$1||s}} de fichier autorisé{{PLURAL:$1||s}} {{PLURAL:$1|es|son}}t le{{PLURAL:$1||s}} suivant{{PLURAL:$1||s}} :",
 	"msu-upload-this": "Téléverser ce fichier",
 	"msu-upload-all": "Téléverser tous les fichiers",
-	"msu-upload-good": "Téléversement de $1 sur $2 {{PLURAL:$2|fichier|fichiers}}",
+	"msu-upload-good": "Téléversement de $1 sur $2 fichier{{PLURAL:$2||s}}",
 	"msu-dropzone": "Glisser ici les fichiers",
 	"msu-comment": "Fichier téléversé avec MsUpload"
 }
