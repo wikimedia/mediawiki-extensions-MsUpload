@@ -3,20 +3,25 @@
 		"authors": [
 			"Manvydasz",
 			"Vitas Povilaitis",
-			"Zygimantus"
+			"Zygimantus",
+			"Nokeoo"
 		]
 	},
-	"msu-desc": "Leidžia lengviau pakrauti vieną arba keletą failų vienu metu. Yra galimybė naudoti drag&drop.",
+	"msu-desc": "Leidžia lengvai įkelti vieną ar kelis failus vienu metu",
 	"msu-button-title": "Pasirinkti failus",
 	"msu-insert-link": "Įterpti nuorodas",
 	"msu-insert-gallery": "Įterpti vaizdų galeriją",
+	"msu-insert-files": "Įterpti visus kaip failus",
+	"msu-insert-links": "Įterpti visus kaip nuorodas",
 	"msu-insert-image": "Įterpti kaip paveikslėlį",
 	"msu-insert-video": "Įterpti vaizdo įrašą",
 	"msu-cancel-upload": "Nutraukti pakrovimą",
+	"msu-continue": "Vis tiek tęsti?",
 	"msu-clean-all": "Išvalyti sąrašą",
 	"msu-ext-not-allowed": "Leidžiami tik {{PLURAL:$1|sekantis failų tipas|sekantys failų tipai}}:",
 	"msu-upload-this": "Įkelti šią rinkmeną",
 	"msu-upload-all": "Įkelti visus failus",
+	"msu-upload-good": "Įkelti $1 iš $2 {{PLURAL:$2|failo|failų}}",
 	"msu-dropzone": "Čia užtemk failus",
 	"msu-comment": "MsUpload"
 }
