@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"msu-insert-files": "Ipasok lahat bilang mga talakasan (files)",
+	"msu-insert-links": "Ipasok lahat bilang mga kawing (links)",
+	"msu-insert-video": "Isingit ang pelikula",
+	"msu-cancel-upload": "Huwag magpatuloy sa pag-karga (upload)",
+	"msu-upload-this": "I-klik dito upang ikarga ang talakasang ito",
+	"msu-dropzone": "Ihulog ang mga talakasan (files) dito"
+}
