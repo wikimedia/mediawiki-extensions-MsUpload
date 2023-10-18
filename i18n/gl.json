@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"msu-desc": "Permite a transferencia sinxela para un ou varios ficheiros ó mesmo tempo",
@@ -18,6 +19,7 @@
 	"msu-ext-not-allowed": "Só se {{PLURAL:$1|permite o seguinte tipo|permiten os seguintes tipos}} de ficheiros:",
 	"msu-upload-this": "Subir este ficheiro",
 	"msu-upload-all": "Subir todos os ficheiros",
+	"msu-upload-good": "Subir $1 de $2 {{PLURAL:$2|ficheiro|ficheiros}}",
 	"msu-dropzone": "Soltar os ficheiros aquí",
 	"msu-comment": "Ficheiro cargado con MsUpload"
 }
