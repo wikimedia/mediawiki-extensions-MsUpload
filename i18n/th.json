@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Patsagorn Y."
+		]
+	},
+	"msu-desc": "ช่วยให้สามารถอัปโหลดไฟล์เดียวหรือหลายไฟล์พร้อมกันได้อย่างง่ายดาย",
+	"msu-button-title": "เลือกไฟล์",
+	"msu-insert-link": "แทรกลิงก์",
+	"msu-insert-gallery": "แทรกทั้งหมดเป็นแกลเลอรี",
+	"msu-insert-files": "แทรกทั้งหมดเป็นไฟล์",
+	"msu-insert-links": "ใส่ทั้งหมดเป็นลิงก์",
+	"msu-insert-image": "แทรกเป็นรูปภาพ",
+	"msu-insert-video": "แทรกวีดีโอ",
+	"msu-cancel-upload": "ยกเลิกการอัปโหลด",
+	"msu-continue": "ดำเนินการต่อ?",
+	"msu-clean-all": "ล้างรายการ",
+	"msu-ext-not-allowed": "เฉพาะ{{PLURAL:$1|ชนิด}}ไฟล์ต่อไปนี้ที่อนุญาตให้อัปโหลด:",
+	"msu-upload-this": "อัปโหลดไฟล์นี้",
+	"msu-upload-all": "อัปโหลดไฟล์ทั้งหมด",
+	"msu-upload-good": "อัปโหลด $1 จาก $2 {{PLURAL:$2|ไฟล์}}",
+	"msu-dropzone": "หย่อนไฟล์ที่นี่",
+	"msu-comment": "ไฟล์ที่อัปโหลดด้วย MsUpload"
+}
