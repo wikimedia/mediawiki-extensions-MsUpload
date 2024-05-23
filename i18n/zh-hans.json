@@ -3,7 +3,8 @@
 		"authors": [
 			"Anterdc99",
 			"Liuxinyu970226",
-			"晒太阳的冰 (zoglun@gmail.com)"
+			"晒太阳的冰 (zoglun@gmail.com)",
+			"LittlePaw365"
 		]
 	},
 	"msu-desc": "为一个或多个文件同时开启轻松上传",
@@ -21,6 +22,6 @@
 	"msu-upload-this": "上传此文件",
 	"msu-upload-all": "上传所有文件",
 	"msu-upload-good": "上传$1个，共$2个{{PLURAL:$2|文件}}",
-	"msu-dropzone": "拖动文件至此",
+	"msu-dropzone": "拖放文件到这里",
 	"msu-comment": "基于MsUpload的文件上传"
 }
