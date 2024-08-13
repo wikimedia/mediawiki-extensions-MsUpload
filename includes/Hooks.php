@@ -7,6 +7,7 @@ use MediaWiki\MediaWikiServices;
 use OutputPage;
 
 class Hooks {
+
 	/**
 	 * Main Function
 	 *
@@ -15,59 +16,46 @@ class Hooks {
 	 * @return bool
 	 */
 	public static function onEditPageShowEditFormInitial( EditPage $editPage, OutputPage $out ) {
-		global $wgScriptPath, $wgExtensionAssetsPath, $wgMSU_useMsLinks, $wgMSU_showAutoCat, $wgMSU_checkAutoCat,
-			$wgMSU_confirmReplace, $wgMSU_useDragDrop, $wgMSU_imgParams, $wgFileExtensions,
-			$wgMSU_uploadsize, $wgMSU_flash_swf_url, $wgMSU_silverlight_xap_url;
+		global $wgFileExtensions, $wgExtensionAssetsPath;
 
-		// First check if the page is editable
+		// Check if the page is editable
 		$title = $out->getTitle();
 		if ( $title->isSpecialPage() ) {
 			return true;
 		}
 
-		// Don't show the upload bar outside of wikitext pages (T267563)
-		if ( method_exists( MediaWikiServices::getInstance(), 'getWikiPageFactory' ) ) {
-			// MW >= 1.36
-			$wikiPage = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $title );
-		} else {
-			// MW < 1.36
-			$wikiPage = $out->getWikiPage();
-		}
-		if ( $wikiPage->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
+		// Only show the upload bar in wikitext pages (T267563)
+		$services = MediaWikiServices::getInstance();
+		$wikiPage = $services->getWikiPageFactory()->newFromTitle( $title );
+		$contentModel = $wikiPage->getContentModel();
+		if ( $contentModel !== CONTENT_MODEL_WIKITEXT ) {
 			return true;
 		}
 
-		$wgMSU_flash_swf_url = __DIR__ . '/../resources/plupload/Moxie.swf';
-		$wgMSU_silverlight_xap_url = __DIR__ . '/../resources/plupload/Moxie.xap';
+		// Add some general config that we'll need
+		$out->addJsConfigVars( 'wgFileExtensions', $wgFileExtensions );
 
-		$out->addJsConfigVars( [
-			'wgFileExtensions' => array_values( array_unique( $wgFileExtensions ) )
-		] );
-
-		if ( $wgMSU_imgParams ) {
-			$wgMSU_imgParams = '|' . $wgMSU_imgParams;
-		}
-
-		$msuVars = [
-			'scriptPath' => $wgScriptPath,
-			'flash_swf_url' => $wgMSU_flash_swf_url,
-			'silverlight_xap_url' => $wgMSU_silverlight_xap_url,
-			'useDragDrop' => $wgMSU_useDragDrop,
-			'showAutoCat' => $wgMSU_showAutoCat,
-			'checkAutoCat' => $wgMSU_checkAutoCat,
-			'useMsLinks' => $wgMSU_useMsLinks,
-			'confirmReplace' => $wgMSU_confirmReplace,
-			'imgParams' => $wgMSU_imgParams,
-			'uploadsize' => $wgMSU_uploadsize,
+		// Add extension-specific config that we'll need
+		$config = $out->getConfig();
+		$msuConfig = [
+			'flash_swf_url' => __DIR__ . '/../resources/plupload/Moxie.swf',
+			'silverlight_xap_url' => __DIR__ . '/../resources/plupload/Moxie.xap',
+			'useDragDrop' => $config->get( 'MSU_useDragDrop' ),
+			'showAutoCat' => $config->get( 'MSU_showAutoCat' ),
+			'checkAutoCat' => $config->get( 'MSU_checkAutoCat' ),
+			'useMsLinks' => $config->get( 'MSU_useMsLinks' ),
+			'confirmReplace' => $config->get( 'MSU_confirmReplace' ),
+			'imgParams' => $config->get( 'MSU_imgParams' ),
+			'uploadsize' => $config->get( 'MSU_uploadsize' ),
 		];
+		$out->addJsConfigVars( 'msuConfig', $msuConfig );
 
-		$out->addJsConfigVars( 'msuVars', $msuVars );
+		// Add the extension module
 		$out->addModules( 'ext.MsUpload' );
 
-		// @todo Figure out how to load this in a module without resource loader crashing.
-		$out->addScriptFile(
-			"$wgExtensionAssetsPath/MsUpload/resources/plupload/plupload.full.min.js"
-		);
+		// @todo Figure out how to load this in a module without resource loader crashing
+		$out->addScriptFile( "$wgExtensionAssetsPath/MsUpload/resources/plupload/plupload.full.min.js" );
+
 		return true;
 	}
 }

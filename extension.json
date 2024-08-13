@@ -1,6 +1,7 @@
 {
+	"manifest_version": 2,
 	"name": "MsUpload",
-	"version": "13.5",
+	"version": "14.0",
 	"author": [
 		"[mailto:wiki@ratin.de Martin Schwindl]",
 		"[mailto:wiki@keyler-consult.de Martin Keyler]",
@@ -74,6 +75,5 @@
 		"MSU_uploadsize": {
 			"value": "100mb"
 		}
-	},
-	"manifest_version": 2
+	}
 }
