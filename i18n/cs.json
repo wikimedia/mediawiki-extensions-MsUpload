@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nesuprachy"
+		]
+	},
+	"msu-desc": "Umožňuje snadné nahrávání jednoho nebo více souborů současně",
+	"msu-button-title": "Vybrat soubory",
+	"msu-insert-link": "Vložit odkaz",
+	"msu-insert-gallery": "Vložit vše jako galerii",
+	"msu-insert-files": "Vložit vše jako soubory",
+	"msu-insert-links": "Vložit vše jako odkazy",
+	"msu-insert-image": "Vložit jako obrázek",
+	"msu-insert-video": "Vložit video",
+	"msu-cancel-upload": "Zrušit nahrávání",
+	"msu-continue": "Přesto pokračovat?",
+	"msu-clean-all": "Vyprázdnit seznam",
+	"msu-ext-not-allowed": "{{PLURAL:$1|Pouze následující typ souboru je povolen|Pouze následující typy souborů jsou povoleny}}:",
+	"msu-upload-this": "Nahrát tento soubor",
+	"msu-upload-all": "Nahrát všechny soubory",
+	"msu-upload-good": "Nahrát $1 z $2 {{PLURAL:$2|souboru|souborů}}",
+	"msu-dropzone": "Sem přetáhněte soubory",
+	"msu-comment": "Soubor uložen pomocí MsUpload"
+}
