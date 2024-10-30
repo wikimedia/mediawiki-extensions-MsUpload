@@ -22,6 +22,5 @@
 	"msu-upload-this": "Carica questo file",
 	"msu-upload-all": "Carica tutti i file",
 	"msu-upload-good": "Caricati $1 di $2 {{PLURAL:$2|file}}",
-	"msu-dropzone": "Posiziona i file qui",
-	"msu-comment": "MsUpload"
+	"msu-dropzone": "Posiziona i file qui"
 }
