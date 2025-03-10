@@ -4,5 +4,15 @@
 			"Yupik"
 		]
 	},
-	"msu-cancel-upload": "Jooskâ vuorkkim"
+	"msu-button-title": "Valjii tiätuvuárháid",
+	"msu-insert-link": "Lasseet liiŋkâ",
+	"msu-insert-gallery": "Lasseet puoh gallerian",
+	"msu-insert-files": "Lasseet puoh tiätuvuárkkán",
+	"msu-insert-links": "Lasseet puoh liŋkkân",
+	"msu-insert-image": "Lasseet kovveen",
+	"msu-insert-video": "Lasseet video",
+	"msu-cancel-upload": "Jooskâ vuorkkim",
+	"msu-clean-all": "Kuorrii listo",
+	"msu-upload-this": "Vuorkkii taam tiätuvuárhá",
+	"msu-upload-all": "Vuorkkii puoh tiätuvuárháid"
 }
