@@ -10,6 +10,7 @@
 		"no-jquery/variable-pattern": "warn",
 		"no-jquery/no-global-selector": "off",
 		"no-jquery/no-animate-toggle": "off",
-		"no-jquery/no-fade": "off"
+		"no-jquery/no-fade": "off",
+		"no-jquery/no-done-fail": "warn"
 	}
 }
