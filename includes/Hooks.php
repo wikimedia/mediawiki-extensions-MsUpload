@@ -15,7 +15,7 @@ class Hooks {
 	 * @param OutputPage $out
 	 * @return bool
 	 */
-	public static function onEditPageShowEditFormInitial( EditPage $editPage, OutputPage $out ) {
+	public static function onEditPageShowEditFormInitial( $editPage, $out ) {
 		global $wgFileExtensions, $wgExtensionAssetsPath;
 
 		// Check if the page is editable
