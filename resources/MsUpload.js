@@ -108,7 +108,7 @@
 							}
 							uploader.trigger( 'CheckFiles' );
 						} );
-						$( '<label>' ).append( checkbox ).append( mw.msg( 'msu-continue' ) ).appendTo( fileItem.warning );
+						$( '<label>' ).append( checkbox ).append( mw.message( 'msu-continue' ).escaped() ).appendTo( fileItem.warning );
 					}
 					break;
 			}
