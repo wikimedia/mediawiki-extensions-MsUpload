@@ -1,13 +1,11 @@
 /* global plupload, moxie */
 const MsUpload = {
 
-	init: function () {
-		MsUpload.config = mw.config.get( 'msuConfig' );
-		mw.hook( 'wikiEditor.toolbarReady' ).add( MsUpload.createUploader );
-	},
-
 	uploader: null,
-	createUploader: function () {
+	createUploader: function ( $textarea ) {
+		MsUpload.$textarea = $textarea;
+		MsUpload.config = mw.config.get( 'msuConfig' );
+
 		// Define the GUI elements
 		const $uploadDiv = $( '<div>' ).attr( 'id', 'msupload-div' );
 		const $uploadContainer = $( '<div>' ).attr( { id: 'msupload-container', class: 'start-loading', title: mw.msg( 'msu-button-title' ) } );
@@ -112,7 +110,7 @@ const MsUpload = {
 	 * @param {string} text
 	 */
 	insertText: function ( text ) {
-		$( '#wpTextbox1' ).textSelection( 'encapsulateSelection', { pre: text } );
+		MsUpload.$textarea.textSelection( 'encapsulateSelection', { pre: text } );
 	},
 
 	unconfirmedReplacements: 0,
@@ -181,7 +179,7 @@ const MsUpload = {
 						}
 						uploader.trigger( 'CheckFiles' );
 					} );
-					$( '<label>' ).append( $checkbox ).append( mw.msg( 'msu-continue' ) ).appendTo( fileItem.warning );
+					$( '<label>' ).append( $checkbox ).append( mw.message( 'msu-continue' ).escaped() ).appendTo( fileItem.warning );
 				}
 				break;
 		}
@@ -551,4 +549,4 @@ const MsUpload = {
 	}
 };
 
-$( MsUpload.init );
+mw.hook( 'wikiEditor.toolbarReady' ).add( MsUpload.createUploader );
