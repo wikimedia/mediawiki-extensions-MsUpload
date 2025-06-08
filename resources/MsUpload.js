@@ -174,7 +174,7 @@ const MsUpload = {
 							$title.show().next().hide();
 							fileItem.unconfirmed = false;
 						} else {
-							$title.hide().next().show().select();
+							$title.hide().next().show().trigger( 'select' );
 							fileItem.unconfirmed = true;
 						}
 						uploader.trigger( 'CheckFiles' );
@@ -250,7 +250,7 @@ const MsUpload = {
 
 		file.li.title.on( 'click', () => {
 			file.li.title.hide();
-			$fileNameInput.show().select();
+			$fileNameInput.show().trigger( 'select' );
 			$fileExtension.show();
 		} );
 
@@ -266,7 +266,7 @@ const MsUpload = {
 		file.extension = file.name.split( '.' ).pop().toLowerCase();
 
 		const fileExtensions = mw.config.get( 'wgFileExtensions' );
-		if ( fileExtensions.indexOf( file.extension ) !== -1 ) {
+		if ( fileExtensions.includes( file.extension ) ) {
 			switch ( file.extension ) {
 				case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff':
 					file.group = 'image';
@@ -367,7 +367,7 @@ const MsUpload = {
 		files.forEach( ( file, index ) => {
 			// iOS6 by SLBoat
 			if ( ( navigator.platform === 'iPad' || navigator.platform === 'iPhone' ) ) {
-				if ( file.name.indexOf( 'image' ) !== -1 && file.name.length < 11 ) {
+				if ( file.name.includes( 'image' ) && file.name.length < 11 ) {
 					const date = new Date();
 					const fileNameApple = navigator.platform + '_image_' + date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + '-' + date.getTime(); // Because each image is named 'image.jpg' in iOS6
 					file.name = fileNameApple + '_' + index + '.' + file.name.split( '.' ).pop(); // image_Y-M-D_0.jpg
