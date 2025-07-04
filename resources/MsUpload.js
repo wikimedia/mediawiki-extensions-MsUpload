@@ -47,14 +47,12 @@ const MsUpload = {
 
 		// Create the Uploader object
 		MsUpload.uploader = new plupload.Uploader( {
-			runtimes: 'html5,flash,silverlight,html4',
+			runtimes: 'html5,html4',
 			browse_button: uploadButton.$element[ 0 ],
 			container: 'msupload-container',
 			max_file_size: MsUpload.config.uploadsize,
 			drop_element: 'msupload-dropzone',
-			url: mw.config.get( 'wgScriptPath' ) + '/api.php',
-			flash_swf_url: MsUpload.config.flash_swf_url,
-			silverlight_xap_url: MsUpload.config.silverlight_xap_url
+			url: mw.config.get( 'wgScriptPath' ) + '/api.php'
 		} );
 
 		// Bind events

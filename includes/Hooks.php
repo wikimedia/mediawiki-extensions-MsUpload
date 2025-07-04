@@ -38,8 +38,6 @@ class Hooks {
 		// Add extension-specific config that we'll need
 		$config = $out->getConfig();
 		$msuConfig = [
-			'flash_swf_url' => __DIR__ . '/../resources/plupload/Moxie.swf',
-			'silverlight_xap_url' => __DIR__ . '/../resources/plupload/Moxie.xap',
 			'useDragDrop' => $config->get( 'MSU_useDragDrop' ),
 			'showAutoCat' => $config->get( 'MSU_showAutoCat' ),
 			'checkAutoCat' => $config->get( 'MSU_checkAutoCat' ),
@@ -54,7 +52,7 @@ class Hooks {
 		$out->addModules( 'ext.MsUpload' );
 
 		// @todo Figure out how to load this in a module without resource loader crashing
-		$out->addScriptFile( "$wgExtensionAssetsPath/MsUpload/resources/plupload/plupload.full.min.js" );
+		$out->addScriptFile( "$wgExtensionAssetsPath/MsUpload/resources/lib/plupload/plupload.full.min.js" );
 
 		return true;
 	}

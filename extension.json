@@ -50,6 +50,7 @@
 		"localBasePath": "resources",
 		"remoteExtPath": "MsUpload/resources"
 	},
+	"ForeignResourcesDir": "resources/lib/",
 	"Hooks": {
 		"EditPage::showEditForm:initial": "MsUpload\\Hooks::onEditPageShowEditFormInitial"
 	},

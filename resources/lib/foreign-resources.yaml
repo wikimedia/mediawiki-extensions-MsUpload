@@ -1,0 +1,10 @@
+plupload:
+    type: zip
+    homepage: https://www.plupload.com/
+    authors: Plupload contributors
+    license:  AGPL-3.0
+    version: 2.3.6
+    src: https://codeload.github.com/moxiecode/plupload/zip/refs/tags/v2.3.6
+    integrity: sha384-mGhEXE1RoI0kG7Cr5TaoV6hHlScf3V6RnbqWbkv14kI2EvYWUkDewKGw4nys4Vd2
+    dest:
+        plupload-*/js/plupload.full.min.js:
