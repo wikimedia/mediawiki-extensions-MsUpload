@@ -12,6 +12,7 @@ module.exports = function ( grunt ) {
 				'**/*.{js,json}',
 				'!node_modules/**',
 				'!vendor/**',
+				'!resources/lib/foreign-resources.cdx.json',
 				'!resources/lib/plupload/**'
 			]
 		},

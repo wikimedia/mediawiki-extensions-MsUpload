@@ -15,7 +15,8 @@
 			"@phpcs",
 			"minus-x check ."
 		],
-		"phpcs": "phpcs -sp --cache"
+		"phpcs": "phpcs -sp --cache",
+		"foreign-resources": "../../maintenance/run manageForeignResources --extension MsUpload"
 	},
 	"config": {
 		"allow-plugins": {
