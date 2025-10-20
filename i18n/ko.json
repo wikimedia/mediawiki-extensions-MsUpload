@@ -4,6 +4,7 @@
 			"Hwangjy9",
 			"Markingdots",
 			"Revi",
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
@@ -20,7 +21,7 @@
 	"msu-clean-all": "목록 비우기",
 	"msu-ext-not-allowed": "다음 {{PLURAL:$1|형식의|형식의}} 파일만 허용됩니다:",
 	"msu-upload-this": "이 파일 올리기",
-	"msu-upload-all": "모든 파일 올리기",
+	"msu-upload-all": "모든 파일 업로드",
 	"msu-upload-good": "{{PLURAL:$2|파일}} $2개 중 $1개 업로드",
 	"msu-dropzone": "여기에 파일을 놓으세요",
 	"msu-comment": "MsUpload로 파일을 올림"
