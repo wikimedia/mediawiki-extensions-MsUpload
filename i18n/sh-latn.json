@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Aca"
 		]
 	},
 	"msu-desc": "Omogućava jednostavno postavljanje jednog ili više datoteka odjednom",
-	"msu-button-title": "Odaberi datoteke",
+	"msu-button-title": "Izaberite datoteke",
 	"msu-insert-link": "Umetni link",
 	"msu-insert-gallery": "Umetni sve kao galeriju",
 	"msu-insert-files": "Umetni sve kao datoteke",
