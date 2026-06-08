@@ -6,6 +6,7 @@
 			"Mainframe98",
 			"McDutchie",
 			"Romaine",
+			"Siebrand",
 			"Sjoerddebruin"
 		]
 	},
@@ -14,7 +15,7 @@
 	"msu-insert-link": "Koppeling invoegen",
 	"msu-insert-gallery": "Voeg in als galerij",
 	"msu-insert-files": "Voeg alle in als bestanden",
-	"msu-insert-links": "Voeg alle in als links",
+	"msu-insert-links": "Alle invoegen als koppelingen",
 	"msu-insert-image": "Voeg in als afbeelding",
 	"msu-insert-video": "Video invoegen",
 	"msu-cancel-upload": "Uploaden annuleren",
