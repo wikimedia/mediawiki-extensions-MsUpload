@@ -8,7 +8,6 @@ const MsUpload = {
 
 		// Define the GUI elements
 		const $uploadDiv = $( '<div>' ).attr( 'id', 'msupload-div' );
-		const $uploadContainer = $( '<div>' ).attr( { id: 'msupload-container', class: 'start-loading' } );
 		const $statusDiv = $( '<div>' ).attr( 'id', 'msupload-status' ).hide();
 		const $uploadList = $( '<ul>' ).attr( 'id', 'msupload-list' );
 		const $bottomDiv = $( '<div>' ).attr( 'id', 'msupload-bottom' ).hide();
@@ -43,13 +42,11 @@ const MsUpload = {
 		$bottomDiv.append( $startButton, $cleanAll, $galleryInsert, $filesInsert, $linksInsert );
 		$uploadDiv.append( $statusDiv, $uploadDrop, $uploadList, $bottomDiv );
 		$( '#wikiEditor-ui-toolbar' ).after( $uploadDiv );
-		$( '#wikiEditor-section-main .group-insert' ).append( $uploadContainer );
 
 		// Create the Uploader object
 		MsUpload.uploader = new plupload.Uploader( {
 			runtimes: 'html5,html4',
 			browse_button: uploadButton.$element[ 0 ],
-			container: 'msupload-container',
 			max_file_size: MsUpload.config.uploadsize,
 			drop_element: 'msupload-dropzone',
 			url: mw.config.get( 'wgScriptPath' ) + '/api.php'
@@ -353,7 +350,6 @@ const MsUpload = {
 
 	onPostInit: function ( uploader ) {
 		mw.log( 'MsUpload DEBUG: runtime: ' + uploader.runtime + ' features: ' + JSON.stringify( uploader.features ) );
-		$( '#msupload-container' ).removeClass( 'start-loading' );
 		if ( uploader.features.dragdrop && MsUpload.config.useDragDrop ) {
 			$( '#msupload-dropzone' ).text( mw.msg( 'msu-dropzone' ) ).show();
 			$( '#msupload-dropzone' ).on( 'dragover', function () {
