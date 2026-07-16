@@ -14,10 +14,12 @@
 	"msu-insert-image": "د انځور په بڼه ورټومبل",
 	"msu-insert-video": "ويډيو ورټومبل",
 	"msu-cancel-upload": "پورته کېدنه ناگارل",
+	"msu-continue": "خامخا دوام ورکړي؟",
 	"msu-clean-all": "لړليک سپينول",
 	"msu-ext-not-allowed": "يوازې د لاندې دوتنو {{PLURAL:$1|ډول|ډولونه}} پرېښل شوي:",
 	"msu-upload-this": "دا دوتنه راپورته‌کول",
 	"msu-upload-all": "ټولې دوتنې راپورته‌کول",
+	"msu-upload-good": "له $2 {{PLURAL:$2|دوتنې|دوتنو}} $1 يې راپورته‌کول",
 	"msu-dropzone": "دوتنې مو دلته خوشې کړئ",
 	"msu-comment": "دوتنه د MsUpload له لارې پورته شوې"
 }
