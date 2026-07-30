@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"msu-desc": "Waxay suuragelisaa gelinta fayl fudud oo hal fayl ah ama faylal badan isku mar",
+	"msu-button-title": "Dooro faylalka",
+	"msu-insert-link": "Geli xiriir",
+	"msu-insert-gallery": "Geli dhammaan sidii gallery",
+	"msu-insert-files": "Geli dhammaan sidii faylasha",
+	"msu-insert-links": "Geli dhammaan sidii xiriiriyeyaal",
+	"msu-insert-image": "Geli sidii sawir",
+	"msu-insert-video": "Geli fayl",
+	"msu-cancel-upload": "Jooji soo gelinta",
+	"msu-continue": "Sii wad si kastaba?",
+	"msu-clean-all": "Nadiifi liiska",
+	"msu-ext-not-allowed": "Kaliya nooca faylka {{PLURAL:$1|soo socda}} ayaa la oggol yahay:",
+	"msu-upload-this": "Soo geli faylkan",
+	"msu-upload-all": "Soo geli faylalka dhamaan",
+	"msu-upload-good": "Soo geli $1 ee $2 {{PLURAL:$2|fayl|faylal}}",
+	"msu-dropzone": "Halkan ku soo dhig faylasha",
+	"msu-comment": "Faylka waxaa lagu soo geliyey MsUpload"
+}
