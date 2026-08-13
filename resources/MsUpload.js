@@ -1,3 +1,5 @@
+const Config = require( './config.json' );
+
 /* global plupload, moxie */
 const MsUpload = {
 
@@ -278,8 +280,7 @@ const MsUpload = {
 		file.li.loading.show();
 		file.extension = file.name.split( '.' ).pop().toLowerCase();
 
-		const fileExtensions = mw.config.get( 'wgFileExtensions' );
-		if ( fileExtensions.includes( file.extension ) ) {
+		if ( Config.FileExtensions.includes( file.extension ) ) {
 			switch ( file.extension ) {
 				case 'jpg': case 'jpeg': case 'png': case 'gif': case 'bmp': case 'tif': case 'tiff':
 					file.group = 'image';
@@ -333,7 +334,9 @@ const MsUpload = {
 				uploader.removeFile( file );
 				uploader.refresh();
 			} );
-			MsUpload.fileError( uploader, file, mw.msg( 'msu-ext-not-allowed', mw.config.get( 'wgFileExtensions' ).length ) + ' ' + mw.config.get( 'wgFileExtensions' ).join( ',' ) );
+			const errorText = mw.msg( 'msu-ext-not-allowed', Config.FileExtensions.length ) +
+				' ' + mw.language.listToText( Config.FileExtensions );
+			MsUpload.fileError( uploader, file, errorText );
 		}
 	},
 

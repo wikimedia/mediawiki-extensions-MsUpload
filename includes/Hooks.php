@@ -30,9 +30,6 @@ class Hooks implements EditPage__showEditForm_initialHook {
 			return true;
 		}
 
-		// Add some general config that we'll need
-		$out->addJsConfigVars( 'wgFileExtensions', $this->config->get( MainConfigNames::FileExtensions ) );
-
 		// Add extension-specific config that we'll need
 		$config = $out->getConfig();
 		$msuConfig = [
