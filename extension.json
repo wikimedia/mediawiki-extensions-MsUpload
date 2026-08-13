@@ -19,8 +19,8 @@
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"MsUpload\\Hooks": "includes/Hooks.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\MsUpload\\": "includes/"
 	},
 	"ResourceModules": {
 		"ext.MsUpload": {
@@ -52,7 +52,16 @@
 	},
 	"ForeignResourcesDir": "resources/lib",
 	"Hooks": {
-		"EditPage::showEditForm:initial": "MsUpload\\Hooks::onEditPageShowEditFormInitial"
+		"EditPage::showEditForm:initial": "MsUploadHooks"
+	},
+	"HookHandlers": {
+		"MsUploadHooks": {
+			"class": "MediaWiki\\Extension\\MsUpload\\Hooks",
+			"services": [
+				"MainConfig",
+				"WikiPageFactory"
+			]
+		}
 	},
 	"config": {
 		"MSU_useDragDrop": {
