@@ -1,4 +1,8 @@
 {
+	"name": "samwilson/msupload",
+	"description": "MediaWiki extension for uploading multiple files while using the source editor.",
+	"license": "GPL-2.0-or-later",
+	"homepage": "https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:MsUpload",
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "52.0.0",
 		"mediawiki/minus-x": "2.0.1",
@@ -11,6 +15,7 @@
 			"phpcbf"
 		],
 		"test": [
+			"composer validate",
 			"parallel-lint . --exclude vendor --exclude node_modules",
 			"@phpcs",
 			"minus-x check ."
