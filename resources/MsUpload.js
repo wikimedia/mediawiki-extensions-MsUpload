@@ -306,6 +306,7 @@ const MsUpload = {
 					break;
 
 				case 'pdf':
+					file.group = 'image';
 					file.li.type.addClass( 'pdf' );
 					break;
 			}
