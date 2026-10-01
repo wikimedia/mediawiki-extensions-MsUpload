@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"msu-desc": "Erméiglecht et fir een oder méi Fichieren einfach zesummen eropzelueden",
@@ -15,7 +16,7 @@
 	"msu-cancel-upload": "Eroplueden ofbriechen",
 	"msu-continue": "Trotzdeem virufueren?",
 	"msu-clean-all": "Lëscht eidelmaachen",
-	"msu-ext-not-allowed": "Nëmmen {{PLURAL:$1|dësen Typ vu Fichier ass|dës Type vu Fichiere sinn}} erlaabt:",
+	"msu-ext-not-allowed": "Nëmmen {{PLURAL:$1|dësen Typ vu Fichier ass|dës Typpe vu Fichiere sinn}} erlaabt:",
 	"msu-upload-this": "Dëse Fichier eroplueden",
 	"msu-upload-all": "all Fichieren eroplueden",
 	"msu-dropzone": "Fichieren hei ofleeën",
